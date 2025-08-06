@@ -18,6 +18,7 @@
     </div>
     <!--  -->
     <!-- right -->
+<<<<<<< HEAD
     <div
       class="lg:flex-1 items-center justify-center h-full relative bg-white max-md:rounded-t-[120px] max-lg:rounded-t-[200px]">
       <form class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md "
@@ -57,6 +58,38 @@
             </button>
           </div>
         </div>
+=======
+    <div class="flex-1 items-center justify-center h-full relative">
+      <form class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md "
+        onsubmit="checkLogin(event)">
+        <div class="mb-6 w-1/2">
+          <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="username">
+            Username
+          </label>
+          <input
+            class="bg-purple-50 appearance-none border-2 border-purple-300 rounded w-full py-2 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
+            id="username" type="text" placeholder="กรุณากรอกชื่อผู้ใช้งาน" />
+        </div>
+        <div class="mb-3 w-1/2">
+          <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="inline-password">
+            Password
+          </label>
+          <input
+            class="bg-purple-50 appearance-none border-2 border-purple-300 rounded w-full py-2 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
+            id="password" type="password" placeholder="กรอกรหัสผ่าน" />
+        </div>
+        <div class="flex flex-row items-center mb-6 w-1/2">
+          <label class=" block text-violet-500 font-bold ">
+            <input class="mr-2" type="checkbox" />
+            <span class="text-md"> ลืมรหัสผ่าน? </span>
+          </label>
+        </div>
+        <button
+          class="w-1/2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          type="submit">
+          ลงชื่อเข้าใช้
+        </button>
+>>>>>>> e448ed4 (✨ feat(page): page_login)
       </form>
       <!-- alert error -->
       <div id="alertBox"
