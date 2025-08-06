@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="global.js"></script>
+  <script src="./global.js"></script>
   <title>EDU KU</title>
 </head>
 
@@ -18,8 +18,8 @@
     <!--  -->
     <!-- right -->
     <div class="flex-1 items-center justify-center h-full relative">
-      <form
-        class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md ">
+      <form class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md "
+        onsubmit="checkLogin(event)">
         <div class="mb-6 w-1/2">
           <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="username">
             Username
@@ -44,7 +44,7 @@
         </div>
         <button
           class="w-1/2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-          id="btSubmit" type="button" onclick="checkLogin()">
+          type="submit">
           ลงชื่อเข้าใช้
         </button>
       </form>
