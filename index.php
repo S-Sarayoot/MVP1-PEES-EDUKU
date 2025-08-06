@@ -18,7 +18,7 @@
     </div>
     <!--  -->
     <!-- right -->
-<<<<<<< HEAD
+
     <div
       class="lg:flex-1 items-center justify-center h-full relative bg-white max-md:rounded-t-[120px] max-lg:rounded-t-[200px]">
       <form class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md "
@@ -58,9 +58,10 @@
             </button>
           </div>
         </div>
-=======
+
     <div class="flex-1 items-center justify-center h-full relative">
-      <form class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md ">
+      <form class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md "
+        onsubmit="checkLogin(event)">
         <div class="mb-6 w-1/2">
           <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="username">
             Username
@@ -85,9 +86,8 @@
         </div>
         
         <button
-        type="button"
-        class="w-1/2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-          id="btn-login">
+          class="w-1/2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          type="submit">
           ลงชื่อเข้าใช้
         </button>
 >>>>>>> e448ed4 (✨ feat(page): page_login)
