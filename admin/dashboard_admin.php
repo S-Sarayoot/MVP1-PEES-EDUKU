@@ -11,7 +11,7 @@
 
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <?php include_once ('../component/sidebar.php')?>
+    <?php include_once('../component/sidebar.php') ?>
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 py-8">
