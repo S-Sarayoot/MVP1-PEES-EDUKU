@@ -15,10 +15,9 @@
     <title>EDU KU - Dashboard</title>
 </head>
 
-<body class="bg-gray-100">
-    <div class="grid grid-cols-12 grid-rows-10 md:grid-rows-12 gap-4 max-h-screen overflow-y-auto ">
-        <!-- Navigation -->
-        <?php include_once('../component/sidebar.php') ?>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <?php include_once('../component/sidebar.php') ?>
 
         <!-- Main Content -->
         <div
