@@ -2,7 +2,10 @@ function linkPage(link) {
   window.location.href = link;
 }
 
-function checkLogin() {
+function checkLogin(event) {
+  if (event) {
+    event.preventDefault();
+  }
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
   let alertBox = document.getElementById("alertBox");
