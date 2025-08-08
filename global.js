@@ -16,6 +16,20 @@ function createSideBar(data) {
     ulSideBar.appendChild(listData);
   })
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+}
+
+function linkPage(link) {
+  window.location.href = link;
+>>>>>>> 6a9b696 (create student)
+}
+
+function linkPage(link) {
+  window.location.href = link;
+>>>>>>> 6a9b696 (create student)
 }
 
 function linkPage(link) {
