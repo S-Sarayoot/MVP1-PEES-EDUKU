@@ -2,6 +2,7 @@ function linkPage(link) {
   window.location.href = link;
 }
 
+// login/Logout function
 function checkLogin(event) {
   if (event) {
     event.preventDefault();
@@ -11,7 +12,7 @@ function checkLogin(event) {
   let alertBox = document.getElementById("alertBox");
 
   if (username === "admin" && password === "1234") {
-    linkPage("./admin/dashboard_admin.php");
+    linkPage("https://dev.kittelweb.xyz/admin/dashboard_admin");
   } else {
     alertBox.classList.remove("hidden");
 
@@ -33,6 +34,34 @@ function checkLogin(event) {
 
 function logout() {
   if (confirm("คุณต้องการออกจากระบบหรือไม่?")) {
-    window.location.href = "index.html";
+    window.location.href = "index";
   }
 }
+
+// admin function
+document.addEventListener("DOMContentLoaded", () => {
+  let allFiles = document.getElementById("allFile");
+  let stores = document.getElementById("store");
+  let users = document.getElementById("user");
+  let online = document.getElementById("online");
+
+  [allFiles, stores, users, online].forEach((info) => {
+    switch (info.id) {
+      case "allFile":
+        info.textContent = "243";
+        break;
+      case "store":
+        info.textContent = "12";
+        break;
+      case "user":
+        info.textContent = "2590";
+        break;
+      case "online":
+        info.textContent = "5";
+        break;
+      default:
+        info.textContent = "0";
+        break;
+    }
+  });
+});
