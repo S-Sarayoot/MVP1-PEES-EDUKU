@@ -96,7 +96,7 @@
                 <!--  -->
             </div>
             <!-- line 2 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-8">
                 <div class="bg-white rounded-lg shadow-md p-6 h-full w-full">
                     <h1 class="text-2xl md:text-3xl  ps-2 xl:ps-3 font-bold font-sans antialiased text-[#433878]">
                         แผนการสอน Workshop
@@ -125,11 +125,11 @@
                     </div>
                     <div class="mx-4">
                         <button type="button"
-                            class="bg-[#866BC2] text-2xl text-white font-seminbold h-14 w-full rounded-lg">เรียกดู</button>
+                            class="text-2xl bg-violet-100 text-violet-700 max-lg:py-2 lg:h-14 w-full rounded-lg">เรียกดู</button>
                     </div>
                 </div>
                 <!--  -->
-                <div class="bg-white rounded-lg shadow-md p-6 h-full md:h-[450px] w-full">
+                <div class="bg-white rounded-lg shadow-md p-6 h-full w-full">
                     <h1 class="text-2xl md:text-3xl  ps-2 xl:ps-3 font-bold font-sans antialiased text-[#433878]">
                         คลังทรัพยากร
                     </h1>
@@ -144,14 +144,122 @@
                                 <p class="text-xl md:text-xl font-bold text-gray-500">แผนฯ ที่คัดเลือก</p>
                             </div>
                         </div>
+                        <div class="flex w-full my-4 items-center">
+                            <button type="button"
+                                class="w-full max-lg:py-2 lg:h-14 bg-green-100 text-green-800 text-xl rounded-lg"> +
+                                เพิ่มสื่อการสอน</button>
+                        </div>
+                        <div class="flex w-full items-center">
+                            <button type="button"
+                                class="w-full max-lg:py-2 lg:h-14 bg-gray-100 text-purple-500 text-xl rounded-lg">
+                                ดูเพิ่มเติม</button>
+                        </div>
                     </div>
                 </div>
                 <!--  -->
-                <div class="bg-white rounded-lg shadow-md p-6 h-full md:h-[450px] w-full">
-
+                <div class="flex flex-col bg-white rounded-lg shadow-md p-6 h-full w-full">
+                    <div class="flex justify-between ">
+                        <h1 class="text-2xl md:text-3xl ps-2 xl:ps-3 font-bold font-sans antialiased text-[#433878]">
+                            ผู้ใช้งาน
+                        </h1>
+                        <button type="button" class="text-2xl bg-green-100 text-green-800 h-14 px-4 py-2 rounded-lg">+
+                            เพิ่มผู้ใช้งาน</button>
+                    </div>
+                    <form class="mx-4 my-4">
+                        <div class="flex items-center relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 " fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="search" id="search"
+                                class="block w-full h-12 p-2 ps-10 text-sm text-gray-900 border border-purple-300 rounded-lg bg-purple-50 focus:ring-purple-500 focus:border-purple-500"
+                                placeholder="Search" required />
+                            <button type="submit"
+                                class="absolute right-2 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-white font-medium rounded-lg text-base lg:text-base px-2 py-1 lg:px-3 ">Search</button>
+                        </div>
+                    </form>
+                    <div class="flex flex-col lg:flex-row mx-4 h-full items-center">
+                        <div
+                            class="flex max-lg:justify-between lg:block w-full h-full bg-purple-50 rounded-l-lg p-4 lg:text-center">
+                            <div class="flex flex-col">
+                                <h1 class="text-3xl lg:text-3xl font-bold text-[#433878] py-5">นิสิต</h1>
+                                <p class="text-2xl lg:text-3xl font-bold text-[#156E68] py-3">67 คน</p>
+                            </div>
+                            <div class="flex max-lg:flex-col mt-4">
+                                <button type="button"
+                                    class="text-base md:text-lg bg-orange-100 text-orange-600 h-11 w-full rounded-full mt-2 mr-2 px-4">แก้ไข</button>
+                                <button type="button"
+                                    class="text-base md:text-lg bg-red-100 text-red-700 h-11 w-full rounded-full mt-2 px-4">ลบ</button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex max-lg:justify-between lg:block w-full h-full bg-gray-50 rounded-r-lg p-4 lg:text-center">
+                            <div class="flex flex-col">
+                                <h1 class="text-3xl lg:text-3xl font-bold text-[#433878] py-5">ผู้ทรงคุณวุฒิ
+                                </h1>
+                                <p class="text-2xl lg:text-3xl font-bold text-[#156E68] py-3">152 คน</p>
+                            </div>
+                            <div class="flex max-lg:flex-col mt-4">
+                                <button type="button"
+                                    class="text-base md:text-lg bg-orange-100 text-orange-600 h-11 w-full rounded-full mt-2 mr-2 px-4 ">แก้ไข</button>
+                                <button type="button"
+                                    class="text-base md:text-lg bg-red-100 text-red-700 h-11 w-full rounded-full mt-2 px-4">ลบ</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <!-- line 3 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                <div class="bg-white rounded-lg shadow-md p-6 h-full w-full">
+                    <h1 class="text-2xl md:text-3xl mx-4 font-bold font-sans antialiased text-[#433878]">
+                        กิจกรรมล่าสุด
+                    </h1>
+                    <div class="mx-4 my-7">
+                        <ul class="list-disc w-full mx-4 text-gray-600 text-xl space-y-2">
+                            <li>
+                                <span class="lg:flex">
+                                    <p class="text-purple-600 max-lg:pb-2 pr-2 font-semibold">นิสิต [6858483838]</p>
+                                    <p>อัพโหลดแผนการสอน Workshop 1 เวลา 12/08/68 08:48 น.</p>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="lg:flex">
+                                    <p class="text-purple-600 max-lg:pb-2 pr-2 font-semibold">ผู้ทรงคุณวุฒิ [2901]</p>
+                                    <p>แสดงความคิดเห็น Workshop 2 เวลา 10/08/68 10:19 น.</p>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="lg:flex">
+                                    <p class="text-purple-600 max-lg:pb-2 pr-2 font-semibold">ผู้ดูแลระบบ [อัญชัญ]</p>
+                                    <p>ลบผู้ใช้งาน นิสิต [876899440] เวลา 10/08/68 12:08 น.</p>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 h-full w-full">
+                    <h1 class="text-2xl md:text-3xl mx-4 font-bold font-sans antialiased text-[#433878]">
+                        สำรองข้อมูลล่าสุด
+                    </h1>
+                    <div class="flex justify-between mx-4 my-7 text-xl lg:text-2xl text-gray-600">
+                        <p>สำรองข้อมูลระบบ</p>
+                        <p class="text-purple-800 font-semibold">21/04/68</p>
+                    </div>
+                    <div class="flex mx-4">
+                        <button type="button"
+                            class="text-2xl bg-violet-100 text-violet-700 max-lg:py-2 lg:h-14 w-full rounded-full">
+                            Backup
+                        </button>
+                        <button type="button"
+                            class="text-2xl bg-green-100 text-green-700 max-lg:py-2 lg:h-14 w-full rounded-full">
+                            Restore
+                        </button>
+                    </div>
+                    <!--  -->
+                </div>
 </body>
 
 </html>
