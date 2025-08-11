@@ -158,7 +158,7 @@
                 </div>
                 <!--  -->
                 <div class="flex flex-col bg-white rounded-lg shadow-md p-6 h-full w-full">
-                    <div class="flex justify-between ">
+                    <div class="flex items-center justify-between ">
                         <h1 class="text-2xl md:text-3xl ps-2 xl:ps-3 font-bold font-sans antialiased text-[#433878]">
                             ผู้ใช้งาน
                         </h1>
