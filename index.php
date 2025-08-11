@@ -7,9 +7,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="./global.js"></script>
   <title>EDU KU</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="font-ibm-plex-thai">
   <!-- left -->
   <div class="lg:flex justify-center items-center h-screen bg-[#866BC2]">
     <div class="flex flex-1 items-center justify-center h-full max-lg:hidden">
@@ -24,15 +25,15 @@
         <div class="w-[85%] sm:w-[70%] md:w-[60%] lg:w-[75%] xl:w-[70%] 2xl:w-1/2">
           <div class="space-y-4">
             <div class=" w-full flex justify-center items-center mb-8">
-              <img src="./image/logo.png" alt="Logo" class="h-16 w-17">
-              <h1 class="text-4xl font-bold text-[#866BC2] ml-3 font-sans antialiased">EDU KU</h1>
+              <img src="./image/logo.png" alt="Logo" class="h-14 w-16">
+              <h1 class="text-3xl font-bold text-[#866BC2] ml-3 antialiased">EDU KU</h1>
             </div>
             <div>
               <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="username">
                 Username
               </label>
               <input
-                class="bg-purple-50 appearance-none border-2 border-[#866BC2] rounded w-full py-2 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
+                class="bg-purple-50 appearance-none border-2 border-[#866BC2] rounded w-full py-1 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
                 id="username" type="text" placeholder="กรุณากรอกชื่อผู้ใช้งาน" />
             </div>
             <div>
@@ -40,17 +41,17 @@
                 Password
               </label>
               <input
-                class="bg-purple-50 appearance-none border-2 border-[#866BC2] rounded w-full py-2 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
+                class="bg-purple-50 appearance-none border-2 border-[#866BC2] rounded w-full py-1 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
                 id="password" type="password" placeholder="กรอกรหัสผ่าน" />
             </div>
             <div class="flex flex-row items-center">
               <label class=" block text-violet-500 font-bold ">
                 <input class="mr-2" type="checkbox" />
-                <span class="text-md"> ลืมรหัสผ่าน? </span>
+                <span class="text-sm"> ลืมรหัสผ่าน? </span>
               </label>
             </div>
             <button
-              class="w-full shadow bg-[#866BC2] hover:bg-purple-400 text-lg md:text-xl focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              class="w-full shadow bg-[#866BC2] hover:bg-purple-400 text-base md:text-lg focus:shadow-outline focus:outline-none text-white font-bold py-1 px-4 rounded"
               type="submit">
               ลงชื่อเข้าใช้
             </button>
