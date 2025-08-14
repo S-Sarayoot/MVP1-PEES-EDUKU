@@ -48,7 +48,7 @@
                 class="block w-sm lg:w-md h-full py-2 ps-10 text-sm text-gray-900 border border-purple-300 rounded-lg bg-purple-50 focus:ring-purple-500 focus:border-purple-500"
                 placeholder="Search" required />
             <button type="submit"
-                class="absolute right-2 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-white font-medium rounded-lg text-base lg:text-base px-2 h-[80%] lg:px-3 ">Search</button>
+                class="absolute right-2 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-white rounded-lg text-base lg:text-base px-2 h-[80%] lg:px-3 ">Search</button>
         </div>
     </form>
     <div class="flex items-center bg-white rounded-full w-36 mr-3 my-1">
