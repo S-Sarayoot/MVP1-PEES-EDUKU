@@ -3,6 +3,8 @@
 *.code-workspace
 
 # 🐳 Docker
+Dockerfile
+docker-compose.yml
 docker-compose.override.yml
 *.pid
 *.log
