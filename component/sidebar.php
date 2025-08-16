@@ -13,23 +13,8 @@
     </div>
     <hr class="border-[#866BC2] mb-4 mx-5">
     <nav class="flex-1 overflow-y-auto w-full">
-        <ul class="space-y-4 px-2 max-md:w-60 md:text-base lg:text-lg xl:text-xl text-gray-700">
-            <li>
-                <a href="https://dev.kittelweb.xyz/admin/dashboard_admin"
-                    class="flex items-center px-4 py-2 rounded hover:bg-gray-100">Dashboard</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center px-4 py-2 rounded hover:bg-gray-100">คลังทรัพยากร</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center px-4 py-2 rounded hover:bg-gray-100">Workshop / แผนกฯ</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center px-4 py-2 rounded hover:bg-gray-100">การจัดการผู้ใช้งาน</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center px-4 py-2 rounded hover:bg-gray-100">รายงาน / Log</a>
-            </li>
+        <ul id="nav-data" class="space-y-4 px-2 max-md:w-60 md:text-base lg:text-lg xl:text-xl text-gray-700">
+
         </ul>
     </nav>
 </div>
@@ -58,7 +43,7 @@
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
             </svg>
         </div>
-        <p id="nameuser" class="grow text-center text-base text-purple-800 font-semibold">Admin</p>
+        <p id="nameuser" class="grow text-center text-base text-purple-800 font-semibold"></p>
     </div>
 
 </div>
