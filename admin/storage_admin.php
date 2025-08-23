@@ -149,90 +149,108 @@
                             <p class="py-2 px-4 w-1/6">Type</p>
                             <p class="py-2 px-4 w-1/6">size</p>
                             <p class="py-2 px-4 w-1/6">Date</p>
-                            <p class="py-2 px-4 w-1/6">Action</p>
+                            <p class="py-2 text-center w-1/6">Action</p>
                         </div>
 
                         <!-- td -->
-                        <div class="max-h-42 md:max-h-52 overflow-y-auto">
+                        <div class="max-h-52 md:max-h-42 overflow-y-auto">
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
                                 <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/6">Image</p>
                                 <p class="py-2 px-4 w-1/6">2.5 MB</p>
                                 <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
                                 <p class="py-2 px-4 w-1/6">Image</p>
                                 <p class="py-2 px-4 w-1/6">2.5 MB</p>
                                 <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
                                 <p class="py-2 px-4 w-1/6">Image</p>
                                 <p class="py-2 px-4 w-1/6">2.5 MB</p>
                                 <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
                                 <p class="py-2 px-4 w-1/6">Image</p>
                                 <p class="py-2 px-4 w-1/6">2.5 MB</p>
                                 <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
                                 <p class="py-2 px-4 w-1/6">Image</p>
                                 <p class="py-2 px-4 w-1/6">2.5 MB</p>
                                 <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
                                 <p class="py-2 px-4 w-1/6">Image</p>
                                 <p class="py-2 px-4 w-1/6">2.5 MB</p>
                                 <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
                                 <p class="py-2 px-4 w-1/6">Image</p>
                                 <p class="py-2 px-4 w-1/6">2.5 MB</p>
                                 <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
                                 <p class="py-2 px-4 w-1/6">Image</p>
                                 <p class="py-2 px-4 w-1/6">2.5 MB</p>
                                 <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
+                                </div>
+                            </div>
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                         </div>
