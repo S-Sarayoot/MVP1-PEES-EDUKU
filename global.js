@@ -1,67 +1,81 @@
 function linkPage(link) {
-  window.location.href = link;
+    window.location.href = link;
 }
 
 // login/Logout function
 function checkLogin(event) {
-  if (event) {
-    event.preventDefault();
-  }
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-  let alertBox = document.getElementById("alertBox");
+    if (event) {
+        event.preventDefault();
+    }
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let alertBox = document.getElementById("alertBox");
 
-  if (username === "admin" && password === "1234") {
-    linkPage("https://dev.kittelweb.xyz/admin/dashboard_admin");
-  } else {
-    alertBox.classList.remove("hidden");
+    if (username === "admin" && password === "1234") {
+        linkPage("https://dev.kittelweb.xyz/admin/dashboard_admin");
+    } else {
+        alertBox.classList.remove("hidden");
 
-    setTimeout(() => {
-      alertBox.classList.remove("translate-x-full");
-      alertBox.classList.add("translate-x-0");
-    }, 10);
+        setTimeout(() => {
+            alertBox.classList.remove("translate-x-full");
+            alertBox.classList.add("translate-x-0");
+        }, 10);
 
-    setTimeout(() => {
-      alertBox.classList.remove("translate-x-0");
-      alertBox.classList.add("translate-x-full");
+        setTimeout(() => {
+            alertBox.classList.remove("translate-x-0");
+            alertBox.classList.add("translate-x-full");
 
-      setTimeout(() => {
-        alertBox.classList.add("hidden");
-      }, 500);
-    }, 3000);
-  }
+            setTimeout(() => {
+                alertBox.classList.add("hidden");
+            }, 500);
+        }, 3000);
+    }
 }
 
 function logout() {
-  if (confirm("คุณต้องการออกจากระบบหรือไม่?")) {
-    window.location.href = "index";
-  }
+    if (confirm("คุณต้องการออกจากระบบหรือไม่?")) {
+        window.location.href = "index";
+    }
 }
 
 // admin function
 document.addEventListener("DOMContentLoaded", () => {
-  let allFiles = document.getElementById("allFile");
-  let stores = document.getElementById("store");
-  let users = document.getElementById("user");
-  let online = document.getElementById("online");
+    let allFiles = document.getElementById("allFile");
+    let stores = document.getElementById("store");
+    let users = document.getElementById("user");
+    let online = document.getElementById("online");
 
-  [allFiles, stores, users, online].forEach((info) => {
-    switch (info.id) {
-      case "allFile":
-        info.textContent = "243";
-        break;
-      case "store":
-        info.textContent = "12";
-        break;
-      case "user":
-        info.textContent = "2590";
-        break;
-      case "online":
-        info.textContent = "5";
-        break;
-      default:
-        info.textContent = "0";
-        break;
+    [allFiles, stores, users, online].forEach((info) => {
+        switch (info.id) {
+            case "allFile":
+                info.textContent = "243";
+                break;
+            case "store":
+                info.textContent = "12";
+                break;
+            case "user":
+                info.textContent = "2590";
+                break;
+            case "online":
+                info.textContent = "5";
+                break;
+            default:
+                info.textContent = "0";
+                break;
+        }
+    });
+});
+
+function toggleModal(show) {
+    const modal = document.getElementById("uploadModal");
+    if (show) {
+        modal.classList.remove("hidden");
+    } else {
+        modal.classList.add("hidden");
     }
-  });
+}
+
+document.getElementById("fileUpload").addEventListener("change", function() {
+    const fileName = this.files.length > 0 ? this.files[0].name : "ยังไม่มีไฟล์";
+    document.getElementById("fileName").textContent = fileName;
 });

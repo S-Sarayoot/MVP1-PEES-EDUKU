@@ -33,9 +33,8 @@
                 <div class="bg-white shadow-md rounded-lg p-4 mb-4">
                     <div class="flex justify-between items-center mb-2">
                         <h2 class="text-lg text-[#433878]">ประเภทสื่อการสอน</h2>
-                        <button class="bg-green-100 text-green-800 rounded-md text-sm p-2">
-                            + เพิ่มสื่อการสอน
-                        </button>
+                        <button onclick="toggleModal(true)" class="bg-green-100 text-green-800 rounded-md text-sm p-2 cursor-pointer">+ เพิ่มสื่อการสอน</button>
+                        <?php include('../component/uploadform.php')?>
                     </div>
                     <hr class="border-0.5 border-gray-100 my-4 -mx-4">
                     <!-- content -->
