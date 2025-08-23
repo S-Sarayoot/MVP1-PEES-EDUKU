@@ -36,16 +36,17 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-xl text-wrap font-semibold text-gray-800">สื่อการสอนทั้งหมด</h3>
+                            <h3 class="text-lg text-wrap font-semibold text-gray-800">สื่อการสอนทั้งหมด</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
                         <p id="allFile" class="text-lime-400 text-2xl font-bold"></p>
-                        <p class="text-base text-gray-500 ml-2">สื่อการสอน</p>
+                        <p class="text-sm text-gray-500 ml-2">สื่อการสอน</p>
                     </span>
                 </div>
                 <!--  -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 h-full w-full">
+                <div
+                    class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 h-full w-full">
                     <div class="flex items-center">
                         <div class="p-3 rounded-full bg-green-100 text-green-600">
                             <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,16 +56,17 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-xl text-wrap font-semibold text-gray-800">แผนการสอนในคลัง</h3>
+                            <h3 class="text-lg text-wrap font-semibold text-gray-800">แผนการสอนในคลัง</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
                         <p id="store" class="text-lime-400 text-2xl font-bold"></p>
-                        <p class="text-base text-gray-500 ml-2">แผนการสอน</p>
+                        <p class="text-sm text-gray-500 ml-2">แผนการสอน</p>
                     </span>
                 </div>
                 <!--  -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 h-full w-full">
+                <div
+                    class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 h-full w-full">
                     <div class="flex text-wrap items-center">
                         <div class="p-3 rounded-full bg-purple-100 text-purple-600">
                             <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,16 +76,17 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-xl text-wrap font-semibold text-gray-800">ผู้ใช้งานทั้งหมด</h3>
+                            <h3 class="text-lg text-wrap font-semibold text-gray-800">ผู้ใช้งานทั้งหมด</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
                         <p id="user" class="px-2 text-lime-400 text-2xl font-bold"></p>
-                        <p class="text-base text-gray-500 ">คน</p>
+                        <p class="text-sm text-gray-500 ">คน</p>
                     </span>
                 </div>
                 <!--  -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 h-full w-full">
+                <div
+                    class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 h-full w-full">
                     <div class="flex text-wrap items-center">
                         <div class="p-3 rounded-full bg-amber-100 text-amber-600">
                             <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,41 +95,42 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-xl text-wrap font-semibold text-gray-800">การเข้าถึงวันนี้</h3>
+                            <h3 class="text-lg text-wrap font-semibold text-gray-800">การเข้าถึงวันนี้</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
                         <p id="online" class="px-2 text-lime-400 text-2xl font-bold"></p>
-                        <p class="text-base text-gray-500 ">คน</p>
+                        <p class="text-sm text-gray-500 ">คน</p>
                     </span>
                 </div>
                 <!--  -->
             </div>
             <!-- line 2 -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-8">
-                <div class="bg-white rounded-lg shadow-md p-4 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-xl ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
+                <div
+                    class="bg-white rounded-lg shadow-md p-4 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
+                    <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
                         แผนการสอน Workshop
                     </h1>
                     <div class="flex justify-between text-wrap mx-4 mt-6 mb-3">
                         <div class="text-gray-500">
-                            <p class="text-base bg-purple-50 py-2 px-4">ครั้งที่ 1</p>
-                            <p class="text-base py-2 px-4">ครั้งที่ 2</p>
-                            <p class="text-base bg-purple-50 py-2 px-4">ครั้งที่ 3</p>
+                            <p class="text-sm bg-purple-50 py-2 px-4">ครั้งที่ 1</p>
+                            <p class="text-sm py-2 px-4">ครั้งที่ 2</p>
+                            <p class="text-sm bg-purple-50 py-2 px-4">ครั้งที่ 3</p>
                             <p class="text-lg py-2 px-4 text-[#156E68] font-bold">รวมทั้งหมด</p>
                         </div>
                         <div class="text-end text-[#866BC2] grow">
-                            <p class="text-base font-semibold bg-purple-50 py-2 px-4">40
+                            <p class="text-sm font-semibold bg-purple-50 py-2 px-4">40
                                 <span class="text-sm">Files</span>
                             </p>
-                            <p class="text-base font-semibold py-2 px-4">39
+                            <p class="text-sm font-semibold py-2 px-4">39
                                 <span class="text-sm">Files</span>
                             </p>
-                            <p class="text-base font-semibold bg-purple-50 py-2 px-4">32
+                            <p class="text-sm font-semibold bg-purple-50 py-2 px-4">32
                                 <span class="text-sm">Files</span>
                             </p>
                             <p class="text-lg font-semibold py-2 px-4 text-[#B1BB1E]">123
-                                <span class="text-base">Files</span>
+                                <span class="text-sm">Files</span>
                             </p>
                         </div>
                     </div>
@@ -136,8 +140,9 @@
                     </div>
                 </div>
                 <!--  -->
-                <div class="bg-white rounded-lg shadow-md p-4 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-xl ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
+                <div
+                    class="bg-white rounded-lg shadow-md p-4 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
+                    <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
                         คลังทรัพยากร
                     </h1>
                     <div class="mx-4 my-5">
@@ -166,7 +171,7 @@
                 <div
                     class="flex flex-col bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
                     <div class="flex items-center justify-between ">
-                        <h1 class="text-xl ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
+                        <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
                             ผู้ใช้งาน
                         </h1>
                         <button type="button" class="text-base bg-green-100 text-green-800 px-4 py-1 rounded-lg">+
@@ -177,28 +182,28 @@
                             <div
                                 class="flex max-lg:justify-between lg:block w-full bg-purple-50 rounded-l-lg p-4 lg:text-center mt-2">
                                 <div class="flex flex-col">
-                                    <h1 class="text-lg font-bold text-[#433878] pb-4">นิสิต</h1>
-                                    <p class="text-xl font-bold text-[#156E68]">67 คน</p>
+                                    <h1 class="text-base font-bold text-[#433878] pb-4">นิสิต</h1>
+                                    <p class="text-lg font-bold text-[#156E68]">67 คน</p>
                                 </div>
                                 <div class="flex max-lg:flex-col mt-4">
                                     <button type="button"
-                                        class="text-base bg-orange-100 text-orange-600 h-full py-1 w-full rounded-full mt-2 mr-2 px-4">แก้ไข</button>
+                                        class="text-sm bg-orange-100 text-orange-600 h-full py-1 w-full rounded-full mt-2 mr-2 px-4">แก้ไข</button>
                                     <button type="button"
-                                        class="text-base bg-red-100 text-red-700 h-full py-1 w-full rounded-full mt-2 px-4">ลบ</button>
+                                        class="text-sm bg-red-100 text-red-700 h-full py-1 w-full rounded-full mt-2 px-4">ลบ</button>
                                 </div>
                             </div>
                             <div
                                 class="flex max-lg:justify-between lg:block w-full bg-gray-50 rounded-r-lg p-4 lg:text-center mt-2">
                                 <div class="flex flex-col">
-                                    <h1 class="text-lg font-bold text-[#433878] pb-4">ผู้ทรงคุณวุฒิ
+                                    <h1 class="text-base font-bold text-[#433878] pb-4">ผู้ทรงคุณวุฒิ
                                     </h1>
-                                    <p class="text-xl font-bold text-[#156E68]">152 คน</p>
+                                    <p class="text-lg font-bold text-[#156E68]">152 คน</p>
                                 </div>
                                 <div class="flex max-lg:flex-col mt-4">
                                     <button type="button"
-                                        class="text-base bg-orange-100 text-orange-600 h-full py-1 w-full rounded-full mt-2 mr-2 px-4 ">แก้ไข</button>
+                                        class="text-sm bg-orange-100 text-orange-600 h-full py-1 w-full rounded-full mt-2 mr-2 px-4 ">แก้ไข</button>
                                     <button type="button"
-                                        class="text-base bg-red-100 text-red-700 h-full py-1 w-full rounded-full mt-2 px-4">ลบ</button>
+                                        class="text-sm bg-red-100 text-red-700 h-full py-1 w-full rounded-full mt-2 px-4">ลบ</button>
                                 </div>
                             </div>
                         </div>
@@ -207,8 +212,9 @@
             </div>
             <!-- line 3 -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-                <div class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-xl mx-4 font-bold  antialiased text-[#433878]">
+                <div
+                    class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
+                    <h1 class="text-lg mx-4 font-bold  antialiased text-[#433878]">
                         กิจกรรมล่าสุด
                     </h1>
                     <div class="mx-4 my-5">
@@ -234,21 +240,22 @@
                         </ul>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-xl mx-4 font-bold  antialiased text-[#433878]">
+                <div
+                    class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
+                    <h1 class="text-lg mx-4 font-bold  antialiased text-[#433878]">
                         สำรองข้อมูลล่าสุด
                     </h1>
-                    <div class="flex justify-between mx-4 my-5 text-base text-gray-600">
+                    <div class="flex justify-between mx-4 my-5 text-sm text-gray-600">
                         <p>สำรองข้อมูลระบบ</p>
                         <p class="text-purple-800 font-semibold">21/04/68</p>
                     </div>
                     <div class="flex mx-4">
                         <button type="button"
-                            class="text-lg bg-violet-100 text-violet-700 py-1 mr-1 h-full w-full rounded-full">
+                            class="text-base bg-violet-100 text-violet-700 py-1 mr-1 h-full w-full rounded-full">
                             Backup
                         </button>
                         <button type="button"
-                            class="text-lg bg-green-100 text-green-700 py-1 h-full w-full rounded-full">
+                            class="text-base bg-green-100 text-green-700 py-1 h-full w-full rounded-full">
                             Restore
                         </button>
                     </div>
