@@ -142,116 +142,101 @@
                     </div>
                     <hr class="border-0.5 border-gray-100 my-4 -mx-4">
                     <!-- table th -->
-                    <div class="max-h-55 md:max-h-43 overflow-auto">
-                        <table class="w-full h-full">
-                            <thead class="bg-gray-100 h-fit">
-                                <tr class="text-left text-sm font-semibold text-gray-500">
-                                    <th class="py-2 px-4">File Name</th>
-                                    <th class="py-2 px-4">Type</th>
-                                    <th class="py-2 px-4">size</th>
-                                    <th class="py-2 px-4">Date</th>
-                                    <th class="py-2 px-4">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                    <td class="py-2 px-4">example_image.jpg</td>
-                                    <td class="py-2 px-4">Image</td>
-                                    <td class="py-2 px-4">2.5 MB</td>
-                                    <td class="py-2 px-4">2023-10-01</td>
-                                    <td class="py-2 px-4">
-                                        <div class="flex flex-col md:flex-row">
-                                            <button class="text-blue-500 hover:underline">Edit</button>
-                                            <button class="text-red-500 hover:underline ml-2">Delete</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                    <td class="py-2 px-4">ก-ฮ.jpg</td>
-                                    <td class="py-2 px-4">Image</td>
-                                    <td class="py-2 px-4">1 MB</td>
-                                    <td class="py-2 px-4">2022-08-02</td>
-                                    <td class="py-2 px-4">
-                                        <div class="flex flex-col md:flex-row">
-                                            <button class="text-blue-500 hover:underline">Edit</button>
-                                            <button class="text-red-500 hover:underline ml-2">Delete</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                    <td class="py-2 px-4">exam_1.jpg</td>
-                                    <td class="py-2 px-4">Exam</td>
-                                    <td class="py-2 px-4">3 MB</td>
-                                    <td class="py-2 px-4">2024-11-11</td>
-                                    <td class="py-2 px-4">
-                                        <div class="flex flex-col md:flex-row">
-                                            <button class="text-blue-500 hover:underline">Edit</button>
-                                            <button class="text-red-500 hover:underline ml-2">Delete</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                    <td class="py-2 px-4">example_image.jpg</td>
-                                    <td class="py-2 px-4">Image</td>
-                                    <td class="py-2 px-4">2.5 MB</td>
-                                    <td class="py-2 px-4">2023-10-01</td>
-                                    <td class="py-2 px-4">
-                                        <div class="flex flex-col md:flex-row">
-                                            <button class="text-blue-500 hover:underline">Edit</button>
-                                            <button class="text-red-500 hover:underline ml-2">Delete</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                    <td class="py-2 px-4">example_image.jpg</td>
-                                    <td class="py-2 px-4">Image</td>
-                                    <td class="py-2 px-4">2.5 MB</td>
-                                    <td class="py-2 px-4">2023-10-01</td>
-                                    <td class="py-2 px-4">
-                                        <div class="flex flex-col md:flex-row">
-                                            <button class="text-blue-500 hover:underline">Edit</button>
-                                            <button class="text-red-500 hover:underline ml-2">Delete</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                    <td class="py-2 px-4">example_image.jpg</td>
-                                    <td class="py-2 px-4">Image</td>
-                                    <td class="py-2 px-4">2.5 MB</td>
-                                    <td class="py-2 px-4">2023-10-01</td>
-                                    <td class="py-2 px-4">
-                                        <div class="flex flex-col md:flex-row">
-                                            <button class="text-blue-500 hover:underline">Edit</button>
-                                            <button class="text-red-500 hover:underline ml-2">Delete</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                    <td class="py-2 px-4">example_image.jpg</td>
-                                    <td class="py-2 px-4">Image</td>
-                                    <td class="py-2 px-4">2.5 MB</td>
-                                    <td class="py-2 px-4">2023-10-01</td>
-                                    <td class="py-2 px-4">
-                                        <div class="flex flex-col md:flex-row">
-                                            <button class="text-blue-500 hover:underline">Edit</button>
-                                            <button class="text-red-500 hover:underline ml-2">Delete</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                    <td class="py-2 px-4">example_image.jpg</td>
-                                    <td class="py-2 px-4">Image</td>
-                                    <td class="py-2 px-4">2.5 MB</td>
-                                    <td class="py-2 px-4">2023-10-01</td>
-                                    <td class="py-2 px-4">
-                                        <div class="flex flex-col md:flex-row">
-                                            <button class="text-blue-500 hover:underline">Edit</button>
-                                            <button class="text-red-500 hover:underline ml-2">Delete</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="flex flex-col w-full h-full">
+                        <!-- th -->
+                        <div class="flex text-left text-sm font-semibold text-gray-500 bg-gray-100">
+                            <p class="py-2 px-4 w-2/6">File Name</p>
+                            <p class="py-2 px-4 w-1/6">Type</p>
+                            <p class="py-2 px-4 w-1/6">size</p>
+                            <p class="py-2 px-4 w-1/6">Date</p>
+                            <p class="py-2 px-4 w-1/6">Action</p>
+                        </div>
+
+                        <!-- td -->
+                        <div class="max-h-42 md:max-h-52 overflow-y-auto">
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                </p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                </div>
+                            </div>
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                </div>
+                            </div>
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                </div>
+                            </div>
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                </div>
+                            </div>
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                </div>
+                            </div>
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                </div>
+                            </div>
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                </div>
+                            </div>
+                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                <p class="py-2 px-4 w-2/6 truncate text-wrap ">example_image.jpg</p>
+                                <p class="py-2 px-4 w-1/6">Image</p>
+                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
+                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row w-1/6">
+                                    <button class="text-blue-500 hover:underline">Edit</button>
+                                    <button class="text-red-500 hover:underline ml-2">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
                     </div>
                     <!--  -->
                 </div>
