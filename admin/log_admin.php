@@ -29,7 +29,7 @@
                         class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
                     > Log </p>
             </div>
-            
+            <
         </div>
 </body>
 

@@ -170,7 +170,7 @@
                 <!--  -->
                 <div
                     class="flex flex-col bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <div class="flex items-center justify-between ">
+                    <div class="flex items-center justify-between max-md:mb-2">
                         <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
                             ผู้ใช้งาน
                         </h1>
@@ -214,7 +214,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                 <div
                     class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg mx-4 font-bold  antialiased text-[#433878]">
+                    <h1 class="text-lg ps-2 font-bold antialiased text-[#433878]">
                         กิจกรรมล่าสุด
                     </h1>
                     <div class="mx-4 my-5">
@@ -242,7 +242,7 @@
                 </div>
                 <div
                     class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg mx-4 font-bold  antialiased text-[#433878]">
+                    <h1 class="text-lg ps-2 font-bold  antialiased text-[#433878]">
                         สำรองข้อมูลล่าสุด
                     </h1>
                     <div class="flex justify-between mx-4 my-5 text-sm text-gray-600">

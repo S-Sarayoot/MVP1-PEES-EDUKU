@@ -43,88 +43,43 @@
                         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:h-full max-h-[200px] overflow-y-auto">
                         <div class="flex p-2 rounded-lg border-1 border-gray-100 hover:border-gray-300 transition">
                             <img src="../image/image_icon.png" alt="image" class="size-14">
-                            <div class="flex flex-col w-full">
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500 font-semibold ">Image</p>
-                                    <p class="text-gray-500">213 files</p>
-                                </div>
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500">21 %</p>
-                                    <p class="text-gray-500">21.24 GB</p>
-                                </div>
+                            <div class="mx-6">
+                                <p class="text-gray-500 font-semibold my-1">Image</p>
+                                <p class="text-gray-500 text-sm">17 files</p>
                             </div>
                         </div>
                         <div class="flex p-2 rounded-lg border-1 border-gray-100 hover:border-gray-300 transition">
                             <div class="bg-[#FCEDFF] p-4 rounded-xl">
-                                <img src="../image/play_icon.png" alt="image" class="h-6 w-7">
+                                <img src="../image/play_icon.png" alt="image" class="h-6 w-6">
                             </div>
-                            <div class="flex flex-col w-full">
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500 font-semibold ">Videos</p>
-                                    <p class="text-gray-500">189 files</p>
-                                </div>
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500">17 %</p>
-                                    <p class="text-gray-500">19.54 GB</p>
-                                </div>
+                            <div class="mx-6">
+                                <p class="text-gray-500 font-semibold my-1">Videos</p>
+                                <p class="text-gray-500 text-sm">47 files</p>
                             </div>
                         </div>
                         <div class="flex p-2 rounded-lg border-1 border-gray-100 hover:border-gray-300 transition">
                             <img src="../image/document_icon.png" alt="image" class="size-14">
-                            <div class="flex flex-col w-full">
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500 font-semibold ">Documents</p>
-                                    <p class="text-gray-500">283 files</p>
-                                </div>
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500">28 %</p>
-                                    <p class="text-gray-500">26.21 GB</p>
-                                </div>
+                            <div class="mx-6">
+                                <p class="text-gray-500 font-semibold my-1">แหล่งการเรียนรู้แนะนำ</p>
+                                <p class="text-gray-500 text-sm">47 files</p>
                             </div>
                         </div>
                         <div class="flex p-2 rounded-lg border-1 border-gray-100 hover:border-gray-300 transition">
                             <div class="bg-[#E0E9FF] p-4 rounded-xl">
-                                <img src="../image/storyboard_icon.png" alt="image" class="h-6 w-7">
+                                <img src="../image/storyboard_icon.png" alt="image" class="h-6 w-6">
                             </div>
-                            <div class="flex flex-col w-full">
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500 font-semibold ">Story board</p>
-                                    <p class="text-gray-500">47 files</p>
-                                </div>
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500">9 %</p>
-                                    <p class="text-gray-500">10 GB</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex p-2 rounded-lg border-1 border-gray-100 hover:border-gray-300 transition">
-                            <div class="bg-[#E7FFE0] p-4 rounded-xl">
-                                <img src="../image/exam_icon.png" alt="image" class="h-6 w-7">
-                            </div>
-                            <div class="flex flex-col w-full">
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500 font-semibold ">Exams</p>
-                                    <p class="text-gray-500">128 files</p>
-                                </div>
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500">16 %</p>
-                                    <p class="text-gray-500">18.24 GB</p>
-                                </div>
+                            <div class="mx-6">
+                                <p class="text-gray-500 font-semibold my-1">แผนการจัดการเรียนรู้</p>
+                                <p class="text-gray-500 text-sm">47 files</p>
                             </div>
                         </div>
                         <div class="flex p-2 rounded-lg border-1 border-gray-100 hover:border-gray-300 transition">
                             <div class="bg-[#FFE0F9] p-4 rounded-xl">
-                                <img src="../image/script_icon.png" alt="image" class="h-6 w-7">
+                                <img src="../image/script_icon.png" alt="image" class="h-6 w-6">
                             </div>
-                            <div class="flex flex-col w-full">
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500 font-semibold ">Script</p>
-                                    <p class="text-gray-500">109 files</p>
-                                </div>
-                                <div class="flex justify-between text-sm my-1 mx-6">
-                                    <p class="text-gray-500">14 %</p>
-                                    <p class="text-gray-500">14.23 GB</p>
-                                </div>
+                            <div class="mx-6">
+                                <p class="text-gray-500 font-semibold my-1">เกณฑ์การประเมิณ</p>
+                                <p class="text-gray-500 text-sm">47 files</p>
                             </div>
                         </div>
                     </div>
@@ -135,7 +90,7 @@
             <div class="flex flex-col">
                 <div class="bg-white shadow-md rounded-lg p-4 mb-4">
                     <div class="flex justify-between items-center mb-2">
-                        <h2 class="text-lg text-[#433878]">สื่อการทั้งหมด</h2>
+                        <h2 class="text-lg text-[#433878]">สื่อการเรียนการสอนทั้งหมด</h2>
                         <a class="text-gray-800 rounded-md text-sm p-2">
                             View all
                         </a>
@@ -145,109 +100,99 @@
                     <div class="flex flex-col w-full h-full">
                         <!-- th -->
                         <div class="flex text-left text-sm font-semibold text-gray-500 bg-gray-100">
-                            <p class="py-2 px-4 w-2/6">File Name</p>
-                            <p class="py-2 px-4 w-1/6">Type</p>
-                            <p class="py-2 px-4 w-1/6">size</p>
-                            <p class="py-2 px-4 w-1/6">Date</p>
-                            <p class="py-2 text-center w-1/6">Action</p>
+                            <p class="py-2 px-4 w-2/5">File Name</p>
+                            <p class="py-2 px-4 w-1/5">Type</p>
+                            <p class="py-2 px-4 w-1/5">Date</p>
+                            <p class="py-2 text-center w-1/5">Action</p>
                         </div>
 
                         <!-- td -->
                         <div class="max-h-52 md:max-h-42 overflow-y-auto">
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">tiktok video
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <p class="py-2 px-4 w-1/5">Videos</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <p class="py-2 px-4 w-1/5">Image</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <p class="py-2 px-4 w-1/5">Image</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <p class="py-2 px-4 w-1/5">Image</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <p class="py-2 px-4 w-1/5">Image</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <p class="py-2 px-4 w-1/5">Image</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <p class="py-2 px-4 w-1/5">Image</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <p class="py-2 px-4 w-1/5">Image</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/6 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
                                 </p>
-                                <p class="py-2 px-4 w-1/6">Image</p>
-                                <p class="py-2 px-4 w-1/6">2.5 MB</p>
-                                <p class="py-2 px-4 w-1/6">2023-10-01</p>
+                                <p class="py-2 px-4 w-1/5">Image</p>
+                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
                                 <div class="flex flex-col md:flex-row justify-center w-1/6">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
