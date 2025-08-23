@@ -142,21 +142,17 @@
                     </div>
                     <hr class="border-0.5 border-gray-100 my-4 -mx-4">
                     <!-- table th -->
-                    <table class="w-full h-full">
-                        <thead class="bg-gray-100 h-fit">
-                            <tr class="text-left text-sm font-semibold text-gray-500">
-                                <th class="py-2 px-4">File Name</th>
-                                <th class="py-2 px-4">Type</th>
-                                <th class="py-2 px-4">size</th>
-                                <th class="py-2 px-4">Date</th>
-                                <th class="py-2 px-4">Action</th>
-                            </tr>
-                        </thead>
-                    </table>
-                    <!--  -->
-                    <!-- table td -->
-                    <div class="overflow-y-auto max-h-55 md:max-h-43 overflow-auto">
-                        <table class="w-full">
+                    <div class="max-h-55 md:max-h-43 overflow-auto">
+                        <table class="w-full h-full">
+                            <thead class="bg-gray-100 h-fit">
+                                <tr class="text-left text-sm font-semibold text-gray-500">
+                                    <th class="py-2 px-4">File Name</th>
+                                    <th class="py-2 px-4">Type</th>
+                                    <th class="py-2 px-4">size</th>
+                                    <th class="py-2 px-4">Date</th>
+                                    <th class="py-2 px-4">Action</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr class="text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
                                     <td class="py-2 px-4">example_image.jpg</td>
