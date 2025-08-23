@@ -24,7 +24,7 @@
         <div
             class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
             <div class="flex justify-between">
-                <h1 class="text-xl text-gray-500 mb-4 ml-4">ประวัติ</h1>
+                <h1 class="text-xl text-gray-500 mb-4 md:mx-4">ประวัติ</h1>
                 <p class="text-gray-700 mb-4 mr-4"><a href="https://dev.kittelweb.xyz/admin/dashboard_admin"
                         class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
                     > Log </p>
