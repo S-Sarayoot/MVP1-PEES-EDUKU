@@ -34,7 +34,7 @@ function checkLogin(event) {
   if (username === "admin" && password === "1234") {
     sideBarMenu = [
       { name: "Dashboard", path: "/admin/dashboard_admin" },  
-      { name: "คลังทรัพยากร", path: "/admin/store_admin" },
+      { name: "คลังทรัพยากร", path: "/admin/storage_admin.php" },
       { name: "workshop/แผนฯ", path: "/admin/user_admin" },
       { name: "ผู้ใช้งาน", path: "/admin/file_admin" },
       { name: "รายงาน/log", path: "/admin/file_admin" },
