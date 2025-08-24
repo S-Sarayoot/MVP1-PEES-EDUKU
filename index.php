@@ -7,47 +7,56 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="./global.js"></script>
   <title>EDU KU</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="font-ibm-plex-thai">
   <!-- left -->
-  <div class="flex justify-center bg-white items-center h-screen overflow-hidden">
-    <div class="flex flex-1 items-center justify-center h-full">
+  <div class="lg:flex justify-center items-center h-screen bg-[#866BC2]">
+    <div class="flex flex-1 items-center justify-center h-full max-lg:hidden">
       <img src="./image/bookOpen.jpg" alt="logo" class="w-full h-full object-cover" />
     </div>
     <!--  -->
     <!-- right -->
-    <div class="flex-1 items-center justify-center h-full relative">
-      <form class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md ">
-        <div class="mb-6 w-1/2">
-          <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="username">
-            Username
-          </label>
-          <input
-            class="bg-purple-50 appearance-none border-2 border-purple-300 rounded w-full py-2 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
-            id="username" type="text" placeholder="กรุณากรอกชื่อผู้ใช้งาน" />
+    <div
+      class="lg:flex-1 items-center justify-center h-full relative bg-white max-md:rounded-t-[120px] max-lg:rounded-t-[200px]">
+      <form class="flex flex-col justify-center w-full h-full items-center p-4 border-1 border-gray-100 drop-shadow-md "
+        onsubmit="checkLogin(event)">
+        <div class="w-[85%] sm:w-[70%] md:w-[60%] lg:w-[75%] xl:w-[70%] 2xl:w-1/2">
+          <div class="space-y-4">
+            <div class=" w-full flex justify-center items-center mb-8">
+              <img src="./image/logo.png" alt="Logo" class="h-14 w-16">
+              <h1 class="text-3xl font-bold text-[#866BC2] ml-3 antialiased">EDU KU</h1>
+            </div>
+            <div>
+              <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="username">
+                Username
+              </label>
+              <input
+                class="bg-purple-50 appearance-none border-2 border-[#866BC2] rounded w-full py-1 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
+                id="username" type="text" placeholder="กรุณากรอกชื่อผู้ใช้งาน" />
+            </div>
+            <div>
+              <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="inline-password">
+                Password
+              </label>
+              <input
+                class="bg-purple-50 appearance-none border-2 border-[#866BC2] rounded w-full py-1 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
+                id="password" type="password" placeholder="กรอกรหัสผ่าน" />
+            </div>
+            <div class="flex flex-row items-center">
+              <label class=" block text-violet-500 font-bold ">
+                <input class="mr-2" type="checkbox" />
+                <span class="text-sm"> ลืมรหัสผ่าน? </span>
+              </label>
+            </div>
+            <button
+              class="w-full shadow bg-[#866BC2] hover:bg-purple-400 text-base md:text-lg focus:shadow-outline focus:outline-none text-white font-bold py-1 px-4 rounded"
+              type="submit">
+              ลงชื่อเข้าใช้
+            </button>
+          </div>
         </div>
-        <div class="mb-3 w-1/2">
-          <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 pb-1" for="inline-password">
-            Password
-          </label>
-          <input
-            class="bg-purple-50 appearance-none border-2 border-purple-300 rounded w-full py-2 px-4 text-gray-400 focus:outline-none focus:bg-white focus:border-purple-500"
-            id="password" type="password" placeholder="กรอกรหัสผ่าน" />
-        </div>
-        <div class="flex flex-row items-center mb-6 w-1/2">
-          <label class=" block text-violet-500 font-bold ">
-            <input class="mr-2" type="checkbox" />
-            <span class="text-md"> ลืมรหัสผ่าน? </span>
-          </label>
-        </div>
-        
-        <button
-        type="button"
-        class="w-1/2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-          id="btn-login">
-          ลงชื่อเข้าใช้
-        </button>
       </form>
       <!-- alert error -->
       <div id="alertBox"
