@@ -18,7 +18,7 @@
 <body class="bg-gray-100">
     <div class="grid grid-cols-12 grid-rows-10 md:grid-rows-12 gap-4 max-h-screen overflow-y-auto ">
         <!-- Navigation -->
-        <?php include_once('../component/sidebar.php') ?>
+        <?php include_once '../component/sidebar.php' ?>
 
         <!-- Main Content -->
         <div
@@ -174,11 +174,11 @@
                         <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
                             ผู้ใช้งาน
                         </h1>
-                        <button type="button" onclick="toggleModal(true)" class="text-base bg-green-100 text-green-800 px-4 py-1 rounded-lg cursor-pointer">+
+                        <button type="button" onclick="toggleModal(true)"
+                            class="text-base bg-green-100 text-green-800 px-4 py-1 rounded-lg cursor-pointer">+
                             เพิ่มผู้ใช้งาน</button>
-                            <?php include'../component/uploadusers.php' ?>
-                        </div>
-                        <div class="mx-4 my-auto">
+                    </div>
+                    <div class="mx-4 my-auto">
                         <div class="flex flex-col lg:flex-row items-center w-full h-full max-sm:overflow-x-auto">
                             <div
                                 class="flex max-lg:justify-between lg:block w-full bg-purple-50 rounded-l-lg p-4 lg:text-center mt-2">
@@ -210,6 +210,8 @@
                         </div>
                     </div>
                 </div>
+                <?php include '../component/uploadusers.php' ?>
+
             </div>
             <!-- line 3 -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
