@@ -174,10 +174,11 @@
                         <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
                             ผู้ใช้งาน
                         </h1>
-                        <button type="button" class="text-base bg-green-100 text-green-800 px-4 py-1 rounded-lg">+
+                        <button type="button" onclick="toggleModal(true)" class="text-base bg-green-100 text-green-800 px-4 py-1 rounded-lg cursor-pointer">+
                             เพิ่มผู้ใช้งาน</button>
-                    </div>
-                    <div class="mx-4 my-auto">
+                            <?php include'../component/uploadusers.php' ?>
+                        </div>
+                        <div class="mx-4 my-auto">
                         <div class="flex flex-col lg:flex-row items-center w-full h-full max-sm:overflow-x-auto">
                             <div
                                 class="flex max-lg:justify-between lg:block w-full bg-purple-50 rounded-l-lg p-4 lg:text-center mt-2">

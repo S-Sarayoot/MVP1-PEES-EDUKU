@@ -1,10 +1,10 @@
 <div id="uploadModal" class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30 hidden">
     <div class="bg-white rounded-xl shadow-xl w-full max-w-xl p-6 relative">
 
-                <button type="button" onclick="toggleModal(false)"
+        <button onclick="toggleModal(false)"
             class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-2xl cursor-pointer text-[32px]">&times;</button>
 
-        <h2 class="text-2xl font-semibold text-purple-700 mb-4 text-shadow-sm">เพิ่มสื่อการสอน</h2>
+        <h2 class="text-2xl font-semibold text-purple-700 mb-4 text-shadow-sm">เพิ่มผูุ้ใช้งาน</h2>
         <hr class="-mx-6 text-gray-300">
         <form class="grid grid-cols-1 gap-5 mt-6">
             <div
@@ -43,9 +43,9 @@
         <hr class="-mx-6 text-gray-300 mt-6 -mb-1">
         <form class="grid grid-row-2 gap-5">
             <div class="flex justify-end gap-3 mt-6 ">
-                <button type="button" onclick="toggleModal(false)"
-                    class="px-4 py-2 rounded-full border border-gray-300 text-black hover:bg-gray-400 transition">ยกเลิก</>
-                <button type="button"
+                <button onclick="toggleModal(false)"
+                    class="px-4 py-2 rounded-full border border-gray-300 text-black hover:bg-gray-400 transition">ยกเลิก</button>
+                <button type="submit"
                     class="px-4 py-2 rounded-full bg-purple-600 text-white hover:bg-purple-700 transition">อัปโหลด</button>
             </div>
         </form>
