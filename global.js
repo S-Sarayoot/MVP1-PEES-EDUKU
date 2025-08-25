@@ -36,10 +36,10 @@ function checkLogin(event) {
   if (username === "admin" && password === "1234") {
     sideBarMenu = [
       { name: "Dashboard", path: "/admin/dashboard_admin" },  
-      { name: "คลังทรัพยากร", path: "/admin/store_admin" },
-      { name: "workshop/แผนฯ", path: "/admin/user_admin" },
-      { name: "ผู้ใช้งาน", path: "/admin/file_admin" },
-      { name: "รายงาน/log", path: "/admin/file_admin" },
+      { name: "คลังทรัพยากร", path: "/admin/storage_admin" },
+      { name: "workshop/แผนฯ", path: "/admin/workshop_admin" },
+      { name: "ผู้ใช้งาน", path: "/admin/users_admin" },
+      { name: "รายงาน/log", path: "/admin/log_admin" },
     ]
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
@@ -48,10 +48,10 @@ function checkLogin(event) {
   }else if (username === "student" && password === "1234") {
     sideBarMenu = [
       { name: "Dashboard", path: "/student/" },  
-      { name: "คลังทรัพยากร", path: "/student/store_student" },
-      { name: "workshop/แผนฯ", path: "/student/user_student" },
-      { name: "ระบบให้คำปรึกษา", path: "/student/file_student" },
-      { name: "ระบบติดตามผลฯ", path: "/student/file_student" },
+      { name: "คลังทรัพยากร", path: "/student/store" },
+      { name: "workshop/แผนฯ", path: "/student/user" },
+      { name: "ระบบให้คำปรึกษา", path: "/student/file" },
+      { name: "ระบบติดตามผลฯ", path: "/student/file" },
       { name: "ระบบของการสะท้อนความคิด", path: "/student/file_student" },
     ]
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
