@@ -19,6 +19,8 @@
     <!--  -->
     <!-- right -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 
     <div
       class="lg:flex-1 items-center justify-center h-full relative bg-white max-md:rounded-t-[120px] max-lg:rounded-t-[200px]">
@@ -60,6 +62,10 @@
           </div>
         </div>
 
+=======
+>>>>>>> 6a9b696 (create student)
+=======
+>>>>>>> 6a9b696 (create student)
 =======
 >>>>>>> 6a9b696 (create student)
     <div class="flex-1 items-center justify-center h-full relative">
