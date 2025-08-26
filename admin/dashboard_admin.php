@@ -88,8 +88,8 @@
                 <div
                     class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 h-full w-full">
                     <div class="flex text-wrap items-center">
-                        <div class="p-3 rounded-full bg-amber-100 text-amber-600">
-                            <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="ml-2 p-3 rounded-full bg-amber-100 text-amber-600">
+                            <svg class="size-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                             </svg>
