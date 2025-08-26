@@ -1,0 +1,22 @@
+# 🔧 VS Code settings
+.vscode/
+*.code-workspace
+
+# 🐳 Docker
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+*.pid
+*.log
+
+# 🧶 Node / Tailwind
+node_modules/
+package.json
+package-lock.json
+
+# 📁 Build output (Tailwind)
+dist/
+
+# ⚙️ System files
+.DS_Store
+Thumbs.db
