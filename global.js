@@ -49,10 +49,11 @@ function checkLogin(event) {
     sideBarMenu = [
       { name: "Dashboard", path: "/student/" },  
       { name: "คลังทรัพยากร", path: "/student/store" },
-      { name: "workshop/แผนฯ", path: "/student/user" },
-      { name: "ระบบให้คำปรึกษา", path: "/student/file" },
-      { name: "ระบบติดตามผลฯ", path: "/student/file" },
-      { name: "ระบบสะท้อนความคิด", path: "/student/file_student" },
+      { name: "workshop/แผนฯ", path: "/student/" },
+      { name: "ระบบให้คำปรึกษา", path: "/student/" },
+      { name: "ระบบติดตามผลฯ", path: "/student/" },
+      { name: "ระบบสะท้อนความคิด", path: "/student/" },
+      { name: "ผู้ใช้งาน", path: "/student/user" },
     ]
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
