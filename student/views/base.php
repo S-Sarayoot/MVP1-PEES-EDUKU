@@ -12,6 +12,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="../global.css" rel="stylesheet">
     <script src="../global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <title><?= htmlspecialchars($title ?? 'Untitled') ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 

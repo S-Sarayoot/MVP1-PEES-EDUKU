@@ -52,7 +52,7 @@ function checkLogin(event) {
       { name: "workshop/แผนฯ", path: "/student/user" },
       { name: "ระบบให้คำปรึกษา", path: "/student/file" },
       { name: "ระบบติดตามผลฯ", path: "/student/file" },
-      { name: "ระบบของการสะท้อนความคิด", path: "/student/file_student" },
+      { name: "ระบบสะท้อนความคิด", path: "/student/file_student" },
     ]
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
