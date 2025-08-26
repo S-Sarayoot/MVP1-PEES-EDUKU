@@ -1,4 +1,5 @@
-<div id="uploadModal" class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30 hidden">
+<div id="uploadModal"
+    class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30 hidden">
     <div class="bg-white rounded-xl shadow-xl w-full max-w-xl p-6 relative">
 
         <button onclick="toggleModal(false)"

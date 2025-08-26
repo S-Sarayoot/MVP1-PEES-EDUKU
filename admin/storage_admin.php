@@ -18,7 +18,7 @@
 <body class="bg-gray-100">
     <div class="grid grid-cols-12 grid-rows-10 md:grid-rows-12 gap-4 max-h-screen overflow-y-auto ">
         <!-- Navigation -->
-        <?php include_once('../component/sidebar.php') ?>
+        <?php include_once'../component/sidebar.php' ?>
 
         <!-- Main Content -->
         <div
@@ -33,8 +33,10 @@
                 <div class="bg-white shadow-md rounded-lg p-4 mb-4">
                     <div class="flex justify-between items-center mb-2">
                         <h2 class="text-lg text-[#433878]">ประเภทสื่อการสอน</h2>
-                        <button onclick="toggleModal(true)" class="bg-green-100 text-green-800 rounded-md text-sm p-2 cursor-pointer">+ เพิ่มสื่อการสอน</button>
-                        <?php include('../component/uploadform.php')?>
+                        <button onclick="toggleModal(true)"
+                            class="bg-green-100 text-green-800 rounded-md text-sm p-2 cursor-pointer">+
+                            เพิ่มสื่อการสอน</button>
+                        <?php include'../component/uploadform.php'?>
                     </div>
                     <hr class="border-0.5 border-gray-100 my-4 -mx-4">
                     <!-- content -->
@@ -89,7 +91,7 @@
             <div class="flex flex-col">
                 <div class="bg-white shadow-md rounded-lg p-4 mb-4">
                     <div class="flex justify-between items-center mb-2">
-                        <h2 class="text-lg text-[#433878]">สื่อการเรียนการสอนทั้งหมด</h2>
+                        <h2 class="text-lg text-[#433878]">สื่อการสอนทั้งหมด</h2>
                         <a class="text-gray-800 rounded-md text-sm p-2">
                             View all
                         </a>
@@ -106,9 +108,9 @@
                         </div>
 
                         <!-- td -->
-                        <div class="max-h-52 md:max-h-42 overflow-y-auto">
+                        <div class="max-h-82 md:max-h-42 overflow-y-auto">
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">tiktok video
+                                <p class="py-2 px-4 w-2/5 break-all">tiktok video
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Videos</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
@@ -118,7 +120,7 @@
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Image</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
@@ -128,7 +130,7 @@
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Image</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
@@ -138,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Image</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
@@ -148,7 +150,7 @@
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Image</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
@@ -158,7 +160,7 @@
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Image</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
@@ -168,7 +170,7 @@
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Image</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
@@ -178,7 +180,7 @@
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Image</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
@@ -188,11 +190,11 @@
                                 </div>
                             </div>
                             <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 truncate text-wrap">example_image.jpg
+                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
                                 </p>
                                 <p class="py-2 px-4 w-1/5">Image</p>
                                 <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/6">
+                                <div class="flex flex-col md:flex-row justify-center w-1/5">
                                     <button class="text-blue-500 hover:underline">Edit</button>
                                     <button class="text-red-500 hover:underline md:ml-2">Delete</button>
                                 </div>

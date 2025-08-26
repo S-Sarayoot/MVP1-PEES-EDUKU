@@ -18,7 +18,7 @@
 <body class="bg-gray-100">
     <div class="grid grid-cols-12 grid-rows-10 md:grid-rows-12 gap-4 max-h-screen overflow-y-auto ">
         <!-- Navigation -->
-        <?php include_once('../component/sidebar.php') ?>
+        <?php include_once '../component/sidebar.php' ?>
 
         <!-- Main Content -->
         <div
@@ -46,15 +46,15 @@
                         <p class="text-purple-900 ">นิสิต
                         <p class="text-green-600 font-semibold mx-2">120</p> คน</p>
                     </div>
-                    <?php include('../component/serch.php') ?>
+                    <?php include '../component/serch.php' ?>
                 </div>
                 <!--  -->
                 <div class="max-h-47 md:max-h-54 overflow-auto border-2 border-purple-100 rounded-b-xl rounded-tr-xl">
-                    <table class="w-full h-full rounded-xl text-sm">
+                    <table class="w-full h-full text-sm whitespace-nowrap">
                         <thead class="bg-purple-100 text-left rounded-rt-xl">
                             <tr>
                                 <th class="py-2 px-4 font-semibold">ลำดับที่</th>
-                                <th class="py-2 px-4 font-semibold">รหัสนักศึกษา</th>
+                                <th class="py-2 px-4 font-semibold">รหัสนิสิต</th>
                                 <th class="py-2 px-4 font-semibold">ชื่อ - นามสกุล</th>
                                 <th class="py-2 px-4 font-semibold">สาขาวิชา</th>
                                 <th class="py-2 px-4 font-semibold">รหัสผ่าน</th>
@@ -72,14 +72,14 @@
                 <!--  -->
                 <div class="flex justify-between items-end mt-10">
                     <div class="flex flex-wrap items-center w-fit p-2 rounded-t-xl bg-purple-200">
-                        <p class="text-purple-900">ผู้ทรงคุณวุฒิ
+                        <p class="text-purple-900 whitespace-nowrap">ผู้ทรงคุณวุฒิ
                         <p class="text-green-600 font-semibold mx-2">50</p> คน</p>
                     </div>
-                    <?php include('../component/serch.php') ?>
+                    <?php include '../component/serch.php' ?>
                 </div>
                 <!--  -->
                 <div class="max-h-47 md:max-h-54 overflow-auto border-2 border-purple-100 rounded-b-xl rounded-tr-xl">
-                    <table class="w-full h-full rounded-xl text-sm">
+                    <table class="w-full h-full text-sm whitespace-nowrap">
                         <thead class="bg-purple-100 text-left rounded-rt-xl">
                             <tr>
                                 <th class="py-2 px-4 font-semibold">ลำดับที่</th>
@@ -101,14 +101,14 @@
                 <!--  -->
                 <div class="flex justify-between items-end mt-10">
                     <div class="flex items-center w-fit p-2 rounded-t-xl bg-purple-200">
-                        <p class="text-purple-900 ">ผู้ดูแลระบบ
+                        <p class="text-purple-900 whitespace-nowrap">ผู้ดูแลระบบ
                         <p class="text-green-600 font-semibold mx-2">10</p> คน</p>
                     </div>
-                    <?php include('../component/serch.php') ?>
+                    <?php include '../component/serch.php' ?>
                 </div>
                 <!--  -->
                 <div class="max-h-47 md:max-h-54 overflow-auto border-2 border-purple-100 rounded-b-xl rounded-tr-xl">
-                    <table class="w-full h-full rounded-xl text-sm">
+                    <table class="w-full h-full text-sm whitespace-nowrap">
                         <thead class="bg-purple-100 text-left rounded-rt-xl">
                             <tr>
                                 <th class="py-2 px-4 font-semibold">ลำดับที่</th>

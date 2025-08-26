@@ -211,7 +211,6 @@
                     </div>
                 </div>
                 <?php include '../component/uploadusers.php' ?>
-
             </div>
             <!-- line 3 -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
