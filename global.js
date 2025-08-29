@@ -1,3 +1,6 @@
+const BASE_LINK = "https://dev.kittelweb.xyz/";
+
+
 function createSideBar(data) {
   console.log('Creating sidebar with data:', data);
   
@@ -35,11 +38,11 @@ function checkLogin(event) {
 
   if (username === "admin" && password === "1234") {
     sideBarMenu = [
-      { name: "Dashboard", path: "/admin/dashboard_admin" },  
-      { name: "คลังทรัพยากร", path: "/admin/storage_admin" },
-      { name: "workshop/แผนฯ", path: "/admin/workshop_admin" },
-      { name: "ผู้ใช้งาน", path: "/admin/users_admin" },
-      { name: "รายงาน/log", path: "/admin/log_admin" },
+      { name: "Dashboard", path: BASE_LINK+"/admin/dashboard_admin" },  
+      { name: "คลังทรัพยากร", path: BASE_LINK+"/admin/storage_admin" },
+      { name: "workshop/แผนฯ", path: BASE_LINK+"/admin/workshop_admin" },
+      { name: "ผู้ใช้งาน", path: BASE_LINK+"/admin/users_admin" },
+      { name: "รายงาน/log", path: BASE_LINK+"/admin/log_admin" },
     ]
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
@@ -47,13 +50,13 @@ function checkLogin(event) {
     linkPage("/admin/dashboard_admin");
   }else if (username === "student" && password === "1234") {
     sideBarMenu = [
-      { name: "Dashboard", path: "/student/" },  
-      { name: "คลังทรัพยากร", path: "/student/store" },
-      { name: "workshop/แผนฯ", path: "/student/" },
-      { name: "ระบบให้คำปรึกษา", path: "/student/" },
-      { name: "ระบบติดตามผลฯ", path: "/student/" },
-      { name: "ระบบสะท้อนความคิด", path: "/student/" },
-      { name: "ผู้ใช้งาน", path: "/student/user" },
+      { name: "Dashboard", path: BASE_LINK+"/student/" },  
+      { name: "คลังทรัพยากร", path: BASE_LINK+"/student/storage" },
+      { name: "workshop/แผนฯ", path: BASE_LINK+"/student/" },
+      { name: "ระบบให้คำปรึกษา", path: BASE_LINK+"/student/" },
+      { name: "ระบบติดตามผลฯ", path: BASE_LINK+"/student/" },
+      { name: "ระบบสะท้อนความคิด", path: BASE_LINK+"/student/" },
+      { name: "ผู้ใช้งาน", path: BASE_LINK+"/student/user" },
     ]
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
