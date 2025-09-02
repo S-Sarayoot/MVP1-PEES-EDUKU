@@ -24,14 +24,14 @@
         <div
             class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
             <div class="flex justify-between">
-                <h1 class="text-xl text-gray-500 mb-4 md:mx-4">ประวัติ</h1>
+                <h1 class="text-lg sm:text-xl text-[#433878] mb-4 md:mx-4">ประวัติ</h1>
                 <p class="text-gray-700 mb-4 mr-4"><a href="https://dev.kittelweb.xyz/admin/dashboard_admin"
                         class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
                     > Log </p>
             </div>
             <div
                 class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shdow transition-tranform ease-in-out duration-200">
-                <h1 class="font-semibold text-2xl mx-2 text-purple-900"> History</h1>
+                <h1 class="text-lg sm:text-xl mx-2 text-[#433878]"> History</h1>
                 <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200 my-4 mx-2">
                     <span class="font-semibold underline mx-4 text-purple-800">คำชี้แจง</span>
                     <span>ประวัตกิจกรรมภายในเว็บไซต์</span>

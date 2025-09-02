@@ -18,25 +18,25 @@
 <body class="bg-gray-100">
     <div class="grid grid-cols-12 grid-rows-10 md:grid-rows-12 gap-4 max-h-screen overflow-y-auto ">
         <!-- Navigation -->
-        <?php include_once'../component/sidebar.php' ?>
+        <?php include_once '../component/sidebar.php' ?>
 
         <!-- Main Content -->
         <div
             class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
             <div class="flex flex-col">
                 <div class="flex justify-between mb-4 md:mx-4">
-                    <h1 class="text-xl text-gray-500">คลังทรัพยากร</h1>
+                    <h1 class="text-lg sm:text-xl text-[#433878]">คลังทรัพยากร</h1>
                     <p class="text-gray-700"><a href="https://dev.kittelweb.xyz/admin/dashboard_admin"
                             class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
                         > Storage</p>
                 </div>
                 <div class="bg-white shadow-md rounded-lg p-4 mb-4">
                     <div class="flex justify-between items-center mb-2">
-                        <h2 class="text-lg text-[#433878]">ประเภทสื่อการสอน</h2>
+                        <h2 class="text-lg sm:text-xl text-[#433878]">ประเภทสื่อการสอน</h2>
                         <button onclick="toggleModal(true)"
                             class="bg-green-100 text-green-800 rounded-md text-sm p-2 cursor-pointer">+
                             เพิ่มสื่อการสอน</button>
-                        <?php include'../component/uploadform.php'?>
+                        <?php include '../component/uploadform.php' ?>
                     </div>
                     <hr class="border-0.5 border-gray-100 my-4 -mx-4">
                     <!-- content -->
@@ -91,7 +91,7 @@
             <div class="flex flex-col">
                 <div class="bg-white shadow-md rounded-lg p-4 mb-4">
                     <div class="flex justify-between items-center mb-2">
-                        <h2 class="text-lg text-[#433878]">สื่อการสอนทั้งหมด</h2>
+                        <h2 class="text-lg sm:text-xl text-[#433878]">สื่อการสอนทั้งหมด</h2>
                         <a class="text-gray-800 rounded-md text-sm p-2">
                             View all
                         </a>
