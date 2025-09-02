@@ -36,7 +36,7 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-lg text-wrap font-semibold text-gray-800">สื่อการสอนทั้งหมด</h3>
+                            <h3 class="text-lg sm:text-xl text-wrap text-[#433878]">สื่อการสอนทั้งหมด</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
@@ -56,7 +56,7 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-lg text-wrap font-semibold text-gray-800">แผนการสอนในคลัง</h3>
+                            <h3 class="text-lg sm:text-xl text-wrap text-[#433878]">แผนการสอนในคลัง</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
@@ -76,7 +76,7 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-lg text-wrap font-semibold text-gray-800">ผู้ใช้งานทั้งหมด</h3>
+                            <h3 class="text-lg sm:text-xl text-wrap text-[#433878]">ผู้ใช้งานทั้งหมด</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
@@ -95,7 +95,7 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-lg text-wrap font-semibold text-gray-800">การเข้าถึงวันนี้</h3>
+                            <h3 class="text-lg sm:text-xl text-wrap text-[#433878]">การเข้าถึงวันนี้</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
@@ -109,7 +109,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-8">
                 <div
                     class="bg-white rounded-lg shadow-md p-4 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
+                    <h1 class="text-lg sm:text-xl ps-2 xl:ps-3  antialiased text-[#433878]">
                         แผนการสอน Workshop
                     </h1>
                     <div class="flex justify-between text-wrap mx-4 mt-6 mb-3">
@@ -142,7 +142,7 @@
                 <!--  -->
                 <div
                     class="bg-white rounded-lg shadow-md p-4 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
+                    <h1 class="text-lg sm:text-xl ps-2 xl:ps-3  antialiased text-[#433878]">
                         คลังทรัพยากร
                     </h1>
                     <div class="mx-4 my-5">
@@ -171,7 +171,7 @@
                 <div
                     class="flex flex-col bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
                     <div class="flex items-center justify-between max-md:mb-2">
-                        <h1 class="text-lg ps-2 xl:ps-3 font-bold  antialiased text-[#433878]">
+                        <h1 class="text-lg sm:text-xl ps-2 xl:ps-3  antialiased text-[#433878]">
                             ผู้ใช้งาน
                         </h1>
                         <button type="button" onclick="toggleModal(true)"
@@ -216,7 +216,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                 <div
                     class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg ps-2 font-bold antialiased text-[#433878]">
+                    <h1 class="text-lg sm:text-xl ps-2 antialiased text-[#433878]">
                         กิจกรรมล่าสุด
                     </h1>
                     <div class="mx-4 my-5">
@@ -244,7 +244,7 @@
                 </div>
                 <div
                     class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg ps-2 font-bold  antialiased text-[#433878]">
+                    <h1 class="text-lg sm:text-xl ps-2  antialiased text-[#433878]">
                         สำรองข้อมูลล่าสุด
                     </h1>
                     <div class="flex justify-between mx-4 my-5 text-sm text-gray-600">
