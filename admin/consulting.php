@@ -105,9 +105,9 @@
                     </div>
                     <!--  -->
                     <!-- ai -->
-                    <div id="ai" class="hidden border border-gray-200 p-4 m-4 rounded-lg">
+                    <div id="ai" class="hidden border border-gray-200 py-2 md:p-4 m-4 rounded-lg">
                         <div class="flex-col px-4">
-                            <div id="chat-content" class="my-4"></div>
+                            <div id="chat-content"></div>
                             <form onsubmit="massage(); return false;">
                                 <div class="flex">
                                     <input id="userInput"
