@@ -81,37 +81,37 @@
                         <span class="font-semibold underline mx-4">คำชี้แจง</span>
                         <span>คำชี้แจงการจัดการนิสิต...</span>
                     </div>
-                    <div class="w-full max-h-52 md:max-h-60 overflow-x-auto my-4 border border-purple-100 shadow-md">
+                    <div class="w-full max-h-52 md:max-h-60 overflow-x-auto my-4 border border-purple-200 shadow-md">
                         <table class="w-full h-full text-sm">
                             <thead class="whitespace-nowrap">
-                                <tr class="bg-purple-100">
-                                    <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-500">ลำดับที่
+                                <tr class="bg-purple-200">
+                                    <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-200">ลำดับที่
                                     </th>
-                                    <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-500">รหัสนิสิต
+                                    <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-200">รหัสนิสิต
                                     </th>
-                                    <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-500">ชื่อ -
+                                    <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-200">ชื่อ -
                                         นามสกุล</th>
-                                    <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-500">สาขาวิชา
+                                    <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-200">สาขาวิชา
                                     </th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-500">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
                                         1</th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-500">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
                                         2</th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-500">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
                                         3</th>
                                 </tr>
-                                <tr class="bg-purple-50">
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">กิจกรรม</th>
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">สะท้อนคิด</th>
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">จำนวนครั้ง</th>
+                                <tr class="bg-purple-10">
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">กิจกรรม</th>
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">สะท้อนคิด</th>
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">จำนวนครั้ง</th>
 
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">กิจกรรม</th>
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">สะท้อนคิด</th>
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">จำนวนครั้ง</th>
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">กิจกรรม</th>
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">สะท้อนคิด</th>
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">จำนวนครั้ง</th>
 
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">กิจกรรม</th>
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">สะท้อนคิด</th>
-                                    <th class="py-1 px-3 font-semibold border border-purple-500">จำนวนครั้ง</th>
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">กิจกรรม</th>
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">สะท้อนคิด</th>
+                                    <th class="py-1 px-3 font-semibold border border-purple-200">จำนวนครั้ง</th>
                                 </tr>
                             </thead>
                             <tbody id="data">
@@ -119,15 +119,15 @@
                                     for (let i = 1; i < 10; i++) {
                                         let table = document.getElementById('data');
                                         table.innerHTML += ` <tr>
-                                                <td class="py-1 px-2 border border-purple-500 text-center">${i}</td>
-                                                <td class="py-1 px-2 text-blue-800 border border-purple-500">687039245</td>
-                                                <td class="py-1 px-2 border border-purple-500">นายสมชัย คงคอย</td>
-                                                <td class="py-1 px-2 border border-purple-500">เทคโนโลยีสารสนเทศ</td>
-                                                <td class="py-1 px-2 border border-purple-500 text-center"><span
+                                                <td class="py-1 px-2 border border-purple-200 text-center">${i}</td>
+                                                <td class="py-1 px-2 text-blue-800 border border-purple-200">687039241</td>
+                                                <td class="py-1 px-2 border border-purple-200">นายสมชัย คงคอย</td>
+                                                <td class="py-1 px-2 border border-purple-200">เทคโนโลยีสารสนเทศ</td>
+                                                <td class="py-1 px-2 border border-purple-200 text-center"><span
                                                         class="text-green-600">6</span>/10</td>
-                                                <td class="py-1 px-2 border border-purple-500 text-center"><span
+                                                <td class="py-1 px-2 border border-purple-200 text-center"><span
                                                         class="text-green-600">2</span>/10</td>
-                                                <td class="py-1 px-2 border border-purple-500 text-center ">
+                                                <td class="py-1 px-2 border border-purple-200 text-center ">
                                                     <p class="py-1">การดูทรัพยากร
                                                         <span class="text-green-600 px-1">8</span>
                                                         ครั้ง
@@ -138,11 +138,11 @@
                                                     </p>
                                                 </td>
 
-                                                <td class="py-1 px-2 border border-purple-500 text-center"><span
+                                                <td class="py-1 px-2 border border-purple-200 text-center"><span
                                                         class="text-green-600">6</span>/10</td>
-                                                <td class="py-1 px-2 border border-purple-500 text-center"><span
+                                                <td class="py-1 px-2 border border-purple-200 text-center"><span
                                                         class="text-green-600">2</span>/10</td>
-                                                <td class="py-1 px-2 border border-purple-500 text-center">
+                                                <td class="py-1 px-2 border border-purple-200 text-center">
                                                     <p class="py-1">การดูทรัพยากร
                                                         <span class="text-green-600 px-1">8</span>
                                                         ครั้ง
@@ -153,11 +153,11 @@
                                                     </p>
                                                 </td>
 
-                                                <td class="py-1 px-2 border border-purple-500 text-center"><span
+                                                <td class="py-1 px-2 border border-purple-200 text-center"><span
                                                         class="text-green-600">6</span>/10</td>
-                                                <td class="py-1 px-2 border border-purple-500 text-center"><span
+                                                <td class="py-1 px-2 border border-purple-200 text-center"><span
                                                         class="text-green-600">2</span>/10</td>
-                                                <td class="py-1 px-2 border border-purple-500 text-center ">
+                                                <td class="py-1 px-2 border border-purple-200 text-center ">
                                                     <p class="py-1">การดูทรัพยากร
                                                         <span class="text-green-600 px-1">8</span>
                                                         ครั้ง
@@ -231,6 +231,28 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="flex max-md:flex-col gap-3 my-4 justify-center">
+                        <?php
+                        $text = "Rubwc Workshop 1";
+                        $subtext = "(กิจกรรมคำถามปลายเปิด)";
+                        $style = "workshop";
+                        include "../component/button.php";
+                        ?>
+
+                        <?php
+                        $text = "Rubwc Workshop 2";
+                        $subtext = "(กิจกรรมออกแบบแผนการจัดการเรียนรู้)";
+                        $style = "workshop";
+                        include "../component/button.php";
+                        ?>
+
+                        <?php
+                        $text = "Rubwc Workshop 3";
+                        $subtext = "สะท้อนคิด";
+                        $style = "workshop";
+                        include "../component/button.php";
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
