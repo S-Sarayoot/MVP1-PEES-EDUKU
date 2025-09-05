@@ -13,10 +13,10 @@
 </head>
 
 <body>
-  <div class=" h-screen overflow-hidden">
+  <div class="h-screen overflow-y-hidden">
 
     <!-- left -->
-    <div class="lg:flex justify-center items-center h-full">
+    <div class="lg:flex justify-center items-center h-screen">
       <div class="flex-1 items-center justify-center h-full max-lg:hidden">
         <img src="./image/bookOpen.jpg" alt="logo" class="w-full h-full object-cover" />
       </div>
