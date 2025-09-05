@@ -2,22 +2,23 @@ const BASE_LINK = "https://dev.kittelweb.xyz/";
 
 
 function createSideBar(data) {
-  console.log('Creating sidebar with data:', data);
-  
-  let ulSideBar = document.getElementById("nav-data");  
+    console.log('Creating sidebar with data:', data);
 
-  data?.forEach((entry) => {
-    let listData = document.createElement("li");  
-    let linkData = document.createElement("a");  
-  
-    linkData.className = "flex items-center px-4 py-2 rounded hover:bg-gray-100";
-  
-    linkData.href = entry.path
-    linkData.innerText = entry.name
+    let ulSideBar = document.getElementById("nav-data");
 
-    listData.appendChild(linkData);
-    ulSideBar.appendChild(listData);
-  })
+
+    data?.forEach((entry) => {
+        let listData = document.createElement("li");
+        let linkData = document.createElement("a");
+
+        linkData.className = "flex items-center px-4 py-2 rounded hover:bg-gray-100";
+
+        linkData.href = entry.path;
+        linkData.innerText = entry.name;
+
+        listData.appendChild(linkData);
+        ulSideBar.appendChild(listData);
+    });
 
 
 }
@@ -84,44 +85,59 @@ function checkLogin(event) {
 }
 
 function logout() {
-  if (confirm("คุณต้องการออกจากระบบหรือไม่?")) {
-    window.location.href = "index";
-  }
+    if (confirm("คุณต้องการออกจากระบบหรือไม่?")) {
+        localStorage.removeItem("sideMenu");
+        window.location.href = "index";
+    }
 }
 
 let sideBarMenu;
 // admin function
 document.addEventListener("DOMContentLoaded", () => {
-  let allFiles = document.getElementById("allFile");
-  let stores = document.getElementById("store");
-  let users = document.getElementById("user");
-  let online = document.getElementById("online");
+    let allFiles = document.getElementById("allFile");
+    let stores = document.getElementById("store");
+    let users = document.getElementById("user");
+    let online = document.getElementById("online");
 
-  const btnLogin = document.getElementById("btn-login");
-  btnLogin?.addEventListener("click", (e) => {
-    e.preventDefault();
-    checkLogin();
-  });
+    const btnLogin = document.getElementById("btn-login");
+    btnLogin?.addEventListener("click", (e) => {
+        e.preventDefault();
+        checkLogin();
+    });
 
-  createSideBar(localStorage.getItem("sideMenu") ? JSON.parse(localStorage.getItem("sideMenu")) : []);
-  [allFiles, stores, users, online].forEach((info) => {
-    switch (info.id) {
-      case "allFile":
-        info.textContent = "243";
-        break;
-      case "store":
-        info.textContent = "12";
-        break;
-      case "user":
-        info.textContent = "2590";
-        break;
-      case "online":
-        info.textContent = "5";
-        break;
-      default:
-        info.textContent = "0";
-        break;
-    }
-  });
+    const savedMenu = localStorage.getItem("sideMenu");
+    createSideBar(savedMenu ? JSON.parse(savedMenu) : []);
+
+    [allFiles, stores, users, online].forEach((info) => {
+        if (!info) return; // เช็คว่ามี element หรือไม่
+
+        switch (info.id) {
+            case "allFile":
+                info.textContent = "243";
+                break;
+            case "store":
+                info.textContent = "12";
+                break;
+            case "user":
+                info.textContent = "2590";
+                break;
+            case "online":
+                info.textContent = "5";
+                break;
+            default:
+                info.textContent = "0";
+                break;
+        }
+    });
 });
 
+function toggleModal(show) {
+    const modal = document.getElementById('uploadModal');
+    if (!modal) return;
+
+    if (show) {
+        modal.classList.remove('hidden');
+    } else {
+        modal.classList.add('hidden');
+    }
+}

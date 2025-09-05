@@ -24,7 +24,7 @@
         <div
             class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
             <div class="flex justify-between">
-                <h1 class="text-lg sm:text-xl text-[#433878] mb-4 md:mx-4">Workshop</h1>
+                <h1 class="text-xl text-[#433878] mb-4 md:mx-4">Workshop</h1>
                 <p class="text-gray-700 mb-4 mr-4"><a href="https://dev.kittelweb.xyz/admin/dashboard_admin"
                         class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
                     > Workshop</p>
@@ -32,7 +32,7 @@
             <div class="flex flex-col gap-4">
                 <div
                     class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shdow transition-tranform ease-in-out duration-200">
-                    <h1 class="text-center text-lg sm:text-xl  text-[#433878] py-4 ">
+                    <h1 class="text-center text-xl font-semibold text-[#433878] py-4 ">
                         บทเรียน
                     </h1>
                     <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200">
@@ -45,7 +45,7 @@
                                 let box = document.getElementById('workshopBox')
                                 box.innerHTML += `
                             <div class="border border-purple-100 rounded-lg shadow-sm p-4 hover:shadow-lg hover:ring hover:ring-purple-300">
-                                <p class="text-center font-semibold text-lg text-violet-900">
+                                <p class="text-center text-lg text-violet-900">
                                     Workshop ${i}
                                 </p>
                                 <div class="flex text-sm my-3 flex-wrap">
@@ -74,7 +74,7 @@
                 <!--  -->
                 <div
                     class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shdow transition-tranform ease-in-out duration-200">
-                    <h2 class="text-lg sm:text-xl text-center text-[#433878] my-2">
+                    <h2 class="text-xl font-semibold text-center text-[#433878] my-2">
                         การจัดการนิสิต
                     </h2>
                     <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200 my-4">
@@ -177,7 +177,7 @@
                 <!--  -->
                 <div
                     class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shdow transition-tranform ease-in-out duration-200">
-                    <h2 class="text-lg sm:text-xl text-center text-[#433878] my-2">
+                    <h2 class="text-xl font-semibold text-center text-[#433878] my-2">
                         เกณฑ์การประเมิณ
                     </h2>
                     <table class="text-sm w-full h-full text-center border border-purple-200 table-auto">
