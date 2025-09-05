@@ -12,8 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <div class="h-screen overflow-y-hidden">
+<body class="h-screen overflow-y-hidden">
+  <div class="h-screen overflow-hidden">
 
     <!-- left -->
     <div class="lg:flex justify-center items-center h-screen">
