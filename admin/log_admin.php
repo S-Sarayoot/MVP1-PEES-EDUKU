@@ -54,22 +54,22 @@
                         </div>
                         <div class="w-full h-full my-4 flex flex-col gap-7 text-xs">
                             <div
-                                class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-shadow transition-transform hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
+                                class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-all hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
                                 <p class="text-blue-500 font-semibold">นิสิต [6849572002]</p>
                                 <p class="text-gray-700">ส่งกิจกรรม workshop 1</p>
                             </div>
                             <div
-                                class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-shadow transition-transform hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
+                                class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-all hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
                                 <p class="text-blue-500 font-semibold">ผู้ทรงคุณวุฒิ [TCH1922]</p>
                                 <p class="text-gray-700">เพิ่มสื่อการสอน</p>
                             </div>
                             <div
-                                class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-shadow transition-transform hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
+                                class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-all hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
                                 <p class="text-blue-500 font-semibold">ผู้ทรงคุณวุฒิ [TCH1922]</p>
                                 <p class="text-gray-700">เพิ่มสื่อการสอน</p>
                             </div>
                             <div
-                                class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-shadow transition-transform hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
+                                class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-all hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
                                 <p class="text-blue-500 font-semibold">ผู้ทรงคุณวุฒิ [TCH1922]</p>
                                 <p class="text-gray-700">เพิ่มสื่อการสอน</p>
                             </div>
