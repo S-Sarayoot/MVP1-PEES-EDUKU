@@ -38,12 +38,13 @@ function checkLogin(event) {
 
   if (username === "admin" && password === "1234") {
     sideBarMenu = [
-      { name: "Dashboard", path: BASE_LINK+"/admin/dashboard_admin" },  
-      { name: "คลังทรัพยากร", path: BASE_LINK+"/admin/storage_admin" },
-      { name: "workshop/แผนฯ", path: BASE_LINK+"/admin/workshop_admin" },
-      { name: "ผู้ใช้งาน", path: BASE_LINK+"/admin/users_admin" },
-      { name: "รายงาน/log", path: BASE_LINK+"/admin/log_admin" },
-    ]
+      { name: "Dashboard", path: BASE_LINK + "/admin/dashboard_admin" },
+      { name: "คลังทรัพยากร", path: BASE_LINK + "/admin/storage_admin" },
+      { name: "workshop/แผนฯ", path: BASE_LINK + "/admin/workshop_admin" },
+      { name: "ผู้ใช้งาน", path: BASE_LINK + "/admin/users_admin" },
+      { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/admin/consulting"},
+      { name: "รายงาน/log", path: BASE_LINK + "/admin/log_admin" },
+    ];
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
 
