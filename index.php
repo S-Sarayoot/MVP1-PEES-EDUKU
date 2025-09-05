@@ -12,18 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="h-screen overflow-y-hidden">
+<body>
   <div class="h-screen overflow-hidden">
 
     <!-- left -->
-    <div class="lg:flex justify-center items-center h-screen">
+    <div class="lg:flex justify-center items-center h-screen overflow-hidden">
       <div class="flex-1 items-center justify-center h-full max-lg:hidden">
         <img src="./image/bookOpen.jpg" alt="logo" class="w-full h-full object-cover" />
       </div>
       <!--  -->
       <!-- right -->
       <div
-        class="lg:flex-1 items-center justify-center h-full relative bg-gray-50">
+        class="lg:flex-1 items-center justify-center h-screen overflow-hidden relative bg-gray-50">
         <form class="flex flex-col w-full h-full justify-center items-center border-1 border-gray-100 "
           onsubmit="checkLogin(event)">
           <div
@@ -93,7 +93,6 @@
       <!--  -->
     </div>
     </div>
-  </div>
 </body>
 
 </html>
