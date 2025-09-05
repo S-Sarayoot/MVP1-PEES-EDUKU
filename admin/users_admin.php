@@ -36,7 +36,7 @@
                         <p class="text-xl text-green-600 px-2 font-semibold ">180</p>
                         <p class="text-xl text-[#433878]">คน</p>
                     </div>
-                    <button class="bg-green-100 text-green-800 rounded-md text-sm py-2 px-4">
+                    <button class="bg-green-100 text-green-800 rounded-md text-sm py-2 px-4 cursor-pointer" onclick="toggleModal(true)">
                         + เพิ่มผู้ใช้งาน
                     </button>
                 </div>
@@ -129,7 +129,7 @@
                 </div>
                 <!--  -->
             </div>
-
+            <?php include '../component/uploadusers.php' ?>
         </div>
     </div>
 </body>

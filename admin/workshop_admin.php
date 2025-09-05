@@ -54,15 +54,16 @@
                                 </div>
                                 <div class="flex flex-col mt-4 mb-2 gap-2 w-full items-center">
                                     <button
-                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200">
+                                        onclick="linkPage('./workshopPage.php')"
+                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200 active:bg-purple-200 active:shadow-lg active:-translate-y-0.5">
                                         <p>กิจกรรม</p>
                                     </button>
                                     <button
-                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200">
+                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200 active:bg-purple-200 active:shadow-lg active:-translate-y-0.5">
                                         <p>ทรัพยากร</p>
                                     </button>
                                     <button
-                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200">
+                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200 active:bg-purple-200 active:shadow-lg active:-translate-y-0.5">
                                         <p>สะท้อนคิด</p>
                                     </button>
                                 </div>

@@ -157,7 +157,8 @@
                             </div>
                         </div>
                         <div class="flex w-full mb-2 items-center">
-                            <button type="button" class="w-full py-1 bg-green-100 text-green-800 text-base rounded-lg">
+                            <button type="button" class="w-full py-1 bg-green-100 text-green-800 text-base rounded-lg cursor-pointer"
+                                    onclick="toggleModal(true)">
                                 +
                                 เพิ่มสื่อการสอน</button>
                         </div>
@@ -210,6 +211,7 @@
                         </div>
                     </div>
                 </div>
+                <?php include '../component/uploadform.php' ?>
                 <?php include '../component/uploadusers.php' ?>
             </div>
             <!-- line 3 -->
