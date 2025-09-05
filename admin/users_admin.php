@@ -24,7 +24,7 @@
         <div
             class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
             <div class="flex justify-between">
-                <h1 class="text-lg sm:text-xl text-[#433878] mb-4 md:mx-4">ผู้ใช้งาน</h1>
+                <h1 class="text-xl text-[#433878] mb-4 md:mx-4">ผู้ใช้งาน</h1>
                 <p class="text-gray-700 mb-4 mr-4"><a href="https://dev.kittelweb.xyz/admin/dashboard_admin"
                         class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
                     > Users</p>
@@ -32,11 +32,11 @@
             <div class="bg-white p-4 rounded-lg shadow-md">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
-                        <p class="text-lg sm:text-xl text-[#433878]">ผู้ใช้งานทั้งหมด</p>
-                        <p class="text-lg sm:text-xl text-green-600 px-2 font-semibold ">180</p>
-                        <p class="text-lg sm:text-xl text-[#433878]">คน</p>
+                        <p class="text-xl text-[#433878]">ผู้ใช้งานทั้งหมด</p>
+                        <p class="text-xl text-green-600 px-2 font-semibold ">180</p>
+                        <p class="text-xl text-[#433878]">คน</p>
                     </div>
-                    <button class="bg-green-100 text-green-800 rounded-md text-sm py-2 px-4">
+                    <button class="bg-green-100 text-green-800 rounded-md text-sm py-2 px-4 cursor-pointer" onclick="toggleModal(true)">
                         + เพิ่มผู้ใช้งาน
                     </button>
                 </div>
@@ -129,7 +129,7 @@
                 </div>
                 <!--  -->
             </div>
-
+            <?php include '../component/uploadusers.php' ?>
         </div>
     </div>
 </body>

@@ -36,7 +36,7 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-lg sm:text-xl text-wrap text-[#433878]">สื่อการสอนทั้งหมด</h3>
+                            <h3 class="text-xl font-semibold text-wrap text-[#433878]">สื่อการสอนทั้งหมด</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
@@ -56,7 +56,7 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-lg sm:text-xl text-wrap text-[#433878]">แผนการสอนในคลัง</h3>
+                            <h3 class="text-xl font-semibold text-wrap text-[#433878]">แผนการสอนในคลัง</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
@@ -76,7 +76,7 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-lg sm:text-xl text-wrap text-[#433878]">ผู้ใช้งานทั้งหมด</h3>
+                            <h3 class="text-xl font-semibold text-wrap text-[#433878]">ผู้ใช้งานทั้งหมด</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
@@ -95,7 +95,7 @@
                             </svg>
                         </div>
                         <div class="ml-5 ">
-                            <h3 class="text-lg sm:text-xl text-wrap text-[#433878]">การเข้าถึงวันนี้</h3>
+                            <h3 class="text-xl font-semibold text-wrap text-[#433878]">การเข้าถึงวันนี้</h3>
                         </div>
                     </div>
                     <span class="flex justify-center items-end my-7">
@@ -109,7 +109,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-8">
                 <div
                     class="bg-white rounded-lg shadow-md p-4 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg sm:text-xl ps-2 xl:ps-3  antialiased text-[#433878]">
+                    <h1 class="text-xl font-semibold ps-2 xl:ps-3  antialiased text-[#433878]">
                         แผนการสอน Workshop
                     </h1>
                     <div class="flex justify-between text-wrap mx-4 mt-6 mb-3">
@@ -142,22 +142,23 @@
                 <!--  -->
                 <div
                     class="bg-white rounded-lg shadow-md p-4 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg sm:text-xl ps-2 xl:ps-3  antialiased text-[#433878]">
+                    <h1 class="text-xl font-semibold ps-2 xl:ps-3  antialiased text-[#433878]">
                         คลังทรัพยากร
                     </h1>
                     <div class="mx-4 my-5">
                         <div class="flex w-full h-full items-center mb-4">
                             <div class="w-full h-full bg-purple-50 rounded-l-lg px-4 py-5 text-center">
                                 <p class="text-2xl font-bold text-[#156E68] pb-5 pt-2">67</p>
-                                <p class="text-sm font-bold text-gray-500">สื่อการสอน</p>
+                                <p class="text-sm text-gray-500">สื่อการสอน</p>
                             </div>
                             <div class="w-full h-full bg-gray-50 rounded-r-lg px-4 py-5 text-center">
                                 <p class="text-2xl font-bold text-[#156E68] pb-5 pt-2">152</p>
-                                <p class="text-sm font-bold text-gray-500">แผนฯ ที่คัดเลือก</p>
+                                <p class="text-sm text-gray-500">แผนฯ ที่คัดเลือก</p>
                             </div>
                         </div>
                         <div class="flex w-full mb-2 items-center">
-                            <button type="button" class="w-full py-1 bg-green-100 text-green-800 text-base rounded-lg">
+                            <button type="button" class="w-full py-1 bg-green-100 text-green-800 text-base rounded-lg cursor-pointer"
+                                    onclick="toggleModal(true)">
                                 +
                                 เพิ่มสื่อการสอน</button>
                         </div>
@@ -171,7 +172,7 @@
                 <div
                     class="flex flex-col bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
                     <div class="flex items-center justify-between max-md:mb-2">
-                        <h1 class="text-lg sm:text-xl ps-2 xl:ps-3  antialiased text-[#433878]">
+                        <h1 class="text-xl font-semibold ps-2 xl:ps-3  antialiased text-[#433878]">
                             ผู้ใช้งาน
                         </h1>
                         <button type="button" onclick="toggleModal(true)"
@@ -183,7 +184,7 @@
                             <div
                                 class="flex max-lg:justify-between lg:block w-full bg-purple-50 rounded-l-lg p-4 lg:text-center mt-2">
                                 <div class="flex flex-col">
-                                    <h1 class="text-base font-bold text-[#433878] pb-4">นิสิต</h1>
+                                    <h1 class="text-base text-[#433878] pb-4">นิสิต</h1>
                                     <p class="text-lg font-bold text-[#156E68]">67 คน</p>
                                 </div>
                                 <div class="flex max-lg:flex-col mt-4">
@@ -196,7 +197,7 @@
                             <div
                                 class="flex max-lg:justify-between lg:block w-full bg-gray-50 rounded-r-lg p-4 lg:text-center mt-2">
                                 <div class="flex flex-col">
-                                    <h1 class="text-base font-bold text-[#433878] pb-4">ผู้ทรงคุณวุฒิ
+                                    <h1 class="text-base text-[#433878] pb-4">ผู้ทรงคุณวุฒิ
                                     </h1>
                                     <p class="text-lg font-bold text-[#156E68]">152 คน</p>
                                 </div>
@@ -210,13 +211,14 @@
                         </div>
                     </div>
                 </div>
+                <?php include '../component/uploadform.php' ?>
                 <?php include '../component/uploadusers.php' ?>
             </div>
             <!-- line 3 -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                 <div
                     class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg sm:text-xl ps-2 antialiased text-[#433878]">
+                    <h1 class="text-xl font-semibold ps-2 antialiased text-[#433878]">
                         กิจกรรมล่าสุด
                     </h1>
                     <div class="mx-4 my-5">
@@ -244,7 +246,7 @@
                 </div>
                 <div
                     class="bg-white rounded-lg shadow-md p-6 h-full w-full hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200 hover:-translate-y-1 ">
-                    <h1 class="text-lg sm:text-xl ps-2  antialiased text-[#433878]">
+                    <h1 class="text-xl font-semibold ps-2  antialiased text-[#433878]">
                         สำรองข้อมูลล่าสุด
                     </h1>
                     <div class="flex justify-between mx-4 my-5 text-sm text-gray-600">
