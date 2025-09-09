@@ -1,4 +1,4 @@
-const BASE_LINK = "https://dev.kittelweb.xyz/";
+const BASE_LINK = "https://dev.kittelweb.xyz";
 
 
 function createSideBar(data) {
