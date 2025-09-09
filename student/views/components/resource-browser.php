@@ -78,7 +78,7 @@ $hAttr = $h; // alias for clarity
           <?php endif; ?>
         </div>
         <div class="p-4">
-          <h3 class="font-semibold text-gray-800 text-sm leading-tight">
+          <h3 class="font-semibold text-gray-800 text-lg leading-snug">
             <?= $h($title) ?>
           </h3>
           <div class="text-xs text-gray-500 mt-2 flex justify-between">

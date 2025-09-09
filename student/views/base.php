@@ -28,6 +28,10 @@
 
         <!-- Main Content -->
         <div class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full mx-auto pb-8 md:py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
+          <p class="text-gray-700 mb-4 mr-4">
+            <a href="https://dev.kittelweb.xyz/student" class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
+            > <?= htmlspecialchars($title ?? 'Untitled') ?> 
+          </p>
           <?= $content /* เนื้อหาหน้าเพจ */ ?>
         </div>
 </body>
