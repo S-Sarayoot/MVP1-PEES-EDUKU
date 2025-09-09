@@ -49,7 +49,7 @@ function checkLogin(event) {
     sideBarMenu = [
       { name: "Dashboard", path: BASE_LINK + "/student/" },
       { name: "คลังทรัพยากร", path: BASE_LINK + "/student/storage" },
-      { name: "workshop/แผนฯ", path: BASE_LINK + "/student/" },
+      { name: "workshop/แผนฯ", path: BASE_LINK + "/student/workshop" },
       { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/student/" },
       { name: "ระบบติดตามผลฯ", path: BASE_LINK + "/student/" },
       { name: "ระบบสะท้อนความคิด", path: BASE_LINK + "/student/" },
