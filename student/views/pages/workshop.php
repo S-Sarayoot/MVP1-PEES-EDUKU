@@ -9,9 +9,9 @@ component('components/workshop-list.php', [
       'name' => 'Workshop 1',
       'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum?',
       'buttons' => [
-        ['label' => 'กิจกรรม',  'href' => '/workshop/1/activity'],
-        ['label' => 'ทรัพยากร', 'href' => '/workshop/1/resources'],
-        ['label' => 'สะท้อนคิด', 'href' => '/workshop/1/reflection'],
+        ['label' => 'กิจกรรม',  'href' => '/workshop/1/activity', 'icon' => '📚'],
+        ['label' => 'ทรัพยากร', 'href' => '/workshop/1/resources', 'icon' => '🗂️'],
+        ['label' => 'สะท้อนคิด', 'href' => '/workshop/1/reflection', 'icon' => '📝'],
       ],
     ],
     [

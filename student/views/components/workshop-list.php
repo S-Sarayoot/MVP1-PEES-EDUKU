@@ -51,9 +51,9 @@ $workshops         = $workshops         ?? [];
         <?php
           // ปุ่มดีฟอลต์ 3 อัน ถ้าไม่ส่งมา
           $buttons = $ws['buttons'] ?? [
-            ['label' => 'กิจกรรม',  'href' => '#'],
-            ['label' => 'ทรัพยากร', 'href' => '#'],
-            ['label' => 'สะท้อนคิด', 'href' => '#'],
+            ['label' => 'กิจกรรม',  'href' => '#', 'icon' => '📚'],
+            ['label' => 'ทรัพยากร', 'href' => '#', 'icon' => '🗂️'],
+            ['label' => 'สะท้อนคิด', 'href' => '#', 'icon' => '📝'],
           ];
         ?>
 
@@ -61,6 +61,7 @@ $workshops         = $workshops         ?? [];
           <?php foreach ($buttons as $btn): ?>
             <a href="<?= htmlspecialchars($btn['href'] ?? '#') ?>"
                class="w-full bg-purple-50 border border-purple-200 rounded-md py-1 px-4  transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200 text-center">
+              <p><?= htmlspecialchars($btn['icon']) ?></p>
               <p><?= htmlspecialchars($btn['label'] ?? 'เปิด') ?></p>
             </a>
           <?php endforeach; ?>

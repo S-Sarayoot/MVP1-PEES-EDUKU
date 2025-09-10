@@ -7,7 +7,7 @@
     class="fixed md:static row-span-10 md:row-span-12  md:col-span-3 xl:col-span-2 top-0 left-0 md:mt-2 h-screen max-w-[300px] px-4 bg-white flex flex-col transition-transform duration-300 -translate-x-full md:translate-x-0 md:h-[calc(100vh-25px)] md:max-w-[300px] rounded-r-2xl text-gray-800 shadow-xl z-40 ">
     <div class="flex items-center py-3 font-semibold text-base mb-4 mt-3">
         <button id="openSidebar2" class="md:hidden px-2 text-xl font-bold text-[#866BC2]">☰</button>
-        <img src="../image/logo.png" alt="Logo" class="h-8 w-9 md:h-10 md:w-11 xl:h-11 xl:w-12 ms-6">
+        <img src="<?php echo path_external('image', 'logo.png') ?>" alt="Logo" class="h-8 w-9 md:h-10 md:w-11 xl:h-11 xl:w-12 ms-6">
         <h1 class="text-xl md:text-3xl xl:text-3xl ps-2 xl:ps-3 font-bold antialiased text-[#866BC2]">EDU KU
         </h1>
     </div>
