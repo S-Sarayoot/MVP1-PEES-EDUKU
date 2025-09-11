@@ -1,3 +1,24 @@
+<?php
+// app/views/layouts/base.php
+function path_external($type,$file) {
+    $parts = explode("/", string:  $_SERVER['REQUEST_URI']);
+
+    // ลบค่าว่างออก (เพราะมี / ขึ้นต้นและท้าย)
+    $parts = array_filter($parts);
+
+    // จัด index ใหม่ให้เป็น array ปกติ (0,1,2,...)
+    $parts = array_values($parts);
+
+    $sidebar_path = "";
+    foreach ($parts as $index => $part) {
+      if($index > 0 && $part !== "workshop" ){ break;};
+        $sidebar_path .= "../";
+    }
+
+    return $sidebar_path. ($type == "" ? "" : $type . "/") . $file;
+}
+?>
+
 <!doctype html>
 <html lang="th">
 <head>
