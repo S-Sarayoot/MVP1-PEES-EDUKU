@@ -72,7 +72,7 @@ $hAttr = $h; // alias for clarity
         <div class="relative h-40">
           <img src="<?= $hAttr($image) ?>" alt="<?= $hAttr($title ?: 'resource') ?>" class="w-full h-full object-cover" loading="lazy">
           <?php if ($tag !== ''): ?>
-            <span class="absolute top-2 left-2 bg-gray-900 text-white text-xs px-2 py-1 rounded">
+            <span class="absolute top-2 left-2 bg-gray-900/70 text-white text-xs px-2 py-1 rounded">
               <?= $h($tag) ?>
             </span>
           <?php endif; ?>
