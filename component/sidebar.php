@@ -1,3 +1,29 @@
+<?php
+// app/views/layouts/base.php
+
+function path_external($type,$file) {
+    $parts = explode("/", string:  $_SERVER['REQUEST_URI']);
+
+    // ลบค่าว่างออก (เพราะมี / ขึ้นต้นและท้าย)
+    $parts = array_filter($parts);
+
+    // จัด index ใหม่ให้เป็น array ปกติ (0,1,2,...)
+    $parts = array_values($parts);
+
+    $sidebar_path = "";
+    foreach ($parts as $index => $part) {
+      if($index > 0 && $part !== "workshop" ){ break;};
+        $sidebar_path .= "../";
+    }
+
+    return $sidebar_path. ($type == "" ? "" : $type . "/") . $file;
+}
+
+
+
+?>
+
+
 <!-- for mobile size -->
 <div class="bg-white w-full h-14 fixed top-0 left-0 md:hidden">
     <button id="openSidebar" class="md:hidden py-3 px-4 text-xl font-bold text-[#866BC2]">☰</button>

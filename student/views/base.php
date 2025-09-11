@@ -1,26 +1,3 @@
-<?php
-// app/views/layouts/base.php
-
-function path_external($type,$file) {
-    $parts = explode("/", string:  $_SERVER['REQUEST_URI']);
-
-    // ลบค่าว่างออก (เพราะมี / ขึ้นต้นและท้าย)
-    $parts = array_filter($parts);
-
-    // จัด index ใหม่ให้เป็น array ปกติ (0,1,2,...)
-    $parts = array_values($parts);
-
-    $sidebar_path = "";
-    foreach ($parts as $index => $part) {
-      if($index > 0 && $part !== "workshop" ){ break;};
-        $sidebar_path .= "../";
-    }
-
-    return $sidebar_path. ($type == "" ? "" : $type . "/") . $file;
-}
-
-?>
-
 <!doctype html>
 <html lang="th">
 <head>
@@ -49,11 +26,8 @@ function path_external($type,$file) {
 
         <!-- Main Content -->
         <div class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full mx-auto pb-8 md:py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
-          <p class="text-gray-700 mb-4 mr-4">
-            <a href="https://dev.kittelweb.xyz/student" class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
-            > <?= htmlspecialchars($title ?? 'Untitled') ?> 
-          </p>
 
+        <?php include_once(path_external('component', 'Breadcrumb.php')) ?>
           <?= $content /* เนื้อหาหน้าเพจ */ ?>
         </div>
 </body>
