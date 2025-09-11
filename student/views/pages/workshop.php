@@ -1,30 +1,28 @@
 <?php
-
 component('components/workshop-list.php', [
   'title' => 'workshop',
   'instruction_title' => 'คำชี้แจง',
   'instruction_text'  => 'คำชี้แจง workshop รวม…',
   'workshops' => [
     [
+      'id'  => 1,
       'name' => 'Workshop 1',
-      'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum?',
-      'buttons' => [
-        ['label' => 'กิจกรรม',  'href' => '/workshop/1/activity', 'icon' => '📚'],
-        ['label' => 'ทรัพยากร', 'href' => '/workshop/1/resources', 'icon' => '🗂️'],
-        ['label' => 'สะท้อนคิด', 'href' => '/workshop/1/reflection', 'icon' => '📝'],
-      ],
+      'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum? ',
+      'status'  => 'close', // active, upcoming, completed
     ],
     [
+      'id'  => 2,
       'name' => 'Workshop 2',
       'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum?',
+      'status'  => 'active', // active, upcoming, completed
     ],
     [
+      'id'  => 3,
       'name' => 'Workshop 3',
-      'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum?',
+      'desc' => 'ระบบยังไม่เปิดให้ทำในขณะนี้',
+      'status'  => 'upcoming', // active, upcoming, completed
     ],
   ],
 ]);
-
-
 ?>
 

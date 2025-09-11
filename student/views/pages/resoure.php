@@ -8,7 +8,7 @@
   'active' => 'ทั้งหมด',
   'items' => [
     [
-      'image' => '/uploads/computer.jpg',
+      'image' => 'https://www.abcollege.org/wp-content/uploads/2025/04/aracde-business-colllege-IT-2.jpg',
       'title' => 'The Future of Computing: How to Stay Ahead',
       'src' => 'https://dev.kittelweb.xyz/student/storage',
       'tag' => 'DESIGN',
@@ -17,7 +17,7 @@
       'cats' => ['Script','กรณีศึกษา']
     ],
     [
-      'image' => '/uploads/color.jpg',
+      'image' => 'https://i.ytimg.com/vi/Kd-GNqGCJR4/maxresdefault.jpg',
       'title' => 'The Power of Color',
       'src' => 'https://dev.kittelweb.xyz/student/storage',
       'tag' => 'DESIGN',
@@ -26,7 +26,7 @@
       'cats' => ['วิดีโอ']
     ],
     [
-      'image' => '/uploads/van.jpg',
+      'image' => 'https://i.ytimg.com/vi/03AOafCNcWk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDTfWT5FeTph7Ng-5sfI81QVWyhcw',
       'title' => 'Travel: Orange Camper',
       'src' => 'https://dev.kittelweb.xyz/student/storage',
       'tag' => 'TRAVEL',
