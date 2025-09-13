@@ -8,7 +8,7 @@ component('components/workshop-list.php', [
       'id'  => 1,
       'name' => 'Workshop 1',
       'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum? ',
-      'status'  => 'close', // active, upcoming, completed
+      'status'  => 'active', // active, upcoming, completed
     ],
     [
       'id'  => 2,
