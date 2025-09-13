@@ -1,5 +1,5 @@
 <div class="max-w-2xl mx-auto bg-white rounded-lg shadow p-6">
-  <h2 class="text-lg font-semibold mb-4">Personal Information</h2>
+  <h2 class="text-2xl font-semibold mb-4">Personal Information</h2>
   
   <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <!-- First Name -->

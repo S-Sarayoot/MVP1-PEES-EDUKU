@@ -43,7 +43,7 @@ $workshops         = $workshops         ?? [];
   <div class="relative flex w-full max-lg:flex-col justify-center max-md:flex-col gap-5 mb-2 mt-4">
     <?php foreach ($workshops as $i => $ws): ?>
       
-      <div class="relative border-2 rounded-lg p-4  w-full <?= ($ws['status'] === 'active') ? ' shadow-sm hover:shadow-lg hover:ring hover:ring-purple-300 border-purple-200 hover:border-purple-0' : 'border-gray-200' ?> ">
+      <div class="relative border-2 rounded-lg p-4  w-full <?= ($ws['status'] === 'active') ? ' shadow-sm hover:shadow-lg hover:ring hover:ring-purple-300 border-purple-500 hover:border-purple-0' : 'border-gray-200' ?> ">
         <p class="text-center font-semibold text-lg text-violet-900">
           <?= htmlspecialchars($ws['name'] ) ?>
         </p>
@@ -67,11 +67,20 @@ $workshops         = $workshops         ?? [];
 
         <div class="flex flex-col mt-4 mb-2 gap-2 w-full items-center">
           <?php foreach ($buttons as $btn): ?>
-            <a href="<?= ($ws['status'] === 'active') ? htmlspecialchars($btn['href'].$ws['id']) : '#' ?>"
+            <?php if ($ws['status'] === 'active'): ?>
+              <a  href="<?= ($ws['status'] === 'active') ? htmlspecialchars($btn['href'].$ws['id']) : '#' ?>"
                class="w-full border rounded-md py-1 px-4 ease-in-out duration-200 text-center transition-transform shadow-sm <?= ($ws['status'] === 'active') ? 'bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-300 hover:shadow-lg hover:-translate-y-0.5 text-purple-900' : 'bg-gray-50 border-gray-200 cursor-default text-gray-400' ?>">
               <p><?= htmlspecialchars($btn['icon']) ?></p>
               <p><?= htmlspecialchars($btn['label']) ?></p>
             </a>
+            <?php endif; ?>
+            <?php if ($ws['status'] !== 'active'): ?>
+              <div  href="<?= ($ws['status'] === 'active') ? htmlspecialchars($btn['href'].$ws['id']) : '#' ?>"
+               class="w-full border rounded-md py-1 px-4 ease-in-out duration-200 text-center transition-transform shadow-sm <?= ($ws['status'] === 'active') ? 'bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-300 hover:shadow-lg hover:-translate-y-0.5 text-purple-900' : 'bg-gray-50 border-gray-200 cursor-default text-gray-400' ?>">
+              <p><?= htmlspecialchars($btn['icon']) ?></p>
+              <p><?= htmlspecialchars($btn['label']) ?></p>
+            </div>
+            <?php endif; ?>
           <?php endforeach; ?>
         </div>
       </div>
