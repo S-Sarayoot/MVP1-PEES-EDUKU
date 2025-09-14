@@ -40,7 +40,7 @@
                     <hr class="border-0.5 border-gray-100 my-4 -mx-4">
                     <!--  -->
                     <!-- Card Container -->
-                    <div id="cardWrapper" class="grid grid-cols-3 gap-4"></div>
+                    <div id="cardWrapper" class="grid grid-cols-3 max-md:grid-cols-1 gap-4"></div>
                 </div>
             </div>
         </div>
