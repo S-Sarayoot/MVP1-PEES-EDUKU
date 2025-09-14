@@ -49,7 +49,7 @@
                </div>
    
                 <div class="mt-4">
-                   <button type="submit" class="w-full px-4 py-2 border-2 border-purple-500 text-purple-500 font-bold hover:bg-purple-500 hover:text-white rounded-lg my-4 cursor-pointer">สะท้อนคิด</button>
+                   <a href="https://dev.kittelweb.xyz/student/workshop/reflection" class="w-full px-4 py-2 border-2 border-purple-500 text-purple-500 font-bold hover:bg-purple-500 hover:text-white rounded-lg my-4 cursor-pointer">สะท้อนคิด</a>
                </div>
             </div>
         </div>
