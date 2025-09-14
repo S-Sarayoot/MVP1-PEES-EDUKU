@@ -162,3 +162,55 @@ function checkAnswer(event) {
     `;
   }, 3000);
 }
+
+
+
+// teacher
+const data = [
+  { title: "นวัตกรรมตัวอย่างห้องเรียนเสมอภาค", desc: "Image", img: "https://www.eef.or.th/wp-content/uploads/2021/01/all-1-scaled-1-768x1024.jpeg", type: "image" },
+  { title: "วีดีโอสอนภาษาอังกฤษ รหัสวิชา1022934", desc: "Videos", img: "https://i.ytimg.com/vi/71bDQNpPtOs/maxresdefault.jpg", type: "videos" },
+  { title: "แหล่งการเรียนรู้แนะนำ", desc: "แหล่งการเรียนรู้แนะนำ", img: "https://media.the101.world/wp-content/uploads/2022/07/05140421/Sorravit_20220722_PolicyInsight-Banner.png", type: "learning" },
+  { title: "แผนการจัดการเรียนรีู้ตัวอย่าง", desc: "แผนการจัดการเรียนรู้", img: "https://online.pubhtml5.com/lbvh/amtn/files/large/1.jpg?1622465202", type: "plan" },
+  { title: "เกณฑ์การประเมิณคะแนน รหัสวิชา1022934", desc: "เกณฑ์การประเมิณ", img: "../image/rubric.png", type: "criteria" }
+];
+document.addEventListener("DOMContentLoaded", () => {
+    const cardWrapper = document.getElementById("cardWrapper");
+    const dropdownButton = document.getElementById("dropdownButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    function renderCards(filter = "all") {
+        cardWrapper.innerHTML = "";
+        let filtered = data;
+        if (filter !== "all") {
+            filtered = data.filter(item => item.type === filter);
+        }
+
+        filtered.forEach(item => {
+            const card = `
+                <div class="bg-gradient-to-r from-purple-500 to-purple-800 p-4 rounded-lg text-white shadow">
+                    <img src="${item.img}" alt="${item.title}" class="w-full h-32 object-cover rounded">
+                    <h3 class="mt-2 font-bold">${item.title}</h3>
+                    <p class="text-sm">${item.desc}</p>
+                    <button class="mt-2 px-3 py-1 bg-white/20 rounded">Read More</button>
+                </div>
+            `;
+            cardWrapper.innerHTML += card;
+        });
+    }
+
+    // dropdown
+    dropdownButton?.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+    });
+
+    dropdownMenu?.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const filter = e.target.getAttribute("data-filter");
+            renderCards(filter);
+            dropdownMenu.classList.add("hidden");
+        });
+    });
+
+    renderCards(); // โหลดครั้งแรก
+});
