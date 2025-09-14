@@ -41,7 +41,7 @@ $data = [
 
 <div class="bg-white p-4 rounded-lg shadow-md">
     <h1 class="text-2xl font-bold mx-2mt-2 text-center">ระบบสะท้อนคิด</h1>
-    <div class="flex gap-6 mt-4">
+    <div class="flex flex-col lg:flex-row gap-6 mt-4">
         <?php foreach ($data as $item): ?>
         <?= component('components/cardReflect.php', $item) ?>
         <?php endforeach; ?>   

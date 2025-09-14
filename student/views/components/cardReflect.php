@@ -25,7 +25,7 @@ switch ($data['status']) {
 
     // ตัวอย่างการ์ด workshop
     ?>
-    <div class="w-1/3 min-h-[30rem] rounded-lg shadow bg-white p-4 flex flex-col border-2 <?= ($data['status'] === 'waiting' ? 'border-purple-500' : 'border-gray-300') ?>">
+    <div class="w-full lg:w-1/3 min-h-[30rem] rounded-lg shadow bg-white p-4 flex flex-col border-2 <?= ($data['status'] === 'waiting' ? 'border-purple-500' : 'border-gray-300') ?>">
 
 
             <h3 class="font-bold text-xl text-center mb-2">Workshop <?= htmlspecialchars($data['id']) ?></h3>
