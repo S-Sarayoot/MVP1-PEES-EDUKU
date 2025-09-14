@@ -1,5 +1,5 @@
-<div class="flex flex-col md:flex-row w-full gap-5 ">
-    <div class="w-full md:w-1/2">
+<div class="flex flex-col-reverse md:flex-row w-full gap-5 ">
+    <div class="w-full md:w-1/2 ">
         <?php component('components/chatBot.php') ?>        
     </div>
                 

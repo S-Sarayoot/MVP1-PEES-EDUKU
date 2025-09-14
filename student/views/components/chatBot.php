@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-    <div class="max-w-3xl mx-auto px-4">
+    <div class="max-w-3xl">
         <!-- กล่องแชท -->
         <div class="bg-white p-4 rounded-lg shadow-md h-[45rem] flex flex-col justify-between">
             <div class="flex items-center p-2 justify-between border-b-2 border-gray-400">
