@@ -1,56 +1,59 @@
 <div class="bg-white p-4 rounded-lg shadow-md">
     <h1 class="text-2xl font-bold mx-2mt-2">Workshop#<?= $_GET['workshop'] ?> กิจกรรม</h1>
     <div class="flex flex-col md:flex-row w-full gap-4 mt-4">
-        <div class="w-full md:w-1/3 border-2 border-purple-200 p-4 rounded-lg">
-             <div class="">
-                <h2 class="text-xl underline font-bold text-purple-800">คำชี้แจง</h2>
-                <p>
-                    กิจกรรมนี้มีวัตถุประสงค์เพื่อให้นักเรียนได้ฝึกทักษะการอ่านและการคิดวิเคราะห์ผ่านการตอบคำถามที่เกี่ยวข้องกับบทบาทของครูในยุคเทคโนโลยีดิจิทัล
-                    โดยนักเรียนจะได้เรียนรู้ถึงความสำคัญของการใช้เทคโนโลยีในการศึกษาและการพัฒนาทักษะที่จำเป็นในศตวรรษที่ 21 รวมถึงการตระหนักถึงคุณธรรมและจริยธรรมที่ครูควรมี
-                    เพื่อเตรียมความพร้อมในการเป็นครูที่มีคุณภาพและสามารถตอบสนองต่อความต้องการของผู้เรียนในยุคปัจจุบันได้อย่างมีประสิทธิภาพ                
-                </p>
-            </div>
-
-            <div class="mt-4">
-                <h2 class="text-xl font-bold">ทรัพยากรที่เกี่ยวข้อง</h2>
-                <ul class="list-disc list-inside mt-2">
-                    <li><a href="https://dev.kittelweb.xyz/student/resource.php?workshop=<?= $_GET['workshop'] ?>" class="text-purple-600 hover:underline">เทคโนโลยีกับการศึกษา [กรณีศึกษา] - นายเอ บีซีดี</a></li>
-                    <li><a href="https://dev.kittelweb.xyz/student/resource.php?workshop=<?= $_GET['workshop'] ?>" class="text-purple-600 hover:underline">บทบาทของครูในยุคเทคโนโลยีดิจิทัล - นางสาวใจดี มากเลย</a></li>
-                    <li><a href="https://dev.kittelweb.xyz/student/resource.php?workshop=<?= $_GET['workshop'] ?>" class="text-purple-600 hover:underline">แหล่งเรียนรู้เพิ่มเติม</a></li>
-            </div>
-            
-            <div class="mt-4">
-                <h2 class="text-xl font-bold">Rubrics</h2>
-                <div class="grid grid-cols-5 gap-2 text-sm">
-                    <div class="flex flex-col items-center text-right">
-                        <span class="w-full px-1 ">1</span>
-                        ความถูกต้องของคำตอบ
-                    </div>
-
-                    <div class="flex flex-col items-center text-right">
-                        <span class="w-full px-1 ">2</span>
-                        ความชัดเจนและความสมบูรณ์ของคำอธิบาย
-                    </div>
-
-                    <div class="flex flex-col items-center text-right">                    
-                        <span class="w-full px-1 text-white  bg-purple-500">3</span>
-                        การใช้ภาษาและการสื่อสารที่เหมาะสม
-                    </div>
-                    <div class="flex flex-col items-center text-right">
-                        <span class="w-full px-1 ">4</span>    
-                        การเชื่อมโยงกับเนื้อหาที่เรียน
-                    </div>
-                    <div class="flex flex-col items-center text-right">
-                        <span class="w-full px-1 ">5</span>    
-                        ความคิดสร้างสรรค์และการวิเคราะห์
-                    </div>
-                </div>
-            </div>
-
-             <div class="mt-4">
-                <button type="submit" class="w-full px-4 py-2 border-2 border-purple-500 text-purple-500 font-bold hover:bg-purple-500 hover:text-white rounded-lg my-4 cursor-pointer">สะท้อนคิด</button>
+        <div class="w-full md:w-1/3 ">
+            <div class="border-2 border-purple-200 p-4 rounded-lg">
+                <div class="">
+                   <h2 class="text-xl underline font-bold text-purple-800">คำชี้แจง</h2>
+                   <p>
+                       กิจกรรมนี้มีวัตถุประสงค์เพื่อให้นักเรียนได้ฝึกทักษะการอ่านและการคิดวิเคราะห์ผ่านการตอบคำถามที่เกี่ยวข้องกับบทบาทของครูในยุคเทคโนโลยีดิจิทัล
+                       โดยนักเรียนจะได้เรียนรู้ถึงความสำคัญของการใช้เทคโนโลยีในการศึกษาและการพัฒนาทักษะที่จำเป็นในศตวรรษที่ 21 รวมถึงการตระหนักถึงคุณธรรมและจริยธรรมที่ครูควรมี
+                       เพื่อเตรียมความพร้อมในการเป็นครูที่มีคุณภาพและสามารถตอบสนองต่อความต้องการของผู้เรียนในยุคปัจจุบันได้อย่างมีประสิทธิภาพ                
+                   </p>
+               </div>
+   
+               <div class="mt-4">
+                   <h2 class="text-xl font-bold">ทรัพยากรที่เกี่ยวข้อง</h2>
+                   <ul class="list-disc list-inside mt-2">
+                       <li><a href="https://dev.kittelweb.xyz/student/resource.php?workshop=<?= $_GET['workshop'] ?>" class="text-purple-600 hover:underline">เทคโนโลยีกับการศึกษา [กรณีศึกษา] - นายเอ บีซีดี</a></li>
+                       <li><a href="https://dev.kittelweb.xyz/student/resource.php?workshop=<?= $_GET['workshop'] ?>" class="text-purple-600 hover:underline">บทบาทของครูในยุคเทคโนโลยีดิจิทัล - นางสาวใจดี มากเลย</a></li>
+                       <li><a href="https://dev.kittelweb.xyz/student/resource.php?workshop=<?= $_GET['workshop'] ?>" class="text-purple-600 hover:underline">แหล่งเรียนรู้เพิ่มเติม</a></li>
+               </div>
+               
+               <div class="mt-4">
+                   <h2 class="text-xl font-bold">Rubrics</h2>
+                   <div class="grid grid-cols-5 gap-2 text-sm">
+                       <div class="flex flex-col items-center text-right">
+                           <span class="w-full px-1 ">1</span>
+                           ความถูกต้องของคำตอบ
+                       </div>
+   
+                       <div class="flex flex-col items-center text-right">
+                           <span class="w-full px-1 ">2</span>
+                           ความชัดเจนและความสมบูรณ์ของคำอธิบาย
+                       </div>
+   
+                       <div class="flex flex-col items-center text-right">                    
+                           <span class="w-full px-1 text-white  bg-purple-500">3</span>
+                           การใช้ภาษาและการสื่อสารที่เหมาะสม
+                       </div>
+                       <div class="flex flex-col items-center text-right">
+                           <span class="w-full px-1 ">4</span>    
+                           การเชื่อมโยงกับเนื้อหาที่เรียน
+                       </div>
+                       <div class="flex flex-col items-center text-right">
+                           <span class="w-full px-1 ">5</span>    
+                           ความคิดสร้างสรรค์และการวิเคราะห์
+                       </div>
+                   </div>
+               </div>
+   
+                <div class="mt-4">
+                   <button type="submit" class="w-full px-4 py-2 border-2 border-purple-500 text-purple-500 font-bold hover:bg-purple-500 hover:text-white rounded-lg my-4 cursor-pointer">สะท้อนคิด</button>
+               </div>
             </div>
         </div>
+
         <div class="w-full md:w-2/3">
            
             <div class="">

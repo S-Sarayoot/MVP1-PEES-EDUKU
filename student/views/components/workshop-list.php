@@ -59,9 +59,9 @@ $workshops         = $workshops         ?? [];
         <?php
           // ปุ่มดีฟอลต์ 3 อัน ถ้าไม่ส่งมา
           $buttons =  [
-        ['label' => 'กิจกรรม',  'href' => 'workshop/activity?workshop=', 'icon' => '📚'],
-        ['label' => 'ทรัพยากร', 'href' => 'workshop/resources?workshop=', 'icon' => '🗂️'],
-        ['label' => 'สะท้อนคิด', 'href' => 'workshop/reflection?workshop=', 'icon' => '📝'],
+        ['label' => 'กิจกรรม',  'href' => 'https://dev.kittelweb.xyz/student/workshop/activity?workshop=', 'icon' => '📚'],
+        ['label' => 'ทรัพยากร', 'href' => 'https://dev.kittelweb.xyz/student/storage', 'icon' => '🗂️'],
+        ['label' => 'สะท้อนคิด', 'href' => 'https://dev.kittelweb.xyz/student/workshop/reflection?workshop=', 'icon' => '📝'],
           ];
         ?>
 
