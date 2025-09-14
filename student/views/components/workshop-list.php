@@ -59,16 +59,18 @@ $workshops         = $workshops         ?? [];
         <?php
           // ปุ่มดีฟอลต์ 3 อัน ถ้าไม่ส่งมา
           $buttons =  [
-        ['label' => 'กิจกรรม',  'href' => 'https://dev.kittelweb.xyz/student/workshop/activity?workshop=', 'icon' => '📚'],
+
+        ['label' => 'กิจกรรม',  'href' => 'https://dev.kittelweb.xyz/student/workshop/activity?workshop='.$ws['id'], 'icon' => '📚'],
         ['label' => 'ทรัพยากร', 'href' => 'https://dev.kittelweb.xyz/student/storage', 'icon' => '🗂️'],
-        ['label' => 'สะท้อนคิด', 'href' => 'https://dev.kittelweb.xyz/student/workshop/reflection?workshop=', 'icon' => '📝'],
+        ['label' => 'สะท้อนคิด', 'href' => 'https://dev.kittelweb.xyz/student/workshop/reflection', 'icon' => '📝'],
+
           ];
         ?>
 
         <div class="flex flex-col mt-4 mb-2 gap-2 w-full items-center">
           <?php foreach ($buttons as $btn): ?>
             <?php if ($ws['status'] === 'active'): ?>
-              <a  href="<?= ($ws['status'] === 'active') ? htmlspecialchars($btn['href'].$ws['id']) : '#' ?>"
+              <a  href="<?= ($ws['status'] === 'active') ? htmlspecialchars($btn['href']) : '#' ?>"
                class="w-full border rounded-md py-1 px-4 ease-in-out duration-200 text-center transition-transform shadow-sm <?= ($ws['status'] === 'active') ? 'bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-300 hover:shadow-lg hover:-translate-y-0.5 text-purple-900' : 'bg-gray-50 border-gray-200 cursor-default text-gray-400' ?>">
               <p><?= htmlspecialchars($btn['icon']) ?></p>
               <p><?= htmlspecialchars($btn['label']) ?></p>

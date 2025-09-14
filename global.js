@@ -61,8 +61,7 @@ function checkLogin(event) {
       { name: "คลังทรัพยากร", path: BASE_LINK + "/student/storage" },
       { name: "workshop/แผนฯ", path: BASE_LINK + "/student/workshop" },
       { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/student/consulting" },
-      { name: "ระบบติดตามผลฯ", path: BASE_LINK + "/student/" },
-      { name: "ระบบสะท้อนความคิด", path: BASE_LINK + "/student/" },
+      { name: "ระบบสะท้อนความคิด", path: BASE_LINK + "/student/reflection" },
       { name: "ผู้ใช้งาน", path: BASE_LINK + "/student/user" },
     ];
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
