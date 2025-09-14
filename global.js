@@ -45,7 +45,17 @@ function checkLogin(event) {
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
    linkPage("/admin/dashboard_admin");
-  } else if (username === "student" && password === "1234") {
+  }
+  else if (username === "teacher" && password === "1234") {
+    sideBarMenu = [
+      { name: "Dashboard", path: BASE_LINK + "/teacher/dashboard" },
+      { name: "คลังทรัพยากร", path: BASE_LINK + "/teacher/storage" },
+      { name: "workshop/แผนฯ", path: BASE_LINK + "/teacher/workshop" },
+      { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/teacher/consulting" },    ];
+    localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
+
+   linkPage("/teacher/storage");
+  }else if (username === "student" && password === "1234") {
     sideBarMenu = [
       { name: "Dashboard", path: BASE_LINK + "/student/" },
       { name: "คลังทรัพยากร", path: BASE_LINK + "/student/storage" },
