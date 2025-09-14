@@ -35,11 +35,12 @@
                 <div class="bg-white shadow-md rounded-lg p-4 mb-4">
                     <div class="mb-2 flex justify-between items-center">
                         <h2 class="text-xl text-[#433878] font-semibold">สื่อการสอนของฉัน</h2>
-                            <?php include '../component/dropdown.php' ?>
+                        <?php include '../component/dropdown.php' ?>
                     </div>
                     <hr class="border-0.5 border-gray-100 my-4 -mx-4">
                     <!--  -->
-                    <div>
+                    <!-- Card Container -->
+                    <div id="cardWrapper" class="grid grid-cols-3 max-md:grid-cols-1 gap-4"></div>
                 </div>
             </div>
         </div>
