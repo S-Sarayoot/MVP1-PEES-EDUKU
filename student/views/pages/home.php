@@ -73,8 +73,7 @@ component('components/MenuCarousel.php', [
     ]
 ]);
 
-
-require_once 'views/pages/workshop.php';
+component('pages/workshop.php');
 
 
 ?>
