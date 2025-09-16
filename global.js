@@ -48,7 +48,7 @@ function checkLogin(event) {
   }
   else if (username === "teacher" && password === "1234") {
     sideBarMenu = [
-      { name: "Dashboard", path: BASE_LINK + "/teacher/dashboard" },
+      { name: "Dashboard", path: BASE_LINK + "/teacher/" },
       { name: "คลังทรัพยากร", path: BASE_LINK + "/teacher/media" },
       { name: "workshop", path: BASE_LINK + "/teacher/workshop" },
       { name: "ผู้ใช้งาน", path: BASE_LINK + "/teacher/user" },

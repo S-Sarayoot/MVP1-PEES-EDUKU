@@ -69,7 +69,7 @@ $hAttr = $h; // alias for clarity
       ?>
       <div class="rb-card "
         data-cats="<?= $hAttr(implode('|', $cats)) ?>">
-        AA<?php component('components/card.php', $item) ?>
+        <?php component('components/card.php', $item) ?>
 
 
       </div>

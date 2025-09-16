@@ -1,5 +1,5 @@
-<div class="flex  w-full gap-4">
-  <div class="flex flex-col w-[70%] gap-4">
+<div class="flex flex-col lg:flex-row w-full gap-4">
+  <div class="flex flex-col w-full lg:w-[70%] gap-4">
     <div class="flex flex-col w-full">
       <h2 class="text-2xl font-bold mb-4">คลังทรัพยากร</h2>
       <?php
@@ -147,7 +147,7 @@
      </div>
   </div>
 
-  <div class="flex flex-col  w-[30%] gap-4">
+  <div class="flex flex-col  w-full lg:w-[70%] gap-4">
 
     <div class="flex  flex-col w-full">
       <h2 class="text-2xl font-bold mb-4">Workshop</h2>
