@@ -53,7 +53,7 @@ $hAttr = $h; // alias for clarity
   </div>
 
   <!-- กริดการ์ด -->
-  <div class="rb-grid grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4">
+  <div class="rb-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
     <?php foreach ($items as $item): ?>
       <?php
         $image = $item['image'] ?? '';
@@ -67,17 +67,34 @@ $hAttr = $h; // alias for clarity
         if (!is_array($cats)) { $cats = array_filter([$cats]); }
         $cats = array_values(array_filter(array_map('strval', $cats)));
       ?>
-      <div class="rb-card "
+      <a href="<?= $hAttr($src) ?>" class="rb-card bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden"
         data-cats="<?= $hAttr(implode('|', $cats)) ?>">
-        AA<?php component('components/card.php', $item) ?>
-
-
-      </div>
+        <div class="relative h-40">
+          <img src="<?= $hAttr($image) ?>" alt="<?= $hAttr($title ?: 'resource') ?>" class="w-full h-full object-cover" loading="lazy">
+          <?php if ($tag !== ''): ?>
+            <span class="absolute top-2 left-2 bg-gray-900/70 text-white text-xs px-2 py-1 rounded">
+              <?= $h($tag) ?>
+            </span>
+          <?php endif; ?>
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-gray-800 text-lg leading-snug">
+            <?= $h($title) ?>
+          </h3>
+          <div class="text-xs text-gray-500 mt-2 flex justify-between">
+            <span><?= $h($date) ?></span>
+            <span><?= $h($readTime) ?> read</span>
+          </div>
+        </div>
+      </a>
     <?php endforeach; ?>
   </div>
 </div>
 
-
+<style>
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
 
 <script>
 (() => {
