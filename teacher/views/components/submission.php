@@ -213,7 +213,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
       const studentId = tr?.dataset?.studentId || '';
       const ws = refBtn.dataset.workshop || select.value;
       window.open(
-        `https://dev.kittelweb.xyz/teacher/reflection?student_id=${encodeURIComponent(studentId)}`,
+        `https://dev.kittelweb.xyz/teacher/workshop/reflection?student_id=${encodeURIComponent(studentId)}`,
         '_blank'
       );
       return;
