@@ -67,7 +67,13 @@ $items = [
 
     <div id="<?= $h($cid) ?>" class="bg-white shadow-md rounded-lg p-4">
       <div class="flex flex-wrap gap-2 justify-between items-center">
-        <h2 class="text-2xl font-bold mb-4">สื่อการสอนของฉัน</h2>
+        <div class="flex gap-4 items-center justify-center">
+          <h2 class="text-2xl font-bold">สื่อการสอนของฉัน</h2>
+          <button onclick="toggleModal(true)" class="bg-green-100 text-green-800 rounded-md text-sm p-2 cursor-pointer">
+            + เพิ่มสื่อการสอน
+          </button>
+          <?php component( 'components/models/uploadform.php') ?>
+        </div>
         <!-- Dropdown กรองหมวดหมู่ -->
         <div class="flex items-center gap-2">
           <label for="<?= $h($cid) ?>_select" class="text-sm text-gray-600">หมวดหมู่:</label>
@@ -84,15 +90,15 @@ $items = [
         <?php /* include '../component/dropdown.php' */ ?>
       </div>
 
-      <hr class="border-0.5 border-gray-100 -mx-4">
+      <!-- <hr class="border-2 border-gray-100 mx-4"> -->
 
       <!-- ว่างเปล่า -->
-      <div class="rb-empty hidden text-center text-gray-500 py-10">
+      <div class="rb-empty hidden text-center text-gray-500 py-10 mt-4">
         ไม่มีเนื้อหาที่จะแสดง
       </div>
 
       <!-- การ์ด -->
-      <div id="<?= $h($cid) ?>_grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div id="<?= $h($cid) ?>_grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-4">
         <?php foreach ($items as $item): ?>
           <?php
             // รองรับทั้ง 'cats' (array) หรือ 'tag' (string)
