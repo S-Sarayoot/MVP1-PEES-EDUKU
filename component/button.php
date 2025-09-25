@@ -13,7 +13,7 @@ if (!isset($link))
     $link = "#";
 
 switch ($style) {
-    case "workshop":
+    case "Workshop":
         $style = "bg-purple-50 border border-purple-700 text-purple-900 py-1 px-3 rounded-md text-shadow-md 
                   hover:ring transition-all ease-in-out 
                   hover:ring-purple-100 shadow-md hover:shadow-lg duration-300 hover:-translate-y-1 hover:bg-purple-200
