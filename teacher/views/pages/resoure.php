@@ -4,7 +4,7 @@
     <h2 class="text-2xl font-bold mb-4">ทรัพยากรการเรียนรู้</h2>
     <?php
     component('components/resource-browser.php', [
-  'categories' => ['ทั้งหมด','วิดีโอ','บทพูด','Exam','Script','Story board','กรณีศึกษา'],
+  'categories' => ['ทั้งหมด', 'แผนการจัดการเรียนรู้', 'วิดีโอ','Script','Story board','กรณีศึกษา'],
   'active' => 'ทั้งหมด',
   'items' => [
     [
@@ -32,7 +32,7 @@
       'tag' => 'TRAVEL',
       'date' => 'Jan 24',
       'readTime' => '8 Mins',
-      'cats' => ['Exam','กรณีศึกษา']
+      'cats' => ['กรณีศึกษา']
     ],
     // เพิ่มได้ตามต้องการ
   ]

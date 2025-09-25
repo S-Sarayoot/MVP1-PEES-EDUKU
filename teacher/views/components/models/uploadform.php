@@ -30,11 +30,11 @@
                     <select id="category"
                         class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-1 focus:ring-purple-500">
                         <option disabled selected>-- เลือกประเภท --</option>
+                        <option value="image">แผนการจัดการเรียนรู้</option>
                         <option value="video">Image</option>
                         <option value="pdf">Videos</option>
                         <option value="image">Documents</option>
                         <option value="link">Story Board</option>
-                        <option value="image">Exams</option>
                         <option value="image">Script</option>
                     </select>
                 </div>

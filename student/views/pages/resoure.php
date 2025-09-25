@@ -4,9 +4,18 @@
     <h2 class="text-2xl font-bold mb-4">ทรัพยากรการเรียนรู้</h2>
     <?php
     component('components/resource-browser.php', [
-  'categories' => ['ทั้งหมด','วิดีโอ','บทพูด','Exam','Script','Story board','กรณีศึกษา'],
+  'categories' => ['ทั้งหมด','แผนการจัดการเรียนรู้','วิดีโอ', 'Script','Story board','กรณีศึกษา'],
   'active' => 'ทั้งหมด',
   'items' => [
+    [
+      'image' => 'https://online.pubhtml5.com/lbvh/amtn/files/large/1.jpg?1622465202',
+      'title' => 'แผนการจัดการเรียนรู้วิทยาศาสตร์ ม.1 เทอม 1 ',
+      'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum?',
+      'tag' => 'แผนการจัดการเรียนรู้',
+      'src' => 'https://dev.kittelweb.xyz/student/storage',
+      'author' => 'นางสาวธัญญลักษณ์ ดิษฐ์ประสพ',
+
+    ],
     [
       'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRScV8Esr92AAEbi3_Y60Vd1Ssqr42TyVEMNA&s',
       'title' => 'Making the Most of Your Space: Tips for Home Renovation and Design',
@@ -66,7 +75,7 @@
       'author' => 'Brian O\'Connor',
       'date' => 'Jan 24',
       'readTime' => '8 Mins',
-      'cats' => ['Exam','กรณีศึกษา']
+      'cats' => ['กรณีศึกษา']
     ]
     ]
 ]);
