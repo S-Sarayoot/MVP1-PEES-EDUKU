@@ -23,7 +23,7 @@ switch ($data['status']) {
         $disabled = 'disabled';
     }
 
-    // ตัวอย่างการ์ด workshop
+    // ตัวอย่างการ์ด Workshop
     ?>
     <div class="w-full lg:w-1/3 min-h-[30rem] rounded-lg shadow bg-white p-4 flex flex-col border-2 <?= ($data['status'] === 'waiting' ? 'border-purple-500' : 'border-gray-300') ?>">
 

@@ -37,12 +37,12 @@
                     </h1>
                     <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200">
                         <span class="font-semibold underline mx-4">คำชี้แจง</span>
-                        <span>คำชี้แจงworkshop...</span>
+                        <span>คำชี้แจงWorkshop...</span>
                     </div>
-                    <div id="workshopBox" class="flex max-lg:flex-col justify-center max-md:flex-col gap-5 mb-2 mt-4">
+                    <div id="WorkshopBox" class="flex max-lg:flex-col justify-center max-md:flex-col gap-5 mb-2 mt-4">
                         <script>
                             for (let i = 1; i < 4; i++) {
-                                let box = document.getElementById('workshopBox')
+                                let box = document.getElementById('WorkshopBox')
                                 box.innerHTML += `
                             <div class="border border-purple-100 rounded-lg shadow-sm p-4 hover:shadow-lg hover:ring hover:ring-purple-300">
                                 <p class="text-center text-lg text-violet-900">
@@ -50,11 +50,11 @@
                                 </p>
                                 <div class="flex text-sm my-3 flex-wrap">
                                     <span class="font-semibold text-purple-800">คำชี้แจง</span>
-                                    <span class="pl-3">คำชี้แจงเกี่ยวกับ workshop ${i}.. เวลา 3 ชั่วโมง</span>
+                                    <span class="pl-3">คำชี้แจงเกี่ยวกับ Workshop ${i}.. เวลา 3 ชั่วโมง</span>
                                 </div>
                                 <div class="flex flex-col mt-4 mb-2 gap-2 w-full items-center">
                                     <button
-                                        onclick="linkPage('./workshopPage.php')"
+                                        onclick="linkPage('./WorkshopPage.php')"
                                         class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200 active:bg-purple-200 active:shadow-lg active:-translate-y-0.5">
                                         <p>กิจกรรม</p>
                                     </button>
@@ -94,11 +94,11 @@
                                         นามสกุล</th>
                                     <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-200">สาขาวิชา
                                     </th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">Workshop
                                         1</th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">Workshop
                                         2</th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">Workshop
                                         3</th>
                                 </tr>
                                 <tr class="bg-purple-10">
@@ -236,21 +236,21 @@
                         <?php
                         $text = "Rubwc Workshop 1";
                         $subtext = "(กิจกรรมคำถามปลายเปิด)";
-                        $style = "workshop";
+                        $style = "Workshop";
                         include "../component/button.php";
                         ?>
 
                         <?php
                         $text = "Rubwc Workshop 2";
                         $subtext = "(กิจกรรมออกแบบแผนการจัดการเรียนรู้)";
-                        $style = "workshop";
+                        $style = "Workshop";
                         include "../component/button.php";
                         ?>
 
                         <?php
                         $text = "Rubwc Workshop 3";
                         $subtext = "สะท้อนคิด";
-                        $style = "workshop";
+                        $style = "Workshop";
                         include "../component/button.php";
                         ?>
                     </div>

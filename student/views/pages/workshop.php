@@ -1,9 +1,9 @@
 <?php
-component('components/workshop-list.php', [
-  'title' => 'workshop',
+component('components/Workshop-list.php', [
+  'title' => 'Workshop',
   'instruction_title' => 'คำชี้แจง',
-  'instruction_text'  => 'คำชี้แจง workshop รวม…',
-  'workshops' => [
+  'instruction_text'  => 'คำชี้แจง Workshop รวม…',
+  'Workshops' => [
     [
       'id'  => 1,
       'name' => 'Workshop 1',

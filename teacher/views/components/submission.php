@@ -1,9 +1,9 @@
 <?php
 /**
- * Student Workshop Table (PHP component) — filter by submitted workshop
- * - เลือกหมวด workshop 1/2/3 แล้วจะแสดงเฉพาะแถวที่ "ส่ง" หมวดนั้น
+ * Student Workshop Table (PHP component) — filter by submitted Workshop
+ * - เลือกหมวด Workshop 1/2/3 แล้วจะแสดงเฉพาะแถวที่ "ส่ง" หมวดนั้น
  * - เลือก "ทั้งหมด" (default) จะแสดงทุกแถว
- * - แสดงคอลัมน์ "สะท้อนคิด" พร้อมไอคอน/สี (ในโหมด "ทั้งหมด" จะแสดง 1–3 แท็กตามสถานะของแต่ละ workshop)
+ * - แสดงคอลัมน์ "สะท้อนคิด" พร้อมไอคอน/สี (ในโหมด "ทั้งหมด" จะแสดง 1–3 แท็กตามสถานะของแต่ละ Workshop)
  * - (option) $showAction = true เพื่อมีปุ่ม "ดูรายละเอียด"
  */
 
@@ -12,7 +12,7 @@ $showIndex  = isset($showIndex) ? (bool)$showIndex : true;
 $showAction = isset($showAction) ? (bool)$showAction : false;
 
 // << changed: เพิ่ม "ทั้งหมด" และตั้งเป็นค่าเริ่มต้น
-$categories = ['ทั้งหมด','workshop 1','workshop 2','workshop 3']; // << changed
+$categories = ['ทั้งหมด','Workshop 1','Workshop 2','Workshop 3']; // << changed
 $activeCat  = $activeCat ?? $categories[0]; // << changed (default = "ทั้งหมด")
 
 $h = fn($v) => htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8');
@@ -25,7 +25,7 @@ $normalize = function ($r) {
   $name  = $r['name']         ?? $r['student_name']  ?? '';
   $major = $r['major']        ?? $r['program']       ?? '';
 
-  $w     = $r['workshops']    ?? $r['workshop']      ?? [];
+  $w     = $r['Workshops']    ?? $r['Workshop']      ?? [];
   if (!is_array($w)) $w = array_filter(array_map('trim', preg_split('/[;,|]/', (string)$w)));
   $w = array_values($w);
 
@@ -33,7 +33,7 @@ $normalize = function ($r) {
   if (!is_array($ref)) $ref = array_filter(array_map('trim', preg_split('/[;,|]/', (string)$ref)));
   $ref = array_values($ref);
 
-  return compact('date','id','name','major') + ['workshops'=>$w,'reflections'=>$ref];
+  return compact('date','id','name','major') + ['Workshops'=>$w,'reflections'=>$ref];
 };
 
 // ใช้สำหรับโหมดเลือกทีละหมวด
@@ -82,7 +82,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
           <th class="py-2 px-3 font-semibold border border-purple-200">รหัสนิสิต</th>
           <th class="py-2 px-3 font-semibold border border-purple-200">ชื่อ - นามสกุล</th>
           <th class="py-2 px-3 font-semibold border border-purple-200">สาขาวิชา</th>
-          <th class="py-2 px-3 font-semibold border border-purple-200">workshop ที่ส่ง</th>
+          <th class="py-2 px-3 font-semibold border border-purple-200">Workshop ที่ส่ง</th>
           <th class="py-2 px-3 font-semibold border border-purple-200">สะท้อนคิด</th>
           <?php if ($showAction): ?><th class="py-2 px-3 font-semibold border border-purple-200 text-center"></th><?php endif; ?>
         </tr>
@@ -93,32 +93,32 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
         <?php else: ?>
           <?php $i = 1; foreach ($rows as $raw): $r = $normalize($raw);
             $subW = [
-              'workshop 1' => in_array('workshop 1', $r['workshops'], true) ? 1 : 0,
-              'workshop 2' => in_array('workshop 2', $r['workshops'], true) ? 1 : 0,
-              'workshop 3' => in_array('workshop 3', $r['workshops'], true) ? 1 : 0,
+              'Workshop 1' => in_array('Workshop 1', $r['Workshops'], true) ? 1 : 0,
+              'Workshop 2' => in_array('Workshop 2', $r['Workshops'], true) ? 1 : 0,
+              'Workshop 3' => in_array('Workshop 3', $r['Workshops'], true) ? 1 : 0,
             ];
             $refW = [
-              'workshop 1' => in_array('workshop 1', $r['reflections'], true) ? 1 : 0,
-              'workshop 2' => in_array('workshop 2', $r['reflections'], true) ? 1 : 0,
-              'workshop 3' => in_array('workshop 3', $r['reflections'], true) ? 1 : 0,
+              'Workshop 1' => in_array('Workshop 1', $r['reflections'], true) ? 1 : 0,
+              'Workshop 2' => in_array('Workshop 2', $r['reflections'], true) ? 1 : 0,
+              'Workshop 3' => in_array('Workshop 3', $r['reflections'], true) ? 1 : 0,
             ];
             $isRef = $refW[$activeCat] ?? 0; // ถ้า "ทั้งหมด" จะถูกแทนด้วย JS ตอน init
           ?>
           <tr class="odd:bg-white even:bg-purple-50/40"
               data-row
               data-student-id="<?= $h($r['id']) ?>"
-              data-sub-w1="<?= $subW['workshop 1'] ?>" data-ref-w1="<?= $refW['workshop 1'] ?>"
-              data-sub-w2="<?= $subW['workshop 2'] ?>" data-ref-w2="<?= $refW['workshop 2'] ?>"
-              data-sub-w3="<?= $subW['workshop 3'] ?>" data-ref-w3="<?= $refW['workshop 3'] ?>">
+              data-sub-w1="<?= $subW['Workshop 1'] ?>" data-ref-w1="<?= $refW['Workshop 1'] ?>"
+              data-sub-w2="<?= $subW['Workshop 2'] ?>" data-ref-w2="<?= $refW['Workshop 2'] ?>"
+              data-sub-w3="<?= $subW['Workshop 3'] ?>" data-ref-w3="<?= $refW['Workshop 3'] ?>">
             <?php if ($showIndex): ?><td class="py-2 px-2 border border-purple-200 text-center" data-role="row-index"><?= $i ?></td><?php endif; ?> <!-- << changed: ใส่ data-role -->
             <td class="py-2 px-3 border border-purple-200"><?= $h($r['date']) ?></td>
             <td class="py-2 px-3 border border-purple-200 text-blue-800"><?= $h($r['id']) ?></td>
             <td class="py-2 px-3 border border-purple-200"><?= $h($r['name']) ?></td>
             <td class="py-2 px-3 border border-purple-200"><?= $h($r['major']) ?></td>
             <td class="py-2 px-3 border border-purple-200">
-              <?php if ($r['workshops']): ?>
+              <?php if ($r['Workshops']): ?>
                 <div class="flex flex-wrap gap-1">
-                  <?php foreach ($r['workshops'] as $ws): ?>
+                  <?php foreach ($r['Workshops'] as $ws): ?>
                     <span class="inline-flex items-center rounded-full bg-purple-100 text-purple-800 px-2 py-0.5 text-xs font-medium"><?= $h($ws) ?></span>
                   <?php endforeach; ?>
                 </div>
@@ -132,12 +132,12 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
             <?php if ($showAction): ?>
             <td class="py-2 px-3 border border-purple-200 text-center">
               <button type="button" class="inline-flex items-center gap-1.5 rounded-md border border-purple-200 px-2.5 py-1 text-xs text-purple-700 hover:bg-purple-50" 
-              data-role="action-workshop" data-workshop="<?= $h($activeCat) ?>">
+              data-role="action-Workshop" data-Workshop="<?= $h($activeCat) ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-                workshop
+                Workshop
               </button>
               <button type="button" class="inline-flex items-center gap-1.5 rounded-md border border-purple-200 px-2.5 py-1 text-xs text-purple-700 hover:bg-purple-50" 
-              data-role="action-reflection" data-workshop="<?= $h($activeCat) ?>">
+              data-role="action-reflection" data-Workshop="<?= $h($activeCat) ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
                 สะท้อนคิด
               </button>
@@ -178,9 +178,9 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
   const renderAllStatusesHTML = (tr) => {
     const blocks = [];
     const map = [
-      ['1','workshop 1'],
-      ['2','workshop 2'],
-      ['3','workshop 3'],
+      ['1','Workshop 1'],
+      ['2','Workshop 2'],
+      ['3','Workshop 3'],
     ];
     map.forEach(([k, label]) => {
       const done = Number(tr.dataset['refW' + k]) === 1;
@@ -196,7 +196,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
     return `<div class="flex flex-wrap gap-x-4 gap-y-1">${blocks.join('')}</div>`;
   };
 
-  const key = n => (n === 'workshop 1' ? '1' : n === 'workshop 2' ? '2' : n === 'workshop 3' ? '3' : 'all');
+  const key = n => (n === 'Workshop 1' ? '1' : n === 'Workshop 2' ? '2' : n === 'Workshop 3' ? '3' : 'all');
 
   // << changed: ฟังก์ชันรีนัมเบอร์ "ลำดับที่" ตามแถวที่มองเห็น
   const renumberVisibleRows = () => {
@@ -241,9 +241,9 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
       tr.style.display = submitted ? '' : 'none';
       if (submitted) visible++;
 
-      // ซิงค์ค่า data-workshop ให้ปุ่มทั้งสอง
-      tr.querySelectorAll('[data-role="action-reflection"],[data-role="action-workshop"]').forEach(btn => {
-        btn.dataset.workshop = (k === 'all') ? 'workshop 1' : cat; // ถ้า "ทั้งหมด" ให้ดีฟอลต์ส่งไปที่ workshop 1 หรือจะปรับภายหลังก็ได้
+      // ซิงค์ค่า data-Workshop ให้ปุ่มทั้งสอง
+      tr.querySelectorAll('[data-role="action-reflection"],[data-role="action-Workshop"]').forEach(btn => {
+        btn.dataset.Workshop = (k === 'all') ? 'Workshop 1' : cat; // ถ้า "ทั้งหมด" ให้ดีฟอลต์ส่งไปที่ Workshop 1 หรือจะปรับภายหลังก็ได้
       });
     });
 
@@ -266,21 +266,21 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
     if (refBtn) {
       const tr = refBtn.closest('tr[data-row]');
       const studentId = tr?.dataset?.studentId || '';
-      const ws = refBtn.dataset.workshop || select.value;
+      const ws = refBtn.dataset.Workshop || select.value;
       window.open(
-        `https://dev.kittelweb.xyz/teacher/workshop/reflection?student_id=${encodeURIComponent(studentId)}`,
+        `https://dev.kittelweb.xyz/teacher/Workshop/reflection?student_id=${encodeURIComponent(studentId)}`,
         '_blank'
       );
       return;
     }
 
-    const wsBtn = e.target.closest('[data-role="action-workshop"]');
+    const wsBtn = e.target.closest('[data-role="action-Workshop"]');
     if (!wsBtn) return; // << คงเดิม
     const tr = wsBtn.closest('tr[data-row]');
     const studentId = tr?.dataset?.studentId || '';
-    const ws = wsBtn.dataset.workshop || select.value;
+    const ws = wsBtn.dataset.Workshop || select.value;
     window.open(
-      `https://dev.kittelweb.xyz/teacher/workshop/activity?student_id=${encodeURIComponent(studentId)}&workshop=${encodeURIComponent(ws)}`,
+      `https://dev.kittelweb.xyz/teacher/Workshop/activity?student_id=${encodeURIComponent(studentId)}&Workshop=${encodeURIComponent(ws)}`,
       '_blank'
     );
   });
