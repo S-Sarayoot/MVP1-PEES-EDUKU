@@ -73,7 +73,7 @@ component('components/MenuCarousel.php', [
     ]
 ]);
 
-component('pages/Workshop.php');
+component('pages/workshop.php');
 
 
 ?>

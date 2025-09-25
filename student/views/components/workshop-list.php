@@ -4,11 +4,11 @@
  * - $title              (string)  ชื่อบล็อก เช่น "บทเรียน"
  * - $instruction_title  (string)  หัวข้อคำชี้แจง
  * - $instruction_text   (string)  เนื้อหาคำชี้แจง
- * - $Workshops          (array)   รายการเวิร์กช็อป
+ * - $workshops          (array)   รายการเวิร์กช็อป
  *    [
  *      [
  *        'name' => 'Workshop 1',
- *        'desc' => 'คำชี้แจงเกี่ยวกับ Workshop 1.. เวลา 3 ชั่วโมง',
+ *        'desc' => 'คำชี้แจงเกี่ยวกับ workshop 1.. เวลา 3 ชั่วโมง',
  *        // ปุ่ม 3 ตัว (optional: ไม่ส่งก็ได้ จะใช้ชื่อดีฟอลต์)
  *        'buttons' => [
  *          ['label' => 'กิจกรรม',  'href' => '#'],
@@ -23,8 +23,8 @@
 $status             = $status             ?? 'บทเรียน';
 $title             = $title             ?? 'บทเรียน';
 $instruction_title = $instruction_title ?? 'คำชี้แจง';
-$instruction_text  = $instruction_text  ?? 'คำชี้แจง Workshop...';
-$Workshops         = $Workshops         ?? [];
+$instruction_text  = $instruction_text  ?? 'คำชี้แจง workshop...';
+$workshops         = $workshops         ?? [];
 ?>
 
 <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow transition-transform ease-in-out duration-200">
@@ -41,7 +41,7 @@ $Workshops         = $Workshops         ?? [];
   </div>
 
   <div class="relative flex w-full max-lg:flex-col justify-center max-md:flex-col gap-5 mb-2 mt-4">
-    <?php foreach ($Workshops as $i => $ws): ?>
+    <?php foreach ($workshops as $i => $ws): ?>
       
       <div class="relative border-2 rounded-lg p-4  w-full <?= ($ws['status'] === 'active') ? ' shadow-sm hover:shadow-lg hover:ring hover:ring-purple-300 border-purple-500 hover:border-purple-0' : 'border-gray-200' ?> ">
         <p class="text-center font-semibold text-lg text-violet-900">
@@ -60,9 +60,9 @@ $Workshops         = $Workshops         ?? [];
           // ปุ่มดีฟอลต์ 3 อัน ถ้าไม่ส่งมา
           $buttons =  [
 
-        ['label' => 'กิจกรรม',  'href' => 'https://dev.kittelweb.xyz/student/Workshop/activity?Workshop='.$ws['id'], 'icon' => '📚'],
+        ['label' => 'กิจกรรม',  'href' => 'https://dev.kittelweb.xyz/student/workshop/activity?workshop='.$ws['id'], 'icon' => '📚'],
         ['label' => 'ทรัพยากร', 'href' => 'https://dev.kittelweb.xyz/student/storage', 'icon' => '🗂️'],
-        ['label' => 'สะท้อนคิด', 'href' => 'https://dev.kittelweb.xyz/student/Workshop/reflection', 'icon' => '📝'],
+        ['label' => 'สะท้อนคิด', 'href' => 'https://dev.kittelweb.xyz/student/workshop/reflection', 'icon' => '📝'],
 
           ];
         ?>

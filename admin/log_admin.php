@@ -56,7 +56,7 @@
                             <div
                                 class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-all hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">
                                 <p class="text-blue-500 font-semibold">นิสิต [6849572002]</p>
-                                <p class="text-gray-700">ส่งกิจกรรม Workshop 1</p>
+                                <p class="text-gray-700">ส่งกิจกรรม workshop 1</p>
                             </div>
                             <div
                                 class="bg-white border border-purple-200 rounded-lg w-full p-2 hover:border-purple-200 transition-all hover:-translate-y-0.5 hover:shadow-md duration-200 ease-in-out">

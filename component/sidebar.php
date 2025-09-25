@@ -12,7 +12,7 @@ function path_image($type,$file) {
 
     $sidebar_path = "";
     foreach ($parts as $index => $part) {
-      if($index > 0 && $part !== "Workshop" ){ break;};
+      if($index > 0 && $part !== "workshop" ){ break;};
         $sidebar_path .= "../";
     }
 
