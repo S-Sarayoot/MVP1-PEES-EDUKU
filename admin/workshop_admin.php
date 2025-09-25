@@ -37,7 +37,7 @@
                     </h1>
                     <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200">
                         <span class="font-semibold underline mx-4">คำชี้แจง</span>
-                        <span>คำชี้แจงworkshop...</span>
+                        <span>คำชี้แจงWorkshop...</span>
                     </div>
                     <div id="workshopBox" class="flex max-lg:flex-col justify-center max-md:flex-col gap-5 mb-2 mt-4">
                         <script>
@@ -94,11 +94,11 @@
                                         นามสกุล</th>
                                     <th rowspan="2" class="py-1 px-3 font-semibold border border-purple-200">สาขาวิชา
                                     </th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">Workshop
                                         1</th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">Workshop
                                         2</th>
-                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">workshop
+                                    <th colspan="3" class="py-1 px-3 font-semibold border border-purple-200">Workshop
                                         3</th>
                                 </tr>
                                 <tr class="bg-purple-10">
