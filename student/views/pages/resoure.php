@@ -14,6 +14,7 @@
       'tag' => 'แผนการจัดการเรียนรู้',
       'src' => 'https://dev.kittelweb.xyz/student/storage',
       'author' => 'นางสาวธัญญลักษณ์ ดิษฐ์ประสพ',
+      'cats' => ['แผนการจัดการเรียนรู้']
 
     ],
     [
@@ -23,6 +24,7 @@
       'tag' => 'กรณีศึกษา',
       'src' => 'https://dev.kittelweb.xyz/student/storage',
       'author' => 'Brian O\'Connor',
+      'cats' => ['กรณีศึกษา']
 
     ],
     [
@@ -32,6 +34,7 @@
       'tag' => 'Story board',
       'src' => 'https://inskru.com/idea/-MZE-rlC1wrTcw1XJa_C/#google_vignette',
       'author' => 'ครูดอยร้อยพลังแสง',
+      'cats' => ['Story board']
     ],
     [
       'image' => '',
@@ -42,7 +45,7 @@
       'author' => 'Brian O\'Connor',
       'date' => 'Jan 27',
       'readTime' => '10 Mins',
-      'cats' => ['Script','กรณีศึกษา']
+      'cats' => ['กรณีศึกษา']
     ],
     [
       'image' => '',
@@ -53,7 +56,7 @@
       'author' => 'Brian O\'Connor',
       'date' => 'Jan 27',
       'readTime' => '10 Mins',
-      'cats' => ['Script','กรณีศึกษา']
+      'cats' => ['กรณีศึกษา']
     ],
     [
       'image' => '',

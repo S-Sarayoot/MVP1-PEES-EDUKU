@@ -1,6 +1,6 @@
 <?php
 component('components/workshop-list.php', [
-  'title' => 'workshop',
+  'title' => 'Workshop',
   'instruction_title' => 'คำชี้แจง',
   'instruction_text'  => 'คำชี้แจง workshop รวม…',
   'workshops' => [
