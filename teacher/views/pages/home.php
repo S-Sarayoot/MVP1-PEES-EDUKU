@@ -4,7 +4,7 @@
       <h2 class="text-2xl font-bold mb-4">คลังทรัพยากร</h2>
       <?php
       component('components/sourceCarousel.php', [
-    'categories' => ['ทั้งหมด','วิดีโอ','บทพูด','Exam','Script','Story board','กรณีศึกษา'],
+    'categories' => ['ทั้งหมด', 'แผนการจัดการเรียนรู้', 'วิดีโอ', 'Script','Story board','กรณีศึกษา'],
     'active' => 'ทั้งหมด',
     'items' => [
       [
@@ -66,7 +66,7 @@
         'author' => 'Brian O\'Connor',
         'date' => 'Jan 24',
         'readTime' => '8 Mins',
-        'cats' => ['Exam','กรณีศึกษา']
+        'cats' => ['กรณีศึกษา']
       ]
       ]
   ]);

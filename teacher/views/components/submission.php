@@ -2,7 +2,8 @@
 /**
  * Student Workshop Table (PHP component) — filter by submitted workshop
  * - เลือกหมวด workshop 1/2/3 แล้วจะแสดงเฉพาะแถวที่ "ส่ง" หมวดนั้น
- * - แสดงคอลัมน์ "สะท้อนคิด" พร้อมไอคอน/สี
+ * - เลือก "ทั้งหมด" (default) จะแสดงทุกแถว
+ * - แสดงคอลัมน์ "สะท้อนคิด" พร้อมไอคอน/สี (ในโหมด "ทั้งหมด" จะแสดง 1–3 แท็กตามสถานะของแต่ละ workshop)
  * - (option) $showAction = true เพื่อมีปุ่ม "ดูรายละเอียด"
  */
 
@@ -10,8 +11,9 @@ $rows       = $items       ?? [];
 $showIndex  = isset($showIndex) ? (bool)$showIndex : true;
 $showAction = isset($showAction) ? (bool)$showAction : false;
 
-$categories = ['workshop 1','workshop 2','workshop 3'];
-$activeCat  = $activeCat ?? $categories[0];
+// << changed: เพิ่ม "ทั้งหมด" และตั้งเป็นค่าเริ่มต้น
+$categories = ['ทั้งหมด','workshop 1','workshop 2','workshop 3']; // << changed
+$activeCat  = $activeCat ?? $categories[0]; // << changed (default = "ทั้งหมด")
 
 $h = fn($v) => htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8');
 $componentId = 'swt_' . substr(md5(json_encode($rows) . rand()), 0, 6);
@@ -34,6 +36,7 @@ $normalize = function ($r) {
   return compact('date','id','name','major') + ['workshops'=>$w,'reflections'=>$ref];
 };
 
+// ใช้สำหรับโหมดเลือกทีละหมวด
 $renderReflect = function(bool $isDone, string $cat) use ($h) {
   if ($isDone) {
     return '
@@ -66,7 +69,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
       </select>
     </div>
     <?php if ($showAction): ?>
-      <div class="text-xs text-gray-500">* แสดงเฉพาะผู้ที่ส่งหมวดที่เลือก</div>
+      <div class="text-xs text-gray-500">* เลือกหมวดเพื่อกรองผู้ที่ “ส่ง” เฉพาะหมวดนั้น หรือเลือก “ทั้งหมด” เพื่อแสดงทุกคน</div> <!-- << changed (ข้อความช่วย) -->
     <?php endif; ?>
   </div>
 
@@ -99,7 +102,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
               'workshop 2' => in_array('workshop 2', $r['reflections'], true) ? 1 : 0,
               'workshop 3' => in_array('workshop 3', $r['reflections'], true) ? 1 : 0,
             ];
-            $isRef = $refW[$activeCat] ?? 0;
+            $isRef = $refW[$activeCat] ?? 0; // ถ้า "ทั้งหมด" จะถูกแทนด้วย JS ตอน init
           ?>
           <tr class="odd:bg-white even:bg-purple-50/40"
               data-row
@@ -107,7 +110,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
               data-sub-w1="<?= $subW['workshop 1'] ?>" data-ref-w1="<?= $refW['workshop 1'] ?>"
               data-sub-w2="<?= $subW['workshop 2'] ?>" data-ref-w2="<?= $refW['workshop 2'] ?>"
               data-sub-w3="<?= $subW['workshop 3'] ?>" data-ref-w3="<?= $refW['workshop 3'] ?>">
-            <?php if ($showIndex): ?><td class="py-2 px-2 border border-purple-200 text-center"><?= $i ?></td><?php endif; ?>
+            <?php if ($showIndex): ?><td class="py-2 px-2 border border-purple-200 text-center" data-role="row-index"><?= $i ?></td><?php endif; ?> <!-- << changed: ใส่ data-role -->
             <td class="py-2 px-3 border border-purple-200"><?= $h($r['date']) ?></td>
             <td class="py-2 px-3 border border-purple-200 text-blue-800"><?= $h($r['id']) ?></td>
             <td class="py-2 px-3 border border-purple-200"><?= $h($r['name']) ?></td>
@@ -124,7 +127,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
               <?php endif; ?>
             </td>
             <td class="py-2 px-3 border border-purple-200" data-role="reflect-cell">
-              <?= $renderReflect((bool)$isRef, $activeCat) ?>
+              <?= $renderReflect((bool)$isRef, is_string($activeCat)?$activeCat:'') ?>
             </td>
             <?php if ($showAction): ?>
             <td class="py-2 px-3 border border-purple-200 text-center">
@@ -158,6 +161,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
   const select = root.querySelector('#<?= $h($componentId) ?>_cat');
   const tbody  = root.querySelector('tbody');
 
+  // HTML สำหรับแสดงสถานะทีละหมวด
   const renderStatusHTML = (isDone, cat) => isDone ? `
     <div class="flex items-center gap-2 text-green-600">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M20 7L10 17L5 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -170,7 +174,39 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
       <span class="inline-flex items-center rounded-full bg-gray-100 text-gray-600 px-2 py-0.5 text-[11px]">${cat}</span>
     </div>`;
 
-  const key = n => (n === 'workshop 1' ? '1' : n === 'workshop 2' ? '2' : '3');
+  // HTML สำหรับโหมด "ทั้งหมด" — แสดงสถานะแยก 3 หมวด
+  const renderAllStatusesHTML = (tr) => {
+    const blocks = [];
+    const map = [
+      ['1','workshop 1'],
+      ['2','workshop 2'],
+      ['3','workshop 3'],
+    ];
+    map.forEach(([k, label]) => {
+      const done = Number(tr.dataset['refW' + k]) === 1;
+      blocks.push(`
+        <div class="flex items-center gap-2 ${done ? 'text-green-600' : 'text-gray-500'}">
+          ${done
+            ? '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M20 7L10 17L5 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            : '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'}
+          <span class="inline-flex items-center rounded-full ${done ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'} px-2 py-0.5 text-[11px]">${label}</span>
+        </div>
+      `);
+    });
+    return `<div class="flex flex-wrap gap-x-4 gap-y-1">${blocks.join('')}</div>`;
+  };
+
+  const key = n => (n === 'workshop 1' ? '1' : n === 'workshop 2' ? '2' : n === 'workshop 3' ? '3' : 'all');
+
+  // << changed: ฟังก์ชันรีนัมเบอร์ "ลำดับที่" ตามแถวที่มองเห็น
+  const renumberVisibleRows = () => {
+    let idx = 1;
+    tbody.querySelectorAll('tr[data-row]').forEach(tr => {
+      if (tr.style.display === 'none') return;
+      const cell = tr.querySelector('[data-role="row-index"]');
+      if (cell) cell.textContent = String(idx++);
+    });
+  };
 
   const applyFilterAndStatus = () => {
     const cat = select.value;
@@ -178,31 +214,50 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
     let visible = 0;
 
     tbody.querySelectorAll('tr[data-row]').forEach(tr => {
-      const submitted = Number(tr.dataset['subW' + k]) === 1;   // กรองจาก workshop ที่ส่ง
-      const reflected = Number(tr.dataset['refW' + k]) === 1;
+      const submittedAll = true; // สำหรับ 'ทั้งหมด'
+      const submitted =
+        (k === '1' ? Number(tr.dataset['subW1']) === 1 :
+        k === '2' ? Number(tr.dataset['subW2']) === 1 :
+        k === '3' ? Number(tr.dataset['subW3']) === 1 :
+        submittedAll); // << changed: โหมดทั้งหมด = ไม่กรอง
+
+      const reflected =
+        (k === '1' ? Number(tr.dataset['refW1']) === 1 :
+        k === '2' ? Number(tr.dataset['refW2']) === 1 :
+        k === '3' ? Number(tr.dataset['refW3']) === 1 :
+        null);
 
       // อัปเดตคอลัมน์สะท้อนคิด
       const cell = tr.querySelector('[data-role="reflect-cell"]');
-      if (cell) cell.innerHTML = renderStatusHTML(reflected, cat);
+      if (cell) {
+        if (k === 'all') {
+          cell.innerHTML = renderAllStatusesHTML(tr); // << changed
+        } else {
+          cell.innerHTML = renderStatusHTML(!!reflected, cat);
+        }
+      }
 
-      // แสดงเฉพาะแถวที่ส่ง
+      // แสดง/ซ่อนตามเงื่อนไข
       tr.style.display = submitted ? '' : 'none';
       if (submitted) visible++;
 
       // ซิงค์ค่า data-workshop ให้ปุ่มทั้งสอง
       tr.querySelectorAll('[data-role="action-reflection"],[data-role="action-workshop"]').forEach(btn => {
-        btn.dataset.workshop = cat;
+        btn.dataset.workshop = (k === 'all') ? 'workshop 1' : cat; // ถ้า "ทั้งหมด" ให้ดีฟอลต์ส่งไปที่ workshop 1 หรือจะปรับภายหลังก็ได้
       });
     });
 
     // แถว "ไม่มีข้อมูลในหมวดนี้"
     const emptyRow = tbody.querySelector('[data-empty-row]');
     if (emptyRow) emptyRow.classList.toggle('hidden', visible > 0);
+
+    // << changed: รีเซ็ตลำดับตามแถวที่มองเห็น
+    renumberVisibleRows();
   };
 
   select.addEventListener('change', applyFilterAndStatus);
 
-  // init
+  // init (ค่าเริ่มต้น = "ทั้งหมด")
   applyFilterAndStatus();
 
   // จับคลิกปุ่ม action ทั้งสองแบบ (รวมไว้ตัวเดียว)
@@ -220,7 +275,7 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
     }
 
     const wsBtn = e.target.closest('[data-role="action-workshop"]');
-    if (!wsBtn) return; // << แก้จากเงื่อนไขกลับด้าน
+    if (!wsBtn) return; // << คงเดิม
     const tr = wsBtn.closest('tr[data-row]');
     const studentId = tr?.dataset?.studentId || '';
     const ws = wsBtn.dataset.workshop || select.value;
@@ -231,4 +286,3 @@ $colspan = ($showIndex ? 7 : 6) + ($showAction ? 1 : 0);
   });
 })();
 </script>
-

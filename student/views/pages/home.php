@@ -68,7 +68,7 @@ component('components/MenuCarousel.php', [
       'author' => 'Brian O\'Connor',
       'date' => 'Jan 24',
       'readTime' => '8 Mins',
-      'cats' => ['Exam','กรณีศึกษา']
+      'cats' => ['กรณีศึกษา']
     ]
     ]
 ]);
