@@ -4,9 +4,9 @@
 // ตัวเลือก: $height(px), $color(hex/rgb), $rounded(bool), $showPercent(bool)
 
 $items       = $items       ?? [
-  ['label' => 'Workshop 1', 'value' => 75],
-  ['label' => 'Workshop 2', 'value' => 60],
-  ['label' => 'Workshop 3', 'value' => 50],
+  ['label' => 'workshop 1', 'value' => 75],
+  ['label' => 'workshop 2', 'value' => 60],
+  ['label' => 'workshop 3', 'value' => 50],
 ];
 $height      = $height      ?? 16;
 $color       = $color       ?? '#4F46E5'; // สีแท่งฝั่งที่ทำแล้ว

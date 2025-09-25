@@ -74,7 +74,7 @@
     </div>
 
      <div class="flex flex-col w-full mt-4">
-       <h2 class="text-2xl font-bold mb-4">นิสิตที่ส่ง Workshop ล่าสุด</h2>
+       <h2 class="text-2xl font-bold mb-4">นิสิตที่ส่ง workshop ล่าสุด</h2>
        <?php
     component('components/submission.php', [
       'items' => [
@@ -83,63 +83,63 @@
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],
        [
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],
   [
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],[
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],[
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],[
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],[
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],[
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],[
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],[
     'submitted_at' => '03/06/2025',   // alias ก็ได้
     'student_id'   => '65209010012',
     'student_name' => 'น.ส. วิไลวรรณ ใจดี',
     'program'      => 'คอมพิวเตอร์ธุรกิจ',
-    'Workshop'     => 'Workshop 2',
+    'workshop'     => 'workshop 2',
   ],
       ]
     ]);
@@ -153,9 +153,9 @@
       <h2 class="text-2xl font-bold mb-4">Workshop</h2>
       <?php
       component('components/progressBar.php', [$items = [
-    ['label' => 'Workshop 1', 'value' => 75],
-    ['label' => 'Workshop 2', 'value' => 60],
-    ['label' => 'Workshop 3', 'value' => 50],
+    ['label' => 'workshop 1', 'value' => 75],
+    ['label' => 'workshop 2', 'value' => 60],
+    ['label' => 'workshop 3', 'value' => 50],
       ],
   'color' =>'#b36ad4ff', // ตัวเลือก
   

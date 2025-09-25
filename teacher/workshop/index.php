@@ -2,6 +2,6 @@
 // public/index.php
 require __DIR__ . '/../helpers.php';
 
-$pageHtml = render('pages/Workshop.php');
+$pageHtml = render('pages/workshop.php');
 
-echo layout('/base.php', $pageHtml, ['title'  => 'Workshop',]);
+echo layout('/base.php', $pageHtml, ['title'  => 'workshop',]);
