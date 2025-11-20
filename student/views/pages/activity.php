@@ -21,33 +21,34 @@
                        <li><a href="https://dev.kittelweb.xyz/student/resource.php?workshop=<?= $_GET['workshop'] ?>" class="text-purple-600 hover:underline">แหล่งเรียนรู้เพิ่มเติม</a></li>
                </div>
                
-               <div class="mt-4">
-                   <h2 class="text-xl font-bold">Rubrics</h2>
-                   <div class="grid grid-cols-5 gap-2 text-sm">
-                       <div class="flex flex-col items-center text-right">
-                           <span class="w-full px-1 ">1</span>
-                           ความถูกต้องของคำตอบ
-                       </div>
-   
-                       <div class="flex flex-col items-center text-right">
-                           <span class="w-full px-1 ">2</span>
-                           ความชัดเจนและความสมบูรณ์ของคำอธิบาย
-                       </div>
-   
-                       <div class="flex flex-col items-center text-right">                    
-                           <span class="w-full px-1 text-white  bg-purple-500">3</span>
-                           การใช้ภาษาและการสื่อสารที่เหมาะสม
-                       </div>
-                       <div class="flex flex-col items-center text-right">
-                           <span class="w-full px-1 ">4</span>    
-                           การเชื่อมโยงกับเนื้อหาที่เรียน
-                       </div>
-                       <div class="flex flex-col items-center text-right">
-                           <span class="w-full px-1 ">5</span>    
-                           ความคิดสร้างสรรค์และการวิเคราะห์
-                       </div>
-                   </div>
-               </div>
+                <div class="mt-4">
+                    <h2 class="text-xl font-bold">Rubrics</h2>
+                    <a href="#" class="inline-block px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-700 transition-colors mb-4">ดูคะแนน Rubric</a>
+                    <!-- <div class="grid grid-cols-5 gap-2 text-sm">
+                        <div class="flex flex-col items-center text-right">
+                            <span class="w-full px-1 ">1</span>
+                            ความถูกต้องของคำตอบ
+                        </div>
+    
+                        <div class="flex flex-col items-center text-right">
+                            <span class="w-full px-1 ">2</span>
+                            ความชัดเจนและความสมบูรณ์ของคำอธิบาย
+                        </div>
+    
+                        <div class="flex flex-col items-center text-right">                    
+                            <span class="w-full px-1 text-white  bg-purple-500">3</span>
+                            การใช้ภาษาและการสื่อสารที่เหมาะสม
+                        </div>
+                        <div class="flex flex-col items-center text-right">
+                            <span class="w-full px-1 ">4</span>    
+                            การเชื่อมโยงกับเนื้อหาที่เรียน
+                        </div>
+                        <div class="flex flex-col items-center text-right">
+                            <span class="w-full px-1 ">5</span>    
+                            ความคิดสร้างสรรค์และการวิเคราะห์
+                        </div>
+                    </div> -->
+                </div>
    
                 <div class="mt-4">
                    <a href="https://dev.kittelweb.xyz/student/workshop/reflection" class="w-full px-4 py-2 border-2 border-purple-500 text-purple-500 font-bold hover:bg-purple-500 hover:text-white rounded-lg my-4 cursor-pointer">สะท้อนคิด</a>
@@ -59,7 +60,7 @@
            
             <div class="">
                     <div class="mb-4">
-                        <span>1.อ่านและตอบคำถามดังต่อไปนี้</span>
+                        <span>1.อ่านและตอบคำถามดังต่อไปนี้</span> (Rubric)
                     </div>
                     <p class="text-sm border border-gray-200 mx-4 p-4 text-wrap">
                         ในปัจจุบัน การศึกษาไม่ได้มุ่งเน้นเพียงการสอนความรู้ในตำราเท่านั้น 
@@ -74,7 +75,7 @@
                     </p>
                     <form onsubmit="checkAnswer(event)">
                         <div class="mx-4 my-4">
-                            <label for="message" class="text-sm">1.1 บทบาทใดของครูที่เกี่ยวข้องกับการใช้เทคโนโลยี?</label>
+                            <label for="message" class="text-sm">1.1 บทบาทใดของครูที่เกี่ยวข้องกับการใช้เทคโนโลยี? (Rubric)</label>
                             <textarea id="message" class="mt-2 field-sizing-fixed w-full caret-purple-500 outline-none border border-purple-500 rounded-lg p-4"></textarea>
                         </div>
                         <div class="mb-4 flex flex-col space-y-3">

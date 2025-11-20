@@ -15,5 +15,8 @@ if ($type) {
 } else {
     $response['message'] = 'Missing user type';
 }
-
+// filepath: c:\xampp2\htdocs\MVP1-PEES-EDUKU\backend\api\get_users_by_type.php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 echo json_encode($response);

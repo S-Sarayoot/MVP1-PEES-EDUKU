@@ -6,7 +6,7 @@ component('components/banner.php', [
     'author' => 'นางสาวธัญญลักษณ์ ดิษฐ์ประสพ',
     'mediaUrl' => 'https://www.asiancollegeofteachers.com/admin_act/blog_images/Game-based%20learning%20in%20primary%20teaching.jpg'
 ]);
-$link_content = 'http://localhost/mvp1-pees-eduku/student/content';
+$link_content = 'https://dev.kittelweb.xyz/student/content';
 
 component('components/MenuCarousel.php', [
     'title' => 'สื่อการสอน',

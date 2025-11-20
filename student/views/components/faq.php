@@ -37,6 +37,19 @@
                         </div>
             </div>
 </div>
+<div class="bg-white-50 p-4 rounded-lg shadow-md mt-6">
+    <h3 class="text-xl font-semibold mb-2 text-purple-700">ติดต่อเรา</h3>
+    <div class="flex flex-col gap-2 text-gray-700">
+        <div>
+            <span class="font-medium">อีเมล:</span>
+            <a href="mailto:equityeducationku@gmail.com" class="text-blue-600 underline">equityeducationku@gmail.com</a>
+        </div>
+        <div>
+            <span class="font-medium">Line:</span>
+            <span class="text-green-600">EquityED_KU</span>
+        </div>
+    </div>
+</div>
 <script>
         function toggleFAQ(id) {
         const content = document.getElementById(`faq-${id}`);

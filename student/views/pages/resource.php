@@ -3,7 +3,7 @@
   <div class="md:col-span-2 space-y-4">
     <h2 class="text-2xl font-bold mb-4">ทรัพยากรการเรียนรู้</h2>
     <?php
-      $link_content = "http://localhost/mvp1-pees-eduku/student/content";
+      $link_content = "https://dev.kittelweb.xyz/student/content";
     component('components/resource-browser.php', [
       'categories' => ['ทั้งหมด','แผนการจัดการเรียนรู้','วิดีโอ', 'Script','Story board','กรณีศึกษา'],
       'active' => 'ทั้งหมด',

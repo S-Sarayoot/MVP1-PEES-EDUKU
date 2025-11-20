@@ -36,7 +36,7 @@ class User{
 	public $faculty_id;
 	public $major_id;
 
-
+ 
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
