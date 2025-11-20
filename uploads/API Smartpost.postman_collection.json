@@ -1,0 +1,1032 @@
+{
+	"info": {
+		"_postman_id": "d249e3f6-6588-4520-826f-ab8686e17167",
+		"name": "API Smartpost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29597613"
+	},
+	"item": [
+		{
+			"name": "addOrder",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"barcode\": \"JB069418848TH\",\r\n\"shipperName\": \"test\",\r\n\"shipperAddress\": \"182 ซอยจรัญสนิทวงศ์\",\r\n\"shipperSubdistrict\": \"บางพลัด\",\r\n\"shipperDistrict\": \"บางพลัด\",\r\n\"shipperProvince\": \"กรุงเทพ\",\r\n\"shipperZipcode\": \"10700\",\r\n\"shipperEmail\": \"admin@admin.com\",\r\n\"shipperMobile\": \"0888888888\",\r\n\"cusName\": \"test_receive\",\r\n\"cusAdd\": \"2454\",\r\n\"cusSub\": \"บางอ้อ\",\r\n\"cusAmp\": \"บางพลัด\",\r\n\"cusProv\": \"กรุงเทพ\",\r\n\"cusZipcode\": \"10700\",\r\n\"cusTel\": \"0999999999\",\r\n\"productPrice\": \"0\",\r\n\"productInbox\": \"ของแห้ง\",\r\n\"productWeight\": \"3600\",\r\n\"cusEmail\" : \"Sarayoot.s@ss.com\",\r\n\"items\" : \"{'name' : 'เสอผ้ ื้ าไหม','type' : 'ลายไทย','size' : 'ขนาดกลาง (M)','qty' : '2','price' : '1550','color' : 'สฟ้ ี า','weight' : '300'}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/addOrder/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"addOrder",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addOrderitem local",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"shipperName\": \"SuphapSukcharoen\",\r\n    \"shipperAddress\": \"59/16หมู่9ต.บางไผ่อ.เมืองจ.ฉะเชิงเทรา24000\",\r\n    \"shipperSubdistrict\": \"ตำบลบางไผ่\",\r\n    \"shipperDistrict\": \"อำเภอเมืองฉะเชิงเทรา\",\r\n    \"shipperProvince\": \"กรุงเทพ\",\r\n    \"shipperZipcode\": \"24000\",\r\n    \"shipperEmail\": \"-\",\r\n    \"shipperMobile\": \"0652362671\",\r\n    \"cusName\": \"test 2025021201aaaaab710\",\r\n    \"cusAdd\": \"改收方地址aaaa\",\r\n    \"cusSub\": \"Dki Jakarta\",\r\n    \"cusAmp\": \"Tha Sala\",\r\n    \"cusProv\": \"Jawa\",\r\n    \"cusZipcode\": \"10700\",\r\n    \"cusTel\": \"0652362672\",\r\n    \"cusEmail\": \"-\",\r\n    \"productPrice\": \"0\",\r\n    \"productInbox\": \"KEXMY1000000367468\",\r\n    \"productWeight\": \"20\",    \r\n    \"insuranceRatePrice\": \"0\",\r\n    \"referenceId\": \"KEXMY1000000367468\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost/api/webservice/addItem",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"webservice",
+						"addItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addOrderitem",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"shipperName\": \"The Everest\",\r\n    \"shipperAddress\": \"1 ซอยนาคนิวาส17\",\r\n    \"shipperSubdistrict\": \"ลาดพร้าว\",\r\n    \"shipperDistrict\": \"ลาดพร้าว\",\r\n    \"shipperProvince\": \"กรุงเทพมหานคร\",\r\n    \"shipperZipcode\": \"10230\",\r\n    \"shipperEmail\": \"\",\r\n    \"shipperMobile\": \"0994452455\",\r\n    \"cusName\": \"นางสาว ภรณ์ทิพย์ หลอมทอง\",\r\n    \"cusAdd\": \"704/9 ม 4\",\r\n    \"cusSub\": \"เทพารักษ์\",\r\n    \"cusAmp\": \"เมืองสมุทรปราการ\",\r\n    \"cusProv\": \"สมุทรปราการ\",\r\n    \"cusZipcode\": \"10270\",\r\n    \"cusTel\": \"0626391693\",\r\n    \"cusEmail\": \"\",\r\n    \"productPrice\": 0,\r\n    \"productInbox\": \"TEST001\",\r\n    \"productWeight\": 100,\r\n    \"insuranceRatePrice\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/addItem",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"addItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recordItem test",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"barcode\" : \"JB164382631TH\",\r\n    \"shipperName\": \"test\",\r\n    \"shipperAddress\": \"182 ซอยจรัญสนิทวงศ์\",\r\n    \"shipperSubdistrict\": \"บางพลัด\",\r\n    \"shipperDistrict\": \"บางพลัด\",\r\n    \"shipperProvince\": \"กรุงเทพ\",\r\n    \"shipperZipcode\": \"10700\",\r\n    \"shipperEmail\": \"admin@admin.com\",\r\n    \"shipperMobile\": \"0888888888\",\r\n    \"cusName\": \"test_receive\",\r\n    \"cusAdd\": \"2454\",\r\n    \"cusSub\": \"บางอ้อ\",\r\n    \"cusAmp\": \"บางพลัด\",\r\n    \"cusProv\": \"กรุงเทพ\",\r\n    \"cusZipcode\": \"10700\",\r\n    \"cusTel\": \"0999999999\",\r\n    \"productPrice\": \"0\",\r\n    \"productInbox\": \"ของแห้ง\",\r\n    \"productWeight\": \"150\",\r\n    \"cusEmail\" : \"Sarayoot.s@ss.com\",\r\n    \"insuranceRatePrice\" : \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/webservice/recordItem",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"webservice",
+						"recordItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST-addOrder",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"barcode\": \"EB798467258TH\",\r\n\"shipperName\": \"test\",\r\n\"shipperAddress\": \"182 ซอยจรัญสนิทวงศ์\",\r\n\"shipperSubdistrict\": \"บางพลัด\",\r\n\"shipperDistrict\": \"บางพลัด\",\r\n\"shipperProvince\": \"กรุงเทพ\",\r\n\"shipperZipcode\": \"10700\",\r\n\"shipperEmail\": \"admin@admin.com\",\r\n\"shipperMobile\": \"0888888888\",\r\n\"cusName\": \"test_receive\",\r\n\"cusAdd\": \"2454\",\r\n\"cusSub\": \"บางอ้อ\",\r\n\"cusAmp\": \"บางพลัด\",\r\n\"cusProv\": \"กรุงเทพ\",\r\n\"cusZipcode\": \"10700\",\r\n\"cusTel\": \"0999999999\",\r\n\"productPrice\": \"0\",\r\n\"productInbox\": \"ของแห้ง\",\r\n\"productWeight\": \"3600\",\r\n\"cusEmail\" : \"Sarayoot.s@ss.com\",\r\n\"items\" : \"{'name' : 'เสอผ้ ื้ าไหม','type' : 'ลายไทย','size' : 'ขนาดกลาง (M)','qty' : '2','price' : '1550','color' : 'สฟ้ ี า','weight' : '300'}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/test/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"test",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "importTh",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/importTh/?barcode=JB164518878TH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"importTh",
+						""
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "JB164518878TH"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "importTh",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"barcode\": \"EB798467289TH\",\r\n\"shipperName\": \"test\",\r\n\"shipperAddress\": \"182 ซอยจรัญสนิทวงศ์\",\r\n\"shipperSubdistrict\": \"บางพลัด\",\r\n\"shipperDistrict\": \"บางพลัด\",\r\n\"shipperProvince\": \"กรุงเทพ\",\r\n\"shipperZipcode\": \"10700\",\r\n\"shipperEmail\": \"admin@admin.com\",\r\n\"shipperMobile\": \"0888888888\",\r\n\"cusName\": \"test_receive\",\r\n\"cusAdd\": \"2454\",\r\n\"cusSub\": \"บางอ้อ\",\r\n\"cusAmp\": \"บางพลัด\",\r\n\"cusProv\": \"กรุงเทพ\",\r\n\"cusZipcode\": \"10700\",\r\n\"cusTel\": \"0999999999\",\r\n\"productPrice\": \"0\",\r\n\"productInbox\": \"ของแห้ง\",\r\n\"productWeight\": \"3600\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.getsmartpost.com/webservice/importTh/?barcode=EB798467289TH",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getsmartpost",
+								"com"
+							],
+							"path": [
+								"webservice",
+								"importTh",
+								""
+							],
+							"query": [
+								{
+									"key": "barcode",
+									"value": "EB798467289TH"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 15:58:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.25"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Basic realm=\"My Realm\", charset=\"UTF-8\""
+						},
+						{
+							"key": "Vary",
+							"value": "User-Agent"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "getOrder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/getOrder/?barcode=JB345650769TH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"getOrder",
+						""
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "JB345650769TH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getHistory",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/getHistory?barcode=JB345736297TH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"getHistory"
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "JB345736297TH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelOrder",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/cancelOrder/?barcode=EB798467258TH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"cancelOrder",
+						""
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "EB798467258TH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelItem local",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost/api/webservice/cancelItem?barcode=JB313571849TH",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"webservice",
+						"cancelItem"
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "JB313571849TH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelItem",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "live-test-004",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "live-test-004",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/cancelItem?barcode={{barcode}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"cancelItem"
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "{{barcode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteItem test",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/webservice/deleteItem?barcode=JB058726689TH",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"webservice",
+						"deleteItem"
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "JB058726689TH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelTh",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/cancelTh?barcode=JB164372841TH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"cancelTh"
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "JB164372841TH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stickerLabel",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "d8AdqNyP",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kmmt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"barcode\":\"JB295780171TH\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/webservice/stickerLabel",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"webservice",
+						"stickerLabel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBarcode local",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/webservice/getBarcode.php?type=NON-COD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"webservice",
+						"getBarcode.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "NON-COD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBarcode",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.getsmartpost.com/webservice/getBarcode?type=COD",
+					"protocol": "http",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"getBarcode"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "COD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPrice local",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/webservice/getPrice.php?productWeight=200&cusZipcode=83000&productPrice=500&insurancePrice=2001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"webservice",
+						"getPrice.php"
+					],
+					"query": [
+						{
+							"key": "productWeight",
+							"value": "200"
+						},
+						{
+							"key": "cusZipcode",
+							"value": "83000"
+						},
+						{
+							"key": "productPrice",
+							"value": "500"
+						},
+						{
+							"key": "insurancePrice",
+							"value": "2001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPrice",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "81818",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/webservice/getPrice.php?productWeight=200&cusZipcode=83000&productPrice=500&insurancePrice=2001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"webservice",
+						"getPrice.php"
+					],
+					"query": [
+						{
+							"key": "productWeight",
+							"value": "200"
+						},
+						{
+							"key": "cusZipcode",
+							"value": "83000"
+						},
+						{
+							"key": "productPrice",
+							"value": "500"
+						},
+						{
+							"key": "insurancePrice",
+							"value": "2001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENDPOINT PRODUCTION",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"shippingCost\":{\"totalAmount\":21,\"shippingCost\":21,\"codAmount\":0,\"codFee\":0,\"codVat\":0,\"specialAreaCost\":0,\"insuranceFee\":0},\"trackingNumber\":\"JB345793229TH\",\"expressName\":\"THAI_POST\",\"weightGram\":600,\"stage\":{\"barcode\":\"JB345793229TH\",\"weight\":1002,\"cod\":\"no\",\"status\":\"4\",\"statusDescription\":\"นำจ่ายถึงผู้รับแล้ว\",\"statusDate\":\"12/09/2025 10:58:01\",\"stationPostcode\":\"10270\",\"station\":\"สมุทรปราการ/สมุทรปราการ\",\"receiverName\":\"Pornsuda/ผู้รับรับเอง\",\"latitude\":\"13.611379\",\"longtitude\":\"100.594374\",\"signature\":\"https://trackimage.thailandpost.co.th/f/signature/QDkzMjI5YjVzMGx1VDMz/QGI1c0pCMGx1VDMx/QGI1czBsVEh1VDM0/QGI1czBsdTM0NTdUMzI=\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/webservice/endPoint",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"webservice",
+						"endPoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENDPOINT TEST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shippingCost\":{\r\n        \"totalAmount\":20,\r\n        \"shippingCost\":20,\r\n        \"codAmount\":0,\r\n        \"codFee\":0,\r\n        \"codVat\":0,\r\n        \"specialAreaCost\":0\r\n    },\r\n    \"trackingNumber\":\"JB220601755TH\",\r\n    \"expressName\":\"THAI_POST\",\r\n    \"weightGram\":700,\r\n    \"stage\":{\r\n        \"barcode\":\"JB220601755TH\",\r\n        \"weight\":13000,\r\n        \"cod\":\"no\",\r\n        \"status\":\"2\",\r\n        \"statusDescription\":\"ปณ.ทดสอบ1\",\r\n        \"statusDate\":\"02/04/2025 13:35:00\",\r\n        \"stationPostcode\":\"10110\",\r\n        \"station\":\"พระโขนง/กรุงเทพฯ\",\r\n        \"receiverName\":\"\",\r\n        \"latitude\":\"13.714582\",\r\n        \"longtitude\":\"100.592356\",\r\n        \"signature\":\"\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url_api}}/webservice/live-test",
+					"host": [
+						"{{local_url_api}}"
+					],
+					"path": [
+						"webservice",
+						"live-test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpointThailandpost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"shippingCost\":{\"totalAmount\":17,\"shippingCost\":17,\"codAmount\":0,\"codFee\":0,\"codVat\":0,\"specialAreaCost\":0,\"insuranceFee\":0},\"trackingNumber\":\"JB267344480TH\",\"expressName\":\"THAI_POST\",\"weightGram\":20,\"stage\":{\"barcode\":\"JB267344480TH\",\"weight\":16,\"cod\":\"no\",\"status\":\"2\",\"statusDescription\":\"ปณ.ต้นทางรับฝากแล้ว\",\"statusDate\":\"23/05/2025 13:38:00\",\"stationPostcode\":\"09169\",\"station\":\"ปณร.ปากเกร็ด 202 (ปตท.ปากเกร็ด 15)/นนทบุรี\",\"receiverName\":\"\",\"latitude\":\"0\",\"longtitude\":\"0\",\"signature\":\"\"}}"
+				},
+				"url": {
+					"raw": "https://api.getsmartpost.com/webservice/endpointThailandpost",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getsmartpost",
+						"com"
+					],
+					"path": [
+						"webservice",
+						"endpointThailandpost"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_url_api",
+			"value": "localhost/api",
+			"type": "default"
+		},
+		{
+			"key": "url_api",
+			"value": "api.getsmartpost.com",
+			"type": "string"
+		}
+	]
+}

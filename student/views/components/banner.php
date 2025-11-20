@@ -1,12 +1,12 @@
 <div class="flex w-full   rounded-lg overflow-hidden shadow-lg">
     <!-- Left Content -->
-    <div class="w-1/2 bg-gray-200 p-6 flex flex-col justify-center">
+    <div class="w-1/3 bg-gray-200 p-6 flex flex-col justify-center">
         <h2 class="text-2xl font-bold mb-2"><?= htmlspecialchars($title) ?></h2>
         <p class="text-gray-700"><?= htmlspecialchars($subtitle) ?></p>
     </div>
 
     <!-- Right Media -->
-    <div class="relative w-1/2 h-56 bg-black overflow-hidden">
+    <div class="relative w-full h-56 bg-black overflow-hidden">
         <div id="banner-media-<?= htmlspecialchars($id) ?>" class="w-full h-full"></div>
 
         <!-- Play Button Overlay -->

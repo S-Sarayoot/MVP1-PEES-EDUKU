@@ -1,5 +1,9 @@
 const BASE_LINK = "https://dev.kittelweb.xyz";
 
+
+
+
+
 function createSideBar(data) {
   console.log("Creating sidebar with data:", data);
 
@@ -44,7 +48,7 @@ function checkLogin(event) {
     ];
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
-   linkPage("/admin/dashboard_admin");
+   linkPage("/admin/");
   }
   else if (username === "teacher" && password === "1234") {
     sideBarMenu = [
@@ -132,8 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function toggleModal(show) {
-    const modal = document.getElementById('uploadModal');
+function toggleModal(show, modalId ) {
+    const modal = document.getElementById(modalId);
     if (!modal) return;
 
     if (show) {
@@ -142,6 +146,9 @@ function toggleModal(show) {
         modal.classList.add('hidden');
     }
 }
+
+
+
 function checkAnswer(event) {
   event.preventDefault();
   let box = document.getElementById("score");
@@ -165,6 +172,31 @@ function checkAnswer(event) {
 }
 
 
+// logout
+function logout() {
+    Swal.fire({
+      title: 'คุณต้องการออกจากระบบหรือไม่?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'ออกจากระบบ',
+      cancelButtonText: 'ยกเลิก',
+      confirmButtonColor: '#7c3aed',
+      cancelButtonColor: '#aaa'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("sideMenu");
+        window.location.href = "../logout.php";
+      }
+    });
+}
+
+// เชื่อมปุ่ม logoutBtn กับฟังก์ชัน logout
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.onclick = logout;
+  }
+});
 
 // teacher
 // const data = [

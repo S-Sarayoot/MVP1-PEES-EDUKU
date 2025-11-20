@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+    require_once 'base.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="../global.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="../global.js"></script>
-    <title>EDU KU - Storage</title>
+
+<title>EquityLearnKU - คลังทรัพยากร</title>
 </head>
 
 <body class="bg-gray-100">
@@ -21,8 +12,7 @@
         <?php include_once '../component/sidebar.php' ?>
 
         <!-- Main Content -->
-        <div
-            class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
+        <div class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
             <div class="flex flex-col">
                 <div class="flex justify-between mb-4 md:mx-4">
                     <h1 class="text-xl text-[#433878]">คลังทรัพยากร</h1>
@@ -45,7 +35,7 @@
                         <div class="flex p-2 rounded-lg border-1 border-gray-100 hover:border-gray-300 transition">
                             <img src="../image/image_icon.png" alt="image" class="size-14">
                             <div class="mx-6">
-                                <p class="text-gray-500 font-semibold my-1">Image</p>
+                                <p class="text-gray-500 font-semibold my-1">รูปภาพ</p>
                                 <p class="text-gray-500 text-sm">17 files</p>
                             </div>
                         </div>
@@ -54,7 +44,7 @@
                                 <img src="../image/play_icon.png" alt="image" class="h-6 w-6">
                             </div>
                             <div class="mx-6">
-                                <p class="text-gray-500 font-semibold my-1">Videos</p>
+                                <p class="text-gray-500 font-semibold my-1">วิดีโอ</p>
                                 <p class="text-gray-500 text-sm">47 files</p>
                             </div>
                         </div>
@@ -74,15 +64,7 @@
                                 <p class="text-gray-500 text-sm">47 files</p>
                             </div>
                         </div>
-                        <div class="flex p-2 rounded-lg border-1 border-gray-100 hover:border-gray-300 transition">
-                            <div class="bg-[#FFE0F9] p-4 rounded-xl">
-                                <img src="../image/script_icon.png" alt="image" class="h-6 w-6">
-                            </div>
-                            <div class="mx-6">
-                                <p class="text-gray-500 font-semibold my-1">เกณฑ์การประเมิณ</p>
-                                <p class="text-gray-500 text-sm">47 files</p>
-                            </div>
-                        </div>
+                       
                     </div>
                     <!--  -->
                 </div>
@@ -104,105 +86,78 @@
                             <p class="py-2 px-4 w-1/5">Date</p>
                             <p class="py-2 text-center w-1/5">Action</p>
                         </div>
-
+                    
                         <!-- td -->
-                        <div class="max-h-82 md:max-h-42 overflow-y-auto">
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">tiktok video
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Videos</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Image</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Image</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Image</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Image</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Image</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Image</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Image</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
-                            <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
-                                <p class="py-2 px-4 w-2/5 break-all">example_image.jpg
-                                </p>
-                                <p class="py-2 px-4 w-1/5">Image</p>
-                                <p class="py-2 px-4 w-1/5">2023-10-01</p>
-                                <div class="flex flex-col md:flex-row justify-center w-1/5">
-                                    <button class="text-blue-500 hover:underline">Edit</button>
-                                    <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                </div>
-                            </div>
+                        <div class="max-h-400 md:max-h-200 overflow-y-auto" id="media-table">
+                            <!-- ข้อมูลจะถูกเติมด้วย JS -->
                         </div>
-                        <!--  -->
                     </div>
+                    <script>
+                        fetch('../backend/api/get_teaching_media.php')
+                            .then(res => res.json())
+                            .then(data => {
+                                const table = document.getElementById('media-table');
+                                table.innerHTML = '';
+                                if (data.success && Array.isArray(data.data)) {
+                                    data.data.forEach(item => {
+                                        table.innerHTML += `
+                                        <div class="flex text-left text-sm text-gray-500 border-b border-gray-200 hover:bg-gray-50">
+                                            <div class="py-2 px-4 w-2/5 flex items-center gap-3">
+                                                <img src="${item.file_name ? '../uploads/' + item.file_name : '../image/no-thumbnail.png'}" alt="thumbnail" class="w-10 h-10 object-cover rounded" />
+                                                <span class="break-all">${item.file_name || '-'}</span>
+                                            </div>
+                                            <p class="py-2 px-4 w-1/5">${item.category || '-'}</p>
+                                            <p class="py-2 px-4 w-1/5">${item.uploaded_at ? item.uploaded_at.substring(0,10) : '-'}</p>
+                                            <div class="flex flex-col md:flex-row justify-center w-1/5">
+                                                <button class="text-blue-500 hover:underline">Edit</button>
+                                                <button class="text-red-500 hover:underline md:ml-2" onclick="deleteMedia(${item.id})">Delete</button>
+                                            </div>
+                                        </div>
+                                        `;
+                                    });
+                                } else {
+                                    table.innerHTML = '<div class="p-4 text-gray-400">ไม่พบข้อมูล</div>';
+                                }
+                            });
+                        </script>
                     <!--  -->
                 </div>
             </div>
+        </div>
+    </div>
 </body>
 
 </html>
+
+<script>
+function deleteMedia(id) {
+    Swal.fire({
+        title: 'ยืนยันการลบ?',
+        text: 'คุณต้องการลบรายการนี้ใช่หรือไม่',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#EF4444',
+        cancelButtonColor: '#6B7280',
+        confirmButtonText: 'ลบ',
+        cancelButtonText: 'ยกเลิก'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch('../backend/api/delete_teaching_media.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    Swal.fire('ลบแล้ว!', 'รายการถูกลบเรียบร้อย', 'success');
+                    // รีโหลดข้อมูลใหม่
+                    location.reload();
+                } else {
+                    Swal.fire('ผิดพลาด', data.message || 'ไม่สามารถลบได้', 'error');
+                }
+            });
+        }
+    });
+}
+</script>

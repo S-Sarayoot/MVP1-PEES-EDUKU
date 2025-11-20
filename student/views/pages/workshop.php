@@ -2,24 +2,24 @@
 component('components/workshop-list.php', [
   'title' => 'Workshop',
   'instruction_title' => 'คำชี้แจง',
-  'instruction_text'  => 'คำชี้แจง workshop รวม…',
+  'instruction_text'  => 'Workshop นี้จะช่วยให้คุณเข้าใจหลักการของความเสมอภาคและสามารถสร้างสภาพแวดล้อมการทำงาน/สังคมที่เปิดกว้างและเคารพความแตกต่างได้อย่างแท้จริง',
   'workshops' => [
     [
       'id'  => 1,
       'name' => 'Workshop 1',
-      'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum? ',
+      'desc' => 'Workshop นี้มุ่งเน้นการถ่ายทอดความรู้ ทักษะ และเครื่องมือที่จำเป็นผ่านการลงมือปฏิบัติจริง เพื่อให้ผู้เข้าร่วมสามารถนำไปประยุกต์ใช้และสร้างผลลัพธ์ที่เป็นรูปธรรมได้ทันที',
       'status'  => 'close', // active, upcoming, completed
     ],
     [
       'id'  => 2,
       'name' => 'Workshop 2',
-      'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et corrupti similique nemo ratione earum?',
+      'desc' => 'ร่วมเรียนรู้และฝึกปฏิบัติจริงใน Workshop นี้ เพื่อพัฒนาทักษะเฉพาะด้าน และนำไปใช้แก้ไขปัญหา/สร้างโอกาสทางธุรกิจได้อย่างมีประสิทธิภาพ',
       'status'  => 'active', // active, upcoming, completed
     ],
     [
       'id'  => 3,
       'name' => 'Workshop 3',
-      'desc' => 'ระบบยังไม่เปิดให้ทำในขณะนี้',
+      'desc' => 'Workshop เชิงโต้ตอบนี้จะมอบมุมมองใหม่ๆ และเครื่องมือที่ทันสมัย เพื่อให้คุณสามารถปรับเปลี่ยนแนวคิดและยกระดับการทำงานในด้าน ให้ก้าวหน้ายิ่งขึ้น',
       'status'  => 'upcoming', // active, upcoming, completed
     ],
   ],

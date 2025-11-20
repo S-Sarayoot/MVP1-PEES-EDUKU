@@ -31,7 +31,7 @@ switch ($data['status']) {
             <h3 class="font-bold text-xl text-center mb-2">Workshop <?= htmlspecialchars($data['id']) ?></h3>
             <h3 class="font-semibold text-lg mb-2">สะท้อนคิด</h3>
         <?php if ( $isActive = ($data['status'] === 'waiting')): ?>
-            <textarea class="min-h-[10rem] border-2 border-gray-100 p-2 text-gray-600 mb-3 overflow-auto resize-none">d<?= htmlspecialchars($data['reflect']) ?></textarea>
+            <textarea class="min-h-[10rem] border-2 border-gray-100 p-2 text-gray-600 mb-3 overflow-auto resize-none"><?= htmlspecialchars($data['reflect']) ?></textarea>
         <?php endif; ?>
             
         <?php if ( $isActive = ($data['status'] === 'reviewed')): ?>

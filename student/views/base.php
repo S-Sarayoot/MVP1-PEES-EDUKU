@@ -32,9 +32,13 @@ function path_external($type,$file) {
     <link href="<?php echo path_external('', 'global.css') ?>" rel="stylesheet">
     <script src="<?php echo path_external('', 'global.js') ?>"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <title>EDU KU - <?= htmlspecialchars($title ?? 'Untitled') ?></title>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js" crossorigin="anonymous"></script>
+
+
+  <title>EquityLearnKU - <?= htmlspecialchars($title ?? 'Untitled') ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   </head>
