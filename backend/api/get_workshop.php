@@ -54,7 +54,7 @@ try {
 
     // Ensure table exists (same minimal schema as create_workshop.php)
     $db->exec(
-        "CREATE TABLE IF NOT EXISTS workshops (\n" .
+        "CREATE TABLE IF NOT EXISTS elk_workshops (\n" .
         "  id INT NOT NULL AUTO_INCREMENT,\n" .
         "  open_time DATETIME NOT NULL,\n" .
         "  close_time DATETIME NOT NULL,\n" .
@@ -69,7 +69,7 @@ try {
         ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"
     );
 
-    $stmt = $db->prepare('SELECT id, open_time, close_time, objective, instruction, questions_json, created_by, updated_by, created_at, updated_at FROM workshops WHERE id = :id LIMIT 1');
+    $stmt = $db->prepare('SELECT id, open_time, close_time, objective, instruction, questions_json, created_by, updated_by, created_at, updated_at FROM elk_workshops WHERE id = :id LIMIT 1');
     $stmt->execute([':id' => $id]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 

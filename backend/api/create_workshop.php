@@ -112,7 +112,7 @@ try {
 
     // Minimal schema: store questions as JSON for now
     $db->exec(
-        "CREATE TABLE IF NOT EXISTS workshops (\n" .
+        "CREATE TABLE IF NOT EXISTS elk_workshops (\n" .
         "  id INT NOT NULL AUTO_INCREMENT,\n" .
         "  open_time DATETIME NOT NULL,\n" .
         "  close_time DATETIME NOT NULL,\n" .
@@ -128,7 +128,7 @@ try {
     );
 
     $stmt = $db->prepare(
-        "INSERT INTO workshops (id, open_time, close_time, objective, instruction, questions_json, created_by, updated_by)\n" .
+        "INSERT INTO elk_workshops (id, open_time, close_time, objective, instruction, questions_json, created_by, updated_by)\n" .
         "VALUES (:id, :open_time, :close_time, :objective, :instruction, :questions_json, :created_by, :updated_by)\n" .
         "ON DUPLICATE KEY UPDATE\n" .
         "  open_time = VALUES(open_time),\n" .
