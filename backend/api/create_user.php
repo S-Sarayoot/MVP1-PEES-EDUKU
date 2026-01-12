@@ -5,6 +5,18 @@ require_once __DIR__ . '/../models/User.php';
 
 $response = ['success' => false, 'message' => ''];
 
+function ensureColumnExists(PDO $db, string $table, string $column, string $definition) {
+    $stmt = $db->prepare(
+        "SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS \n" .
+        "WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = :t AND COLUMN_NAME = :c LIMIT 1"
+    );
+    $stmt->execute([':t' => $table, ':c' => $column]);
+    $exists = (bool)$stmt->fetchColumn();
+    if (!$exists) {
+        $db->exec("ALTER TABLE `{$table}` ADD COLUMN `{$column}` {$definition}");
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // กำหนดตัวแปรทั้งหมดที่ฟังก์ชัน createUser ใช้
     $user_code         = $_POST['user_code']        ?? null;
@@ -25,9 +37,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $faculty_id        = $_POST['faculty_id']       ?? null;
     $major_id          = $_POST['major_id']         ?? null;
 
+    $academic_year     = $_POST['academic_year']    ?? null;
+    $academic_term     = $_POST['academic_term']    ?? null;
+
     $database = new Database();
     $db = $database->getConnection();
     $userModel = new User($db);
+
+    // Ensure new columns exist (student academic fields)
+    ensureColumnExists($db, 'elk_user', 'academic_year', 'VARCHAR(10) NULL');
+    ensureColumnExists($db, 'elk_user', 'academic_term', 'VARCHAR(10) NULL');
 
     // กำหนดค่า property ใน object
     $userModel->user_code         = $user_code;
@@ -47,6 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userModel->status            = $status;
     $userModel->faculty_id        = $faculty_id;
     $userModel->major_id          = $major_id;
+
+    $userModel->academic_year     = $academic_year;
+    $userModel->academic_term     = $academic_term;
 
     $result = $userModel->createUser();
 

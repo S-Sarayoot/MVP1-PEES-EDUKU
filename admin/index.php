@@ -165,9 +165,9 @@
                         <h1 class="text-xl font-semibold ps-2 xl:ps-3  antialiased text-[#433878]">
                             ผู้ใช้งาน
                         </h1>
-                        <button type="button" onclick="toggleModal(true)"
+                        <a href="users_admin" type="button" 
                             class="text-base bg-green-100 text-green-800 px-4 py-1 rounded-lg cursor-pointer">+
-                            เพิ่มผู้ใช้งาน</button>
+                            จัดการผู้ใช้งาน</a>
                     </div>
                     <div class="mx-4 my-auto">
                         <div class="flex flex-col lg:flex-row items-center w-full h-full max-sm:overflow-x-auto">

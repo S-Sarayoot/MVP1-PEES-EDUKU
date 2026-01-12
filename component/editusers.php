@@ -11,7 +11,7 @@
             <input type="hidden" name="user_id" id="user_id">
             <div class="grid grid-cols-1 gap-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
+                    <div id="editUsernameGroup">
                         <label for="edit_username" class="block font-semibold mb-2">Username:</label>
                         <input type="email" name="username" id="edit_username" class="border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
@@ -20,6 +20,10 @@
                         <input type="password" name="password" id="edit_password" class="border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <small class="text-gray-500">* ถ้าไม่ต้องการเปลี่ยนรหัสผ่าน ให้เว้นว่างไว้</small>
                     </div>
+                </div>
+                <div>
+                    <label for="edit_user_name" class="block font-semibold mb-2">ชื่อ - นามสกุล:</label>
+                    <input type="text" name="user_name" id="edit_user_name" class="border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                 </div>
                 <div>
                     <label for="edit_user_type" class="block font-semibold mb-2">ประเภทผู้ใช้งาน:</label>
@@ -40,6 +44,28 @@
                         autocomplete="off"
                         oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                     >
+                </div>
+
+                <div id="editAcademicGroup" class="grid grid-cols-1 md:grid-cols-2 gap-4 hidden">
+                    <div>
+                        <label for="edit_academic_year" class="block font-semibold mb-2">ปีการศึกษา:</label>
+                        <input type="text" name="academic_year" id="edit_academic_year"
+                            class="border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="เช่น 2568"
+                            inputmode="numeric"
+                            maxlength="4"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </div>
+                    <div>
+                        <label for="edit_academic_term" class="block font-semibold mb-2">ภาคการศึกษา:</label>
+                        <select name="academic_term" id="edit_academic_term" class="border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-1 focus:ring-purple-500 w-full">
+                            <option disabled selected value="">-- เลือกภาค --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -111,18 +137,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('edit_user_type').addEventListener('change', function() {
         const studentCodeGroup = document.getElementById('editStudentCodeGroup');
+        const academicGroup = document.getElementById('editAcademicGroup');
+        const usernameGroup = document.getElementById('editUsernameGroup');
+        const usernameInput = document.getElementById('edit_username');
+        const userCodeInput = document.getElementById('edit_user_code');
+        const academicYear = document.getElementById('edit_academic_year');
+        const academicTerm = document.getElementById('edit_academic_term');
         if (this.value === 'student') {
             studentCodeGroup.classList.remove('hidden');
+            academicGroup.classList.remove('hidden');
+            if (usernameGroup) usernameGroup.classList.add('hidden');
+            if (usernameInput) { usernameInput.required = false; usernameInput.value = ''; usernameInput.disabled = true; }
+            if (userCodeInput) userCodeInput.required = true;
+            if (academicYear) academicYear.required = true;
+            if (academicTerm) academicTerm.required = true;
         } else {
             studentCodeGroup.classList.add('hidden');
             document.getElementById('edit_user_code').value = '';
+            academicGroup.classList.add('hidden');
+            if (usernameGroup) usernameGroup.classList.remove('hidden');
+            if (usernameInput) { usernameInput.required = true; usernameInput.disabled = false; }
+            if (userCodeInput) userCodeInput.required = false;
+            if (academicYear) { academicYear.required = false; academicYear.value = ''; }
+            if (academicTerm) { academicTerm.required = false; academicTerm.value = ''; }
         }
     });
+
+    // (student) username is derived from student code on submit
 
     // ส่งข้อมูลแก้ไขไปยัง API
     document.getElementById('editUserForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const formData = new FormData(this);
+
+        // ถ้าเป็น student ให้ใช้รหัสนิสิตแทน username
+        const userType = formData.get('user_type');
+        if (userType === 'student') {
+            const code = (formData.get('user_code') || '').toString().trim();
+            formData.set('username', code);
+        }
 
         fetch('../backend/api/update_user.php', {
             method: 'POST',

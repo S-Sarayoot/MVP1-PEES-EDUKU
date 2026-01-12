@@ -140,11 +140,12 @@
                 if (data.success && Array.isArray(data.data)) {
                     data.data.forEach((item, i) => {
                         if(type === 'student') {
+                            const displayUsername = item.user_code || item.username || '-';
                             table.innerHTML += `
                             <tr class="bg-white">
                                 <td class="py-2 px-4">${i+1}</td>
                                 <td class="py-2 px-4 text-blue-500">${item.user_code || '-'}</td>
-                                <td class="py-2 px-4">${item.username || '-'}</td>
+                                <td class="py-2 px-4">${displayUsername}</td>
                                 <td class="py-2 px-4">${item.user_name || '-'}</td>
                                 <td class="py-2 px-4">${item.major_name || '-'}</td>
                                 <td class="py-2 px-4">${item.faculty_name || '-'}</td>
@@ -226,10 +227,40 @@
         document.getElementById('edit_faculty_id').value = user.faculty_id || '';
         document.getElementById('edit_major_id').value = user.major_id || '';
         document.getElementById('edit_user_code').value = user.user_code || '';
+        const editUserName = document.getElementById('edit_user_name');
+        if (editUserName) editUserName.value = user.user_name || '';
+        const editAcademicYear = document.getElementById('edit_academic_year');
+        if (editAcademicYear) editAcademicYear.value = user.academic_year || '';
+        const editAcademicTerm = document.getElementById('edit_academic_term');
+        if (editAcademicTerm) editAcademicTerm.value = user.academic_term || '';
         if (user.user_type === 'student') {
             document.getElementById('editStudentCodeGroup').classList.remove('hidden');
+            const editAcademicGroup = document.getElementById('editAcademicGroup');
+            if (editAcademicGroup) editAcademicGroup.classList.remove('hidden');
+
+            const editUsernameGroup = document.getElementById('editUsernameGroup');
+            if (editUsernameGroup) editUsernameGroup.classList.add('hidden');
+            const editUsername = document.getElementById('edit_username');
+            if (editUsername) { editUsername.required = false; editUsername.disabled = true; editUsername.value = ''; }
+
+            const editUserCode = document.getElementById('edit_user_code');
+            if (editUserCode) editUserCode.required = true;
+            if (editAcademicYear) editAcademicYear.required = true;
+            if (editAcademicTerm) editAcademicTerm.required = true;
         } else {
             document.getElementById('editStudentCodeGroup').classList.add('hidden');
+            const editAcademicGroup = document.getElementById('editAcademicGroup');
+            if (editAcademicGroup) editAcademicGroup.classList.add('hidden');
+
+            const editUsernameGroup = document.getElementById('editUsernameGroup');
+            if (editUsernameGroup) editUsernameGroup.classList.remove('hidden');
+            const editUsername = document.getElementById('edit_username');
+            if (editUsername) { editUsername.required = true; editUsername.disabled = false; }
+
+            const editUserCode = document.getElementById('edit_user_code');
+            if (editUserCode) { editUserCode.required = false; }
+            if (editAcademicYear) { editAcademicYear.required = false; }
+            if (editAcademicTerm) { editAcademicTerm.required = false; }
         }
         toggleModal(true, 'editModal');
     };

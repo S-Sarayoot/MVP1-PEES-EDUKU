@@ -35,6 +35,8 @@ class User{
 
 	public $faculty_id;
 	public $major_id;
+	public $academic_year;
+	public $academic_term;
 
  
     // constructor with $db as database connection
@@ -156,12 +158,13 @@ class User{
 	public function createUser(){
     // query to insert record
     $query = "INSERT INTO " . $this->table_name . "
-            SET user_code=:user_code, username=:username, password=:password, user_type=:user_type, 
+			SET user_code=:user_code, username=:username, password=:password, user_type=:user_type, 
             user_name=:user_name, user_province=:user_province, user_district=:user_district, 
             user_address=:user_address, user_telephone=:user_telephone, user_email=:user_email, 
             user_contactname=:user_contactname, company_house_file=:company_house_file, 
             idcard_file=:idcard_file, book_bank_file=:book_bank_file, status=:status,
-            faculty_id=:faculty_id, major_id=:major_id";
+			faculty_id=:faculty_id, major_id=:major_id,
+			academic_year=:academic_year, academic_term=:academic_term";
 
     // prepare query
     $stmt = $this->conn->prepare($query);
@@ -184,6 +187,8 @@ class User{
     $this->status=htmlspecialchars(strip_tags($this->status));
     $this->faculty_id=htmlspecialchars(strip_tags($this->faculty_id));
     $this->major_id=htmlspecialchars(strip_tags($this->major_id));
+	$this->academic_year=$this->academic_year !== null ? htmlspecialchars(strip_tags($this->academic_year)) : null;
+	$this->academic_term=$this->academic_term !== null ? htmlspecialchars(strip_tags($this->academic_term)) : null;
 
     // bind values
     $stmt->bindParam(":user_code", $this->user_code);
@@ -203,6 +208,8 @@ class User{
     $stmt->bindParam(":status", $this->status);
     $stmt->bindParam(":faculty_id", $this->faculty_id);
     $stmt->bindParam(":major_id", $this->major_id);
+	$stmt->bindParam(":academic_year", $this->academic_year);
+	$stmt->bindParam(":academic_term", $this->academic_term);
 
     // execute query
     if($stmt->execute()){
@@ -221,7 +228,8 @@ class User{
             user_address=:user_address, user_zipcode=:user_zipcode, user_telephone=:user_telephone, user_email=:user_email, 
             user_contactname=:user_contactname, company_house_file=:company_house_file, 
             idcard_file=:idcard_file, book_bank_file=:book_bank_file, status=:status,
-            faculty_id=:faculty_id, major_id=:major_id
+			faculty_id=:faculty_id, major_id=:major_id,
+			academic_year=:academic_year, academic_term=:academic_term
             WHERE user_id = :user_id";
 
     $stmt = $this->conn->prepare($query);
@@ -244,6 +252,8 @@ class User{
     $this->faculty_id=htmlspecialchars(strip_tags($this->faculty_id));
     $this->major_id=htmlspecialchars(strip_tags($this->major_id));
     $this->user_id=htmlspecialchars(strip_tags($this->user_id));
+	$this->academic_year=$this->academic_year !== null ? htmlspecialchars(strip_tags($this->academic_year)) : null;
+	$this->academic_term=$this->academic_term !== null ? htmlspecialchars(strip_tags($this->academic_term)) : null;
 
     // bind values
     $stmt->bindParam(":user_code", $this->user_code);
@@ -262,6 +272,8 @@ class User{
     $stmt->bindParam(":status", $this->status);
     $stmt->bindParam(":faculty_id", $this->faculty_id);
     $stmt->bindParam(":major_id", $this->major_id);
+	$stmt->bindParam(":academic_year", $this->academic_year);
+	$stmt->bindParam(":academic_term", $this->academic_term);
     $stmt->bindParam(":user_id", $this->user_id);
 
     if($stmt->execute()){

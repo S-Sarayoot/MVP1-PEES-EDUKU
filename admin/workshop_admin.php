@@ -10,55 +10,33 @@
         <?php include_once '../component/sidebar.php' ?>
 
         <!-- Main Content -->
-        <div
-            class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
+        <div class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
             <div class="flex justify-between">
                 <h1 class="text-xl text-[#433878] mb-4 md:mx-4">Workshop</h1>
-                <p class="text-gray-700 mb-4 mr-4"><a href="https://dev.kittelweb.xyz/admin/dashboard_admin"
+                <p class="text-gray-700 mb-4 mr-4"><a href="../"
                         class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
                     > Workshop</p>
             </div>
             <div class="flex flex-col gap-4">
-                <div
-                    class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shdow transition-tranform ease-in-out duration-200">
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow transition-tranform ease-in-out duration-200">
                     <h1 class="text-center text-xl font-semibold text-[#433878] py-4 ">
-                        บทเรียน
+                        สำหรับผู้ดูแลระบบ
                     </h1>
                     <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200">
-                        <span class="font-semibold underline mx-4">คำชี้แจง</span>
-                        <span>คำชี้แจงWorkshop...</span>
+                        <span class="font-semibold underline mx-4">คำอธิบาย</span>
+                        <span>คลิกที่ Workshop เพื่อดูรายละเอียด</span>
                     </div>
                     <div id="workshopBox" class="flex max-lg:flex-col justify-center max-md:flex-col gap-5 mb-2 mt-4">
-                        <script>
-                            for (let i = 1; i < 4; i++) {
-                                let box = document.getElementById('workshopBox')
-                                box.innerHTML += `
-                            <div class="border border-purple-100 rounded-lg shadow-sm p-4 hover:shadow-lg hover:ring hover:ring-purple-300">
-                                <p class="text-center text-lg text-violet-900">
-                                    Workshop ${i}
-                                </p>
-                                <div class="flex text-sm my-3 flex-wrap">
-                                    <span class="font-semibold text-purple-800">คำชี้แจง</span>
-                                    <span class="pl-3">คำชี้แจงเกี่ยวกับ workshop ${i}.. เวลา 3 ชั่วโมง</span>
-                                </div>
-                                <div class="flex flex-col mt-4 mb-2 gap-2 w-full items-center">
-                                    <button
-                                        onclick="linkPage('./workshopPage.php')"
-                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200 active:bg-purple-200 active:shadow-lg active:-translate-y-0.5">
-                                        <p>กิจกรรม</p>
-                                    </button>
-                                    <button
-                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200 active:bg-purple-200 active:shadow-lg active:-translate-y-0.5">
-                                        <p>ทรัพยากร</p>
-                                    </button>
-                                    <button
-                                        class="w-1/2 lg:w-1/3 bg-purple-50 border border-purple-200 rounded-md py-1 px-4 transition-shadow transition-transform shadow-sm hover:bg-purple-200 hover:shadow-lg hover:-translate-y-0.5 ease-in-out duration-200 active:bg-purple-200 active:shadow-lg active:-translate-y-0.5">
-                                        <p>สะท้อนคิด</p>
-                                    </button>
-                                </div>
-                            </div>`;
-                            }
-                        </script>
+                        
+                        <a href="workshop_management?id=1" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block">
+                            <p class="text-center text-lg text-violet-900 font-semibold">Workshop 1</p>
+                        </a>
+                        <a href="workshop_management?id=2" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block">
+                            <p class="text-center text-lg text-violet-900 font-semibold">Workshop 2</p>
+                        </a>
+                        <a href="workshop_management?id=3" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block">
+                            <p class="text-center text-lg text-violet-900 font-semibold">Workshop 3</p>
+                        </a>
                     </div>
                 </div>
                 <!--  -->
