@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company_house_file= $_POST['company_house_file'] ?? null;
     $idcard_file       = $_POST['idcard_file']      ?? null;
     $book_bank_file    = $_POST['book_bank_file']   ?? null;
-    $status            = $_POST['status']           ?? null;
+    $status            = $_POST['status']           ?? 1;
     $faculty_id        = $_POST['faculty_id']       ?? null;
     $major_id          = $_POST['major_id']         ?? null;
 
