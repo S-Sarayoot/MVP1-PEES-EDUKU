@@ -200,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         sel.value = 'student';
                         applyUserTypeUI(sel.value);
                     }
+                    window.location.reload();
                 });
             } else {
                 Swal.fire({
