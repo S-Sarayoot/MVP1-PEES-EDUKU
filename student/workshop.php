@@ -38,9 +38,9 @@
 					container.innerHTML = `<div class="flex justify-center items-center w-full col-span-full py-10"><img src="${APP_BASE}/image/loading.gif" alt="loading" class="w-16 h-16"></div>`;
 
 					const links = {
-						activity: (id) => `${APP_BASE}/student/activity?workshop=${encodeURIComponent(String(id))}`,
-						storage: (id) => `${APP_BASE}/student/storage?workshop=${encodeURIComponent(String(id))}`,
-						reflection: (id) => `${APP_BASE}/student/reflection?workshop=${encodeURIComponent(String(id))}`,
+						activity: (id) => `../student/activity?workshop=${encodeURIComponent(String(id))}`,
+						storage: (id) => `../student/storage?workshop=${encodeURIComponent(String(id))}`,
+						reflection: (id) => `../student/reflection?workshop=${encodeURIComponent(String(id))}`,
 					};
 
 					const parseLocalDatetime = (value) => {
