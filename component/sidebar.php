@@ -3,38 +3,6 @@
 require_once __DIR__ . '/../backend/config/credential.php';
 
 
-$sidebarMenu = null;
-if (!empty($credential_user_type)) {
-    if ($credential_user_type === 'admin') {
-        $sidebarMenu = [
-            [ 'name' => 'Dashboard', 'path' => $base_url . '/admin/' ],
-            [ 'name' => 'คลังทรัพยากร', 'path' => $base_url . '/admin/storage_admin' ],
-            [ 'name' => 'Workshop/แผนฯ', 'path' => $base_url . '/admin/workshop_admin' ],
-            [ 'name' => 'ผู้ใช้งาน', 'path' => $base_url . '/admin/users_admin' ],
-            [ 'name' => 'ระบบให้คำปรึกษา', 'path' => $base_url . '/admin/consulting' ],
-            [ 'name' => 'รายงาน/log', 'path' => $base_url . '/admin/log_admin' ],
-        ];
-    } elseif ($credential_user_type === 'teacher') {
-        $sidebarMenu = [
-            [ 'name' => 'Dashboard', 'path' => $base_url . '/teacher/' ],
-            [ 'name' => 'คลังทรัพยากร', 'path' => $base_url . '/teacher/media' ],
-            [ 'name' => 'Workshop', 'path' => $base_url . '/teacher/workshop' ],
-            [ 'name' => 'ผู้ใช้งาน', 'path' => $base_url . '/teacher/user' ],
-        ];
-    } elseif ($credential_user_type === 'student') {
-        $sidebarMenu = [
-            [ 'name' => 'Dashboard', 'path' => $base_url . '/student/' ],
-            [ 'name' => 'Workshop/แผนฯ', 'path' => $base_url . '/student/workshop' ],
-            [ 'name' => 'คลังทรัพยากร', 'path' => $base_url . '/student/storage' ],
-            // reflection ต้องมี workshop id
-            [ 'name' => 'ระบบสะท้อนความคิด', 'path' => $base_url . '/student/reflection?workshop=1' ],
-            [ 'name' => 'ระบบให้คำปรึกษา', 'path' => $base_url . '/student/consulting' ],
-            [ 'name' => 'ผู้ใช้งาน', 'path' => $base_url . '/student/user' ],
-        ];
-    }
-}
-
-
 function path_image($type,$file) {
     $parts = explode("/", string:  $_SERVER['REQUEST_URI']);
 
@@ -77,33 +45,6 @@ function path_image($type,$file) {
 
         </ul>
     </nav>
-
-    <script>
-        (function () {
-            const menu = <?php echo json_encode($sidebarMenu ?? [], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
-            try {
-                localStorage.setItem('sideMenu', JSON.stringify(menu));
-            } catch (e) {}
-
-            const ul = document.getElementById('nav-data');
-            if (!ul) return;
-            ul.innerHTML = '';
-
-            const render = (items) => {
-                (Array.isArray(items) ? items : []).forEach((entry) => {
-                    const li = document.createElement('li');
-                    const a = document.createElement('a');
-                    a.className = 'flex items-center px-4 py-2 rounded hover:bg-gray-100';
-                    a.href = entry?.path || '#';
-                    a.innerText = entry?.name || '-';
-                    li.appendChild(a);
-                    ul.appendChild(li);
-                });
-            };
-
-            render(menu);
-        })();
-    </script>
 </div>
 <!-- for desktop size -->
 <div class="flex flex-wrap justify-between items-center md:col-span-9 xl:col-span-10 row-span-1 bg-[#9886CE] w-full h-full rounded-bl-xl shadow-lg max-md:hidden ">

@@ -8,14 +8,6 @@ function createSideBar(data) {
   console.log("Creating sidebar with data:", data);
 
   let ulSideBar = document.getElementById("nav-data");
-  if (!ulSideBar) return;
-
-  // If sidebar is already rendered (e.g. by component/sidebar.php), don't render again.
-  if (ulSideBar.children && ulSideBar.children.length > 0) {
-    return;
-  }
-
-  ulSideBar.innerHTML = "";
 
   data?.forEach((entry) => {
     let listData = document.createElement("li");
@@ -121,17 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const savedMenu = localStorage.getItem("sideMenu");
-    let parsedMenu = [];
-    if (savedMenu) {
-      try {
-        parsedMenu = JSON.parse(savedMenu);
-        // Backward compatibility: some pages stored double-encoded JSON.
-        if (typeof parsedMenu === "string") parsedMenu = JSON.parse(parsedMenu);
-      } catch (e) {
-        parsedMenu = [];
-      }
-    }
-    createSideBar(Array.isArray(parsedMenu) ? parsedMenu : []);
+    createSideBar(savedMenu ? JSON.parse(savedMenu) : []);
   [allFiles, stores, users, online].forEach((info) => {
     if (!info) return;
     switch (info.id) {
