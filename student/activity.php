@@ -236,11 +236,11 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 			return;
 		}
 
-		if (elStorageLink) elStorageLink.href = `${APP_BASE}/student/storage.php?workshop=${encodeURIComponent(String(workshopId))}`;
-		if (elReflectionLink) elReflectionLink.href = `${APP_BASE}/student/reflection.php?workshop=${encodeURIComponent(String(workshopId))}`;
+		if (elStorageLink) elStorageLink.href = `../student/storage.php?workshop=${encodeURIComponent(String(workshopId))}`;
+		if (elReflectionLink) elReflectionLink.href = `../student/reflection.php?workshop=${encodeURIComponent(String(workshopId))}`;
 
 		// Submission indicator: show if user has already submitted at least once
-		fetch(`${APP_BASE}/backend/api/get_my_workshop_attempts.php?workshop_id=${encodeURIComponent(String(workshopId))}`)
+		fetch(`../backend/api/get_my_workshop_attempts.php?workshop_id=${encodeURIComponent(String(workshopId))}`)
 			.then((res) => res.json())
 			.then((payload) => {
 				const map = payload?.by_workshop_id || {};
@@ -251,7 +251,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 			})
 			.catch(() => {});
 
-		fetch(`${APP_BASE}/backend/api/get_workshop.php?id=${encodeURIComponent(String(workshopId))}`)
+		fetch(`../backend/api/get_workshop.php?id=${encodeURIComponent(String(workshopId))}`)
 			.then((res) => res.json())
 			.then((payload) => {
 				if (!payload?.success || !payload.workshop) {
@@ -344,7 +344,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 					didOpen: () => Swal.showLoading(),
 				});
 
-				fetch(`${APP_BASE}/backend/api/submit_workshop_attempt.php`, {
+				fetch(`../backend/api/submit_workshop_attempt.php`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify({
@@ -372,7 +372,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 								: `<div>ระบบได้รับคำตอบแล้ว</div>`,
 							confirmButtonText: 'ตกลง',
 						}).then(() => {
-							window.location.href = `${APP_BASE}/student/workshop.php`;
+							window.location.href = `../student/workshop.php`;
 						});
 					})
 					.catch((err) => {
