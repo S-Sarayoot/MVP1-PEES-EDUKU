@@ -28,7 +28,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 						<input id="username" name="username" type="text" readonly class="w-full mt-1 px-3 py-2 border rounded-md bg-gray-100 text-gray-500" value="<?php echo htmlspecialchars((string)($credential_username ?? ''), ENT_QUOTES, 'UTF-8'); ?>">
 					</div>
 
-                    
+
 					<div class="md:col-span-2">
 						<label class="text-sm text-gray-600">รหัสผู้ใช้</label>
 						<input id="user_code" name="user_code" type="text" readonly class="w-full mt-1 px-3 py-2 border rounded-md bg-gray-100 text-gray-500" value="<?php echo htmlspecialchars((string)($credential_user_code ?? ''), ENT_QUOTES, 'UTF-8'); ?>">
@@ -167,8 +167,8 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 
 			const loadLookups = async (u) => {
 				const [fac, maj] = await Promise.all([
-					fetch(`${APP_BASE}/backend/api/get_faculty.php`).then((r) => r.json()).catch(() => []),
-					fetch(`${APP_BASE}/backend/api/get_major.php`).then((r) => r.json()).catch(() => []),
+					fetch(`../backend/api/get_faculty.php`).then((r) => r.json()).catch(() => []),
+					fetch(`../backend/api/get_major.php`).then((r) => r.json()).catch(() => []),
 				]);
 				fillSelect(fields.faculty_id, Array.isArray(fac) ? fac : [], u?.faculty_id);
 				fillSelect(fields.major_id, Array.isArray(maj) ? maj : [], u?.major_id);
@@ -177,7 +177,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 			const loadMe = async () => {
 				setStatus('กำลังโหลด...');
 				try {
-					const res = await fetch(`${APP_BASE}/backend/api/get_me.php`, { headers: { 'Accept': 'application/json' } });
+					const res = await fetch(`../backend/api/get_me.php`, { headers: { 'Accept': 'application/json' } });
 					const payload = await res.json();
 					if (!payload?.success || !payload.user) throw new Error(payload?.message || 'โหลดข้อมูลไม่สำเร็จ');
 					applyUser(payload.user);
@@ -200,7 +200,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 
 					try {
 						const fd = new FormData(form);
-						const res = await fetch(`${APP_BASE}/backend/api/update_me.php`, {
+						const res = await fetch(`../backend/api/update_me.php`, {
 							method: 'POST',
 							body: fd,
 							headers: { 'Accept': 'application/json' },
