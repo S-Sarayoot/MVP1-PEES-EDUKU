@@ -5,10 +5,9 @@ const BASE_LINK = "https://dev.kittelweb.xyz";
 
 
 function createSideBar(data) {
-  let ulSideBar = document.getElementById("nav-data");
-  if (!ulSideBar) return;
+  console.log("Creating sidebar with data:", data);
 
-  ulSideBar.innerHTML = "";
+  let ulSideBar = document.getElementById("nav-data");
 
   data?.forEach((entry) => {
     let listData = document.createElement("li");
@@ -114,16 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const savedMenu = localStorage.getItem("sideMenu");
-    let menu = [];
-    if (savedMenu) {
-      try {
-        const parsed = JSON.parse(savedMenu);
-        menu = typeof parsed === 'string' ? JSON.parse(parsed) : parsed;
-      } catch (e) {
-        menu = [];
-      }
-    }
-    createSideBar(Array.isArray(menu) ? menu : []);
+    createSideBar(savedMenu ? JSON.parse(savedMenu) : []);
   [allFiles, stores, users, online].forEach((info) => {
     if (!info) return;
     switch (info.id) {
