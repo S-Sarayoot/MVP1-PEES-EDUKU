@@ -72,7 +72,7 @@
 						<div style="position:relative;width:100%;height:100%;overflow:hidden;">
 							<iframe
 								style="position:absolute;top:50%;left:50%;width:200%;height:200%;transform:translate(-50%,-50%);"
-								src="https://www.youtube.com/embed/${youTubeId}?autoplay=1&mute=1&rel=0&playsinline=1&modestbranding=1"
+								src="https://www.youtube.com/embed/${youTubeId}?autoplay=1&mute=1&rel=0&playsinline=1&modestbranding=1&loop=1&playlist=${youTubeId}"
 								title="YouTube video player"
 								frameborder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -104,7 +104,7 @@
 						banner<?php echo $bannerId; ?>.innerHTML = `
 							<iframe
 								class="w-full h-full"
-								src="https://www.youtube.com/embed/${youTubeId}?autoplay=1&mute=1&rel=0"
+								src="https://www.youtube.com/embed/${youTubeId}?autoplay=1&mute=1&rel=0&loop=1&playlist=${youTubeId}"
 								title="YouTube video player"
 								frameborder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
