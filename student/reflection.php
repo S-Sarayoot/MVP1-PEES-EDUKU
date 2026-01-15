@@ -192,7 +192,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 		};
 
 		const loadNotes = () => {
-			return fetch(`${APP_BASE}/backend/api/get_workshop_notes.php?workshop_id=${encodeURIComponent(String(workshopId))}`)
+			return fetch(`../backend/api/get_workshop_notes.php?workshop_id=${encodeURIComponent(String(workshopId))}`)
 				.then((res) => res.json())
 				.then((payload) => {
 					if (!payload?.success) throw new Error(payload?.message || 'โหลดข้อความไม่สำเร็จ');
@@ -201,7 +201,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 		};
 
 		const postNote = ({ content, parentId = null }) => {
-			return fetch(`${APP_BASE}/backend/api/post_workshop_note.php`, {
+			return fetch(`../backend/api/post_workshop_note.php`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
@@ -223,11 +223,11 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 			return;
 		}
 
-		if (elActivityLink) elActivityLink.href = `${APP_BASE}/student/activity.php?workshop=${encodeURIComponent(String(workshopId))}`;
-		if (elStorageLink) elStorageLink.href = `${APP_BASE}/student/storage.php?workshop=${encodeURIComponent(String(workshopId))}`;
+		if (elActivityLink) elActivityLink.href = `../student/activity.php?workshop=${encodeURIComponent(String(workshopId))}`;
+		if (elStorageLink) elStorageLink.href = `../student/storage.php?workshop=${encodeURIComponent(String(workshopId))}`;
 
 		Promise.all([
-			fetch(`${APP_BASE}/backend/api/get_workshop.php?id=${encodeURIComponent(String(workshopId))}`).then((res) => res.json()),
+			fetch(`../backend/api/get_workshop.php?id=${encodeURIComponent(String(workshopId))}`).then((res) => res.json()),
 			loadNotes().catch(() => []),
 		])
 			.then(([wsPayload, notes]) => {
