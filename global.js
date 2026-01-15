@@ -8,6 +8,14 @@ function createSideBar(data) {
   console.log("Creating sidebar with data:", data);
 
   let ulSideBar = document.getElementById("nav-data");
+  if (!ulSideBar) return;
+
+  // If sidebar is already rendered (e.g. by component/sidebar.php), don't render again.
+  if (ulSideBar.children && ulSideBar.children.length > 0) {
+    return;
+  }
+
+  ulSideBar.innerHTML = "";
 
   data?.forEach((entry) => {
     let listData = document.createElement("li");
@@ -66,7 +74,7 @@ function checkLogin(event) {
       { name: "คลังทรัพยากร", path: BASE_LINK + "/student/storage" },
       { name: "Workshop/แผนฯ", path: BASE_LINK + "/student/workshop" },
       { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/student/consulting" },
-      { name: "ระบบสะท้อนความคิด", path: BASE_LINK + "/student/workshop/reflection" },
+      { name: "ระบบสะท้อนความคิด", path: BASE_LINK + "/student/reflection?workshop=1" },
       { name: "ผู้ใช้งาน", path: BASE_LINK + "/student/user" },
     ];
     localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
@@ -113,7 +121,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const savedMenu = localStorage.getItem("sideMenu");
-    createSideBar(savedMenu ? JSON.parse(savedMenu) : []);
+    let parsedMenu = [];
+    if (savedMenu) {
+      try {
+        parsedMenu = JSON.parse(savedMenu);
+        // Backward compatibility: some pages stored double-encoded JSON.
+        if (typeof parsedMenu === "string") parsedMenu = JSON.parse(parsedMenu);
+      } catch (e) {
+        parsedMenu = [];
+      }
+    }
+    createSideBar(Array.isArray(parsedMenu) ? parsedMenu : []);
   [allFiles, stores, users, online].forEach((info) => {
     if (!info) return;
     switch (info.id) {
