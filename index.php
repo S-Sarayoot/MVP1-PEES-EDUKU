@@ -25,7 +25,7 @@
       [ "name" => "รายงาน/log", "path" => $base_url . "/admin/log_admin" ]
     ];
     echo '<script>';
-      echo 'localStorage.setItem("sideMenu", JSON.stringify(' . json_encode($sideBarMenu, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '));';
+    echo 'localStorage.setItem("sideMenu", ' . json_encode(json_encode($sideBarMenu)) . ');';
     echo 'window.location.href = "' . $base_url . '/admin/";';
     echo '</script>';
     exit();
@@ -35,12 +35,12 @@
           [ "name" => "Workshop/แผนฯ", "path" => $base_url . "/student/workshop" ],
           [ "name" => "คลังทรัพยากร", "path" => $base_url . "/student/storage" ],
           
-            [ "name" => "ระบบสะท้อนความคิด", "path" => $base_url . "/student/reflection?workshop=1" ],
+          [ "name" => "ระบบสะท้อนความคิด", "path" => $base_url . "/student/reflection?workshop=1" ],
           [ "name" => "ระบบให้คำปรึกษา", "path" => $base_url . "/student/consulting" ],
           [ "name" => "ผู้ใช้งาน", "path" => $base_url . "/student/user" ]
         ];
         echo '<script>';
-          echo 'localStorage.setItem("sideMenu", JSON.stringify(' . json_encode($sideBarMenu, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '));';
+        echo 'localStorage.setItem("sideMenu", ' . json_encode(json_encode($sideBarMenu)) . ');';
         echo 'window.location.href = "' . $base_url . '/student/";';
         echo '</script>';
         exit();
@@ -52,7 +52,7 @@
           [ "name" => "ผู้ใช้งาน", "path" => $base_url . "/teacher/user" ]
         ];
         echo '<script>';
-          echo 'localStorage.setItem("sideMenu", JSON.stringify(' . json_encode($sideBarMenu, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '));';
+        echo 'localStorage.setItem("sideMenu", ' . json_encode(json_encode($sideBarMenu)) . ');';
         echo 'window.location.href = "' . $base_url . '/teacher/";';
         echo '</script>';
         exit();

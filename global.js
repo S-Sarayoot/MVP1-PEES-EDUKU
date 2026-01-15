@@ -37,58 +37,58 @@ function checkLogin(event) {
   let password = document.getElementById("password").value;
   let alertBox = document.getElementById("alertBox");
 
-  // if (username === "admin" && password === "1234") {
-  //   sideBarMenu = [
-  //     { name: "Dashboard22", path: BASE_LINK + "/admin/dashboard_admin" },
-  //     { name: "คลังทรัพยากร", path: BASE_LINK + "/admin/storage_admin" },
-  //     { name: "Workshop/แผนฯ", path: BASE_LINK + "/admin/workshop_admin" },
-  //     { name: "ผู้ใช้งาน", path: BASE_LINK + "/admin/users_admin" },
-  //     { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/admin/consulting" },
-  //     { name: "รายงาน/log", path: BASE_LINK + "/admin/log_admin" },
-  //   ];
-  //   localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
+  if (username === "admin" && password === "1234") {
+    sideBarMenu = [
+      { name: "Dashboard", path: BASE_LINK + "/admin/dashboard_admin" },
+      { name: "คลังทรัพยากร", path: BASE_LINK + "/admin/storage_admin" },
+      { name: "Workshop/แผนฯ", path: BASE_LINK + "/admin/workshop_admin" },
+      { name: "ผู้ใช้งาน", path: BASE_LINK + "/admin/users_admin" },
+      { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/admin/consulting" },
+      { name: "รายงาน/log", path: BASE_LINK + "/admin/log_admin" },
+    ];
+    localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
-  //  linkPage("/admin/");
-  // }
-  // else if (username === "teacher" && password === "1234") {
-  //   sideBarMenu = [
-  //     { name: "Dashboard22", path: BASE_LINK + "/teacher/" },
-  //     { name: "คลังทรัพยากร", path: BASE_LINK + "/teacher/media" },
-  //     { name: "Workshop", path: BASE_LINK + "/teacher/workshop" },
-  //     { name: "ผู้ใช้งาน", path: BASE_LINK + "/teacher/user" },
-  //   ];
-  //   localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
+   linkPage("/admin/");
+  }
+  else if (username === "teacher" && password === "1234") {
+    sideBarMenu = [
+      { name: "Dashboard", path: BASE_LINK + "/teacher/" },
+      { name: "คลังทรัพยากร", path: BASE_LINK + "/teacher/media" },
+      { name: "Workshop", path: BASE_LINK + "/teacher/workshop" },
+      { name: "ผู้ใช้งาน", path: BASE_LINK + "/teacher/user" },
+    ];
+    localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
-  //  linkPage("/teacher/");
-  // }else if (username === "student" && password === "1234") {
-  //   sideBarMenu = [
-  //     { name: "Dashboard22", path: BASE_LINK + "/student/" },
-  //     { name: "คลังทรัพยากร", path: BASE_LINK + "/student/storage" },
-  //     { name: "Workshop/แผนฯ", path: BASE_LINK + "/student/workshop" },
-  //     { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/student/consulting" },
-  //     { name: "ระบบสะท้อนความคิด", path: BASE_LINK + "/student/reflection?workshop=1" },
-  //     { name: "ผู้ใช้งาน", path: BASE_LINK + "/student/user" },
-  //   ];
-  //   localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
+   linkPage("/teacher/");
+  }else if (username === "student" && password === "1234") {
+    sideBarMenu = [
+      { name: "Dashboard", path: BASE_LINK + "/student/" },
+      { name: "คลังทรัพยากร", path: BASE_LINK + "/student/storage" },
+      { name: "Workshop/แผนฯ", path: BASE_LINK + "/student/workshop" },
+      { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/student/consulting" },
+      { name: "ระบบสะท้อนความคิด", path: BASE_LINK + "/student/workshop/reflection" },
+      { name: "ผู้ใช้งาน", path: BASE_LINK + "/student/user" },
+    ];
+    localStorage.setItem("sideMenu", JSON.stringify(sideBarMenu));
 
-  //   linkPage("/student");
-  // } else {
-  //   alertBox.classList.remove("hidden");
+    linkPage("/student");
+  } else {
+    alertBox.classList.remove("hidden");
 
-  //   setTimeout(() => {
-  //     alertBox.classList.remove("translate-x-full");
-  //     alertBox.classList.add("translate-x-0");
-  //   }, 10);
+    setTimeout(() => {
+      alertBox.classList.remove("translate-x-full");
+      alertBox.classList.add("translate-x-0");
+    }, 10);
 
-  //   setTimeout(() => {
-  //     alertBox.classList.remove("translate-x-0");
-  //     alertBox.classList.add("translate-x-full");
+    setTimeout(() => {
+      alertBox.classList.remove("translate-x-0");
+      alertBox.classList.add("translate-x-full");
 
-  //     setTimeout(() => {
-  //       alertBox.classList.add("hidden");
-  //     }, 500);
-  //   }, 3000);
-  // }
+      setTimeout(() => {
+        alertBox.classList.add("hidden");
+      }, 500);
+    }, 3000);
+  }
 }
 
 function logout() {
