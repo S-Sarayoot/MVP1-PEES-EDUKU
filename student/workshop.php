@@ -140,8 +140,8 @@
 					};
 
 					Promise.all([
-						fetch(`${APP_BASE}/backend/api/get_workshops.php`).then((res) => res.json()),
-						fetch(`${APP_BASE}/backend/api/get_my_workshop_attempts.php`).then((res) => res.json()).catch(() => null),
+						fetch(`../backend/api/get_workshops.php`).then((res) => res.json()),
+						fetch(`../backend/api/get_my_workshop_attempts.php`).then((res) => res.json()).catch(() => null),
 					])
 						.then(([workshopsPayload, attemptsPayload]) => {
 							const items = (workshopsPayload?.workshops || workshopsPayload?.data || []).filter(Boolean);
