@@ -45,10 +45,10 @@
                     <h2 class="text-xl font-semibold text-center text-[#433878] my-2">
                         การจัดการนิสิต
                     </h2>
-                    <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200 my-4">
+                    <!-- <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200 my-4">
                         <span class="font-semibold underline mx-4">คำชี้แจง</span>
                         <span>คำชี้แจงการจัดการนิสิต...</span>
-                    </div>
+                    </div> -->
                     <div class="w-full max-h-52 md:max-h-60 overflow-x-auto my-4 border border-purple-200 shadow-md">
                         <table class="w-full h-full text-sm">
                             <thead class="whitespace-nowrap">
@@ -170,7 +170,7 @@
                                 <td class="py-2 px-3 text-green-600 border border-purple-400">10%</td>
                                 <td class="py-2 px-3 text-green-600 border border-purple-400">10%</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td class="py-2 px-3 border border-purple-400">จำนวนครั้งการเข้าดูทรัพยากร</td>
                                 <td colspan="3" class="py-2 px-3 border border-purple-400">
                                     <div class="flex justify-center py-4">
@@ -196,31 +196,10 @@
                                         </ul>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
-                    <div class="flex max-md:flex-col gap-3 my-4 justify-center">
-                        <?php
-                        $text = "Rubwc Workshop 1";
-                        $subtext = "(กิจกรรมคำถามปลายเปิด)";
-                        $style = "workshop";
-                        include "../component/button.php";
-                        ?>
-
-                        <?php
-                        $text = "Rubwc Workshop 2";
-                        $subtext = "(กิจกรรมออกแบบแผนการจัดการเรียนรู้)";
-                        $style = "workshop";
-                        include "../component/button.php";
-                        ?>
-
-                        <?php
-                        $text = "Rubwc Workshop 3";
-                        $subtext = "สะท้อนคิด";
-                        $style = "workshop";
-                        include "../component/button.php";
-                        ?>
-                    </div>
+                    
                 </div>
             </div>
         </div>

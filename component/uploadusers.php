@@ -165,11 +165,16 @@ document.addEventListener('DOMContentLoaded', function() {
     userTypeSelect.value = userTypeSelect.value || 'student';
     applyUserTypeUI(userTypeSelect.value);
 
+    let savingUser = false;
+
     // (student) username is derived from student code on submit
 
     // บันทึกผู้ใช้งาน
     document.getElementById('uploadUserForm').addEventListener('submit', function(e) {
         e.preventDefault();
+        if (savingUser) return;
+
+        const submitBtn = this.querySelector('button[type="submit"]');
         const formData = new FormData(this);
 
         // ถ้าเป็น student ให้ใช้รหัสนิสิตแทน username
@@ -179,12 +184,26 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.set('username', code);
         }
 
+        savingUser = true;
+        if (submitBtn) submitBtn.disabled = true;
+        Swal.fire({
+            title: 'กำลังบันทึก... ',
+            text: 'โปรดรอสักครู่',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            showConfirmButton: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+
         fetch('../backend/api/create_user.php', {
             method: 'POST',
             body: formData
         })
         .then(res => res.json())
         .then(data => {
+            Swal.close();
             if (data.success) {
                 Swal.fire({
                     icon: 'success',
@@ -212,12 +231,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(() => {
+            Swal.close();
             Swal.fire({
                 icon: 'error',
                 title: 'เกิดข้อผิดพลาด',
                 text: 'ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์',
                 confirmButtonColor: '#EF4444'
             });
+        })
+        .finally(() => {
+            savingUser = false;
+            if (submitBtn) submitBtn.disabled = false;
         });
     });
 });
