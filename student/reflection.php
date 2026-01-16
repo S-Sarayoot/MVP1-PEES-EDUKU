@@ -224,9 +224,10 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 		}
 
 		if (elActivityLink) elActivityLink.href = `../student/activity.php?workshop=${encodeURIComponent(String(workshopId))}`;
-		if (elStorageLink) elStorageLink.href = `../student/storage.php?workshop=${encodeURIComponent(String(workshopId))}`;
-
-		Promise.all([
+		//if (elStorageLink) elStorageLink.href = `../student/storage.php?workshop=${encodeURIComponent(String(workshopId))}`;
+        if (elStorageLink) elStorageLink.href = `../student/post?id=25`;
+		
+        Promise.all([
 			fetch(`../backend/api/get_workshop.php?id=${encodeURIComponent(String(workshopId))}`).then((res) => res.json()),
 			loadNotes().catch(() => []),
 		])

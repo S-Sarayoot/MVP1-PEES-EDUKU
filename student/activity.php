@@ -236,7 +236,8 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 			return;
 		}
 
-		if (elStorageLink) elStorageLink.href = `../student/storage.php?workshop=${encodeURIComponent(String(workshopId))}`;
+		//if (elStorageLink) elStorageLink.href = `../student/storage.php?workshop=${encodeURIComponent(String(workshopId))}`;
+        if (elStorageLink) elStorageLink.href = `../student/post?id=25`;
 		if (elReflectionLink) elReflectionLink.href = `../student/reflection.php?workshop=${encodeURIComponent(String(workshopId))}`;
 
 		// Submission indicator: show if user has already submitted at least once

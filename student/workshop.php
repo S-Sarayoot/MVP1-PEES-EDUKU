@@ -39,7 +39,8 @@
 
 					const links = {
 						activity: (id) => `../student/activity?workshop=${encodeURIComponent(String(id))}`,
-						storage: (id) => `../student/storage?workshop=${encodeURIComponent(String(id))}`,
+						//storage: (id) => `../student/storage?workshop=${encodeURIComponent(String(id))}`,
+                        storage: (id) => `../student/post?id=25`,
 						reflection: (id) => `../student/reflection?workshop=${encodeURIComponent(String(id))}`,
 					};
 
