@@ -26,15 +26,15 @@
                         <span class="font-semibold underline mx-4">คำอธิบาย</span>
                         <span>คลิกที่ Workshop เพื่อดูรายละเอียด</span>
                     </div>
-                    <div id="workshopBox" class="flex max-lg:flex-col justify-center max-md:flex-col gap-5 mb-2 mt-4">
+                    <div id="workshopBox" class="flex flex-col lg:flex-row justify-center gap-5 mb-2 mt-4 w-full">
                         
-                        <a href="workshop_management?id=1" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block">
+                        <a href="workshop_management?id=1" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
                             <p class="text-center text-lg text-violet-900 font-semibold">Workshop 1</p>
                         </a>
-                        <a href="workshop_management?id=2" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block">
+                        <a href="workshop_management?id=2" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
                             <p class="text-center text-lg text-violet-900 font-semibold">Workshop 2</p>
                         </a>
-                        <a href="workshop_management?id=3" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block">
+                        <a href="workshop_management?id=3" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
                             <p class="text-center text-lg text-violet-900 font-semibold">Workshop 3</p>
                         </a>
                     </div>

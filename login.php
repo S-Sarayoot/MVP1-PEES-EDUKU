@@ -38,12 +38,12 @@
               </div>
               <div>
                 <label class="block text-gray-500 font-bold mb-1 pr-4 pb-1" for="email">
-                  Email
+                  Email / KU ID
                 </label>
                 <div class="p-0.5 rounded-lg bg-gradient-to-r from-blue-500/50 to-purple-500/50 focus-within:from-purple-500 focus-within:to-blue-500">
-                  <input type="email" id="email" name="email"
+                  <input type="text" id="email" name="email"
                     class="bg-purple-50 appearance-none rounded-lg w-full py-1 px-4 placeholder-gray-400 text-gray-700 focus:bg-white outline-none"
-                    placeholder="กรอกอีเมล..." />
+                    placeholder="กรอกอีเมลหรือรหัสนิสิต..." />
                 </div>
               </div>
 
@@ -66,11 +66,11 @@
                 type="submit">
                 ลงชื่อเข้าใช้
               </button>
-              <div class="w-full flex justify-center">
+              <!-- <div class="w-full flex justify-center">
                 <button type="button" class="flex justify-center items-center w-full text-base md:text-lg shadow-md border-2 text-[#006c67] cursor-pointer border-[#006c67] hover:bg-[#006c67] hover:text-white transition hover:shadow-lg py-1 px-4 rounded" onclick="window.location.reload();">
                   KU All-Login
                 </button>
-              </div>
+              </div> -->
             </div>
           </div>
         </form>

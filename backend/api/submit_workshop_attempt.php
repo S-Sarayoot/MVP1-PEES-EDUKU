@@ -140,6 +140,18 @@ try {
         jsonFail('Workshop has no questions', 400);
     }
 
+    // Only support choice questions (legacy open questions are ignored)
+    $hasChoice = false;
+    foreach ($questions as $q) {
+        if (is_array($q) && (($q['type'] ?? 'choice') !== 'open')) {
+            $hasChoice = true;
+            break;
+        }
+    }
+    if (!$hasChoice) {
+        jsonFail('Workshop has no supported questions', 400);
+    }
+
     $db->beginTransaction();
 
     // Build answers map: index -> answer payload
@@ -151,8 +163,13 @@ try {
         $answersByIndex[$idx] = $a;
     }
 
-    // Validate all questions answered
+    // Validate all choice questions answered (open questions are ignored)
     for ($i = 0; $i < count($questions); $i++) {
+        $q = $questions[$i];
+        if (!is_array($q)) $q = [];
+        $qType = ($q['type'] ?? 'choice') === 'open' ? 'open' : 'choice';
+        if ($qType !== 'choice') continue;
+
         if (!array_key_exists($i, $answersByIndex)) {
             jsonFail('Missing answer for question index ' . $i);
         }
@@ -229,7 +246,15 @@ try {
         $qScore = intval($q['score'] ?? 0);
         if ($qScore < 0) $qScore = 0;
 
-        $a = $answersByIndex[$i];
+        if ($qType !== 'choice') {
+            // Ignore legacy open questions
+            continue;
+        }
+
+        $a = $answersByIndex[$i] ?? null;
+        if (!is_array($a)) {
+            jsonFail('Missing answer for question index ' . $i);
+        }
 
         if ($qType === 'choice') {
             $selected = normalizeChoiceIndex($a['answer'] ?? null);
@@ -261,30 +286,6 @@ try {
                 ':answer_text' => null,
                 ':is_correct' => $isCorrect ? 1 : 0,
                 ':score_auto' => $scoreThis,
-                ':score_manual' => null,
-            ]);
-        } else {
-            $answerText = trim((string)($a['answer'] ?? ''));
-            if ($answerText === '') {
-                jsonFail('Missing open answer for question index ' . $i);
-            }
-
-            $needsManual = true;
-            $maxScoreManual += $qScore;
-
-            $insertAnswer->execute([
-                ':attempt_id' => $attemptId,
-                ':workshop_id' => $workshopId,
-                ':user_id' => $userId,
-                ':question_index' => $i,
-                ':question_type' => 'open',
-                ':question_text' => $qText,
-                ':max_score' => $qScore,
-                ':selected_choice' => null,
-                ':correct_choice' => null,
-                ':answer_text' => $answerText,
-                ':is_correct' => null,
-                ':score_auto' => 0,
                 ':score_manual' => null,
             ]);
         }

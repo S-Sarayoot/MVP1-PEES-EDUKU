@@ -20,6 +20,7 @@ function ensureColumnExists(PDO $db, string $table, string $column, string $defi
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id            = $_POST['user_id']            ?? null;
     $user_code          = $_POST['user_code']          ?? null;
+    $password           = $_POST['password']           ?? null;
     $user_type          = $_POST['user_type']          ?? null;
     $user_name          = $_POST['user_name']          ?? null;
     $user_province      = $_POST['user_province']      ?? null;
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company_house_file = $_POST['company_house_file'] ?? null;
     $idcard_file        = $_POST['idcard_file']        ?? null;
     $book_bank_file     = $_POST['book_bank_file']     ?? null;
-    $status             = $_POST['status']             ?? null;
+    // $status             = $_POST['status']             ?? null;
     $faculty_id         = $_POST['faculty_id']         ?? null;
     $major_id           = $_POST['major_id']           ?? null;
 
@@ -62,18 +63,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userModel->company_house_file = $company_house_file;
     $userModel->idcard_file        = $idcard_file;
     $userModel->book_bank_file     = $book_bank_file;
-    $userModel->status             = $status;
+    $userModel->status             = 1;
     $userModel->faculty_id         = $faculty_id;
     $userModel->major_id           = $major_id;
 
     $userModel->academic_year      = $academic_year;
     $userModel->academic_term      = $academic_term;
 
-    $result = $userModel->updateUser();
+    $passwordToStore = null;
+    if ($password !== null) {
+        $password = trim((string)$password);
+        if ($password !== '') {
+            $info = password_get_info($password);
+            // If client already sends a password_hash()-style string, keep it as-is.
+            $passwordToStore = ($info['algo'] ?? 0) !== 0
+                ? $password
+                : password_hash($password, PASSWORD_DEFAULT);
+        }
+    }
 
-    if ($result) {
-        $response['success'] = true;
-    } else {
+    try {
+        $db->beginTransaction();
+        $result = $userModel->updateUser();
+        if ($result && $passwordToStore !== null) {
+            $userModel->password = $passwordToStore;
+            $result = $userModel->updatePassword();
+        }
+
+        if ($result) {
+            $db->commit();
+            $response['success'] = true;
+        } else {
+            $db->rollBack();
+            $response['message'] = 'อัพเดตข้อมูลไม่สำเร็จ';
+        }
+    } catch (Throwable $e) {
+        if ($db->inTransaction()) {
+            $db->rollBack();
+        }
         $response['message'] = 'อัพเดตข้อมูลไม่สำเร็จ';
     }
 } else {

@@ -18,8 +18,8 @@
   if($credential_user_type == 'admin') {
     $sideBarMenu = [
       [ "name" => "Dashboard", "path" => $base_url . "/admin/" ],
+      [ "name" => "Workshop", "path" => $base_url . "/admin/workshop_admin" ],
       [ "name" => "คลังทรัพยากร", "path" => $base_url . "/admin/storage_admin" ],
-      [ "name" => "Workshop/แผนฯ", "path" => $base_url . "/admin/workshop_admin" ],
       [ "name" => "ผู้ใช้งาน", "path" => $base_url . "/admin/users_admin" ],
       [ "name" => "ระบบให้คำปรึกษา", "path" => $base_url . "/admin/consulting" ],
       [ "name" => "รายงาน/log", "path" => $base_url . "/admin/log_admin" ]
@@ -32,7 +32,7 @@
   } else if($credential_user_type == 'student') {     
         $sideBarMenu = [
           [ "name" => "Dashboard", "path" => $base_url . "/student/" ],
-          [ "name" => "Workshop/แผนฯ", "path" => $base_url . "/student/workshop" ],
+          [ "name" => "Workshop", "path" => $base_url . "/student/workshop" ],
           [ "name" => "คลังทรัพยากร", "path" => $base_url . "/student/storage" ],
           
           [ "name" => "ระบบสะท้อนความคิด", "path" => $base_url . "/student/reflection?workshop=1" ],
@@ -47,8 +47,8 @@
   } else if($credential_user_type == 'teacher') {   
         $sideBarMenu = [
           [ "name" => "Dashboard", "path" => $base_url . "/teacher/" ],
-          [ "name" => "คลังทรัพยากร", "path" => $base_url . "/teacher/media" ],
           [ "name" => "Workshop", "path" => $base_url . "/teacher/workshop" ],
+          [ "name" => "คลังทรัพยากร", "path" => $base_url . "/teacher/media" ],
           [ "name" => "ผู้ใช้งาน", "path" => $base_url . "/teacher/user" ]
         ];
         echo '<script>';

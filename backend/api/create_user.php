@@ -48,10 +48,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ensureColumnExists($db, 'elk_user', 'academic_year', 'VARCHAR(10) NULL');
     ensureColumnExists($db, 'elk_user', 'academic_term', 'VARCHAR(10) NULL');
 
+    $passwordToStore = null;
+    if ($password !== null) {
+        $password = trim((string)$password);
+        if ($password !== '') {
+            $info = password_get_info($password);
+            // If client already sends a password_hash()-style string, keep it as-is.
+            $passwordToStore = ($info['algo'] ?? 0) !== 0
+                ? $password
+                : password_hash($password, PASSWORD_DEFAULT);
+        }
+    }
+
     // กำหนดค่า property ใน object
     $userModel->user_code         = $user_code;
     $userModel->username          = $username;
-    $userModel->password          = $password;
+    $userModel->password          = $passwordToStore;
     $userModel->user_type         = $user_type;
     $userModel->user_name         = $user_name;
     $userModel->user_province     = $user_province;
@@ -76,7 +88,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response['success'] = true;
         $response['message'] = 'สร้างผู้ใช้งานสำเร็จ';
     } else {
-        $response['message'] = 'บันทึกข้อมูลไม่สำเร็จ';
+        $err = (string)($userModel->last_error ?? '');
+        // MySQL duplicate key typically: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'x' for key 'username'
+        if (stripos($err, 'Duplicate entry') !== false && (stripos($err, "key 'username'") !== false || stripos($err, 'username') !== false)) {
+            $response['message'] = 'username ซ้ำบนระบบ';
+        } else {
+            $response['message'] = 'บันทึกข้อมูลไม่สำเร็จ';
+        }
     }
 } else {
     $response['message'] = 'Invalid request method';

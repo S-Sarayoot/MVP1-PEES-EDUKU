@@ -34,6 +34,58 @@ $userExists = $user->userExists();
 
 if ($userExists && password_verify($_POST["password"], $user->password)) {
 
+    // Record login (used by admin dashboard)
+    try {
+        $ensureColumnExists = function ($db, $table, $column, $definition) {
+            try {
+                $stmt = $db->prepare(
+                    "SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS\n" .
+                    "WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = :t AND COLUMN_NAME = :c LIMIT 1"
+                );
+                $stmt->execute([':t' => $table, ':c' => $column]);
+                $exists = (bool)$stmt->fetchColumn();
+                if (!$exists) {
+                    $db->exec("ALTER TABLE `{$table}` ADD COLUMN `{$column}` {$definition}");
+                }
+            } catch (Throwable $e) {
+                // ignore schema migration failures
+            }
+        };
+
+        $db->exec(
+            "CREATE TABLE IF NOT EXISTS elk_user_login_log (\n" .
+            "  id BIGINT NOT NULL AUTO_INCREMENT,\n" .
+            "  user_id INT NOT NULL,\n" .
+            "  user_type VARCHAR(50) NULL,\n" .
+            "  username VARCHAR(255) NULL,\n" .
+            "  ip_address VARCHAR(45) NULL,\n" .
+            "  user_agent VARCHAR(255) NULL,\n" .
+            "  login_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,\n" .
+            "  PRIMARY KEY (id),\n" .
+            "  INDEX idx_login_at (login_at),\n" .
+            "  INDEX idx_user_id (user_id)\n" .
+            ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"
+        );
+
+        // In case the table already existed before ip/user_agent columns were added
+        $ensureColumnExists($db, 'elk_user_login_log', 'ip_address', 'VARCHAR(45) NULL');
+        $ensureColumnExists($db, 'elk_user_login_log', 'user_agent', 'VARCHAR(255) NULL');
+
+        $ip = $_SERVER['REMOTE_ADDR'] ?? null;
+        $ua = $_SERVER['HTTP_USER_AGENT'] ?? null;
+
+        $stmtLogin = $db->prepare('INSERT INTO elk_user_login_log (user_id, user_type, username, ip_address, user_agent) VALUES (:uid, :ut, :un, :ip, :ua)');
+        $stmtLogin->execute([
+            ':uid' => (int)$user->user_id,
+            ':ut' => $user->user_type ?? null,
+            ':un' => $user->username ?? null,
+            ':ip' => $ip,
+            ':ua' => $ua,
+        ]);
+    } catch (Throwable $e) {
+        // ignore logging failures
+    }
+
     
     
     $token = array(

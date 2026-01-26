@@ -57,16 +57,23 @@ $workshop_id = isset($payload['workshop_id']) ? intval($payload['workshop_id']) 
 $open_time = normalizeDatetimeLocal($payload['open_time'] ?? '');
 $close_time = normalizeDatetimeLocal($payload['close_time'] ?? '');
 $objective = trim((string)($payload['objective'] ?? ''));
+$main_concept = trim((string)($payload['main_concept'] ?? ''));
 $instruction = trim((string)($payload['instruction'] ?? ''));
 $questions = $payload['questions'] ?? [];
+$rubric = $payload['rubric'] ?? [];
 
 if ($workshop_id <= 0) jsonFail('Missing workshop_id');
 if ($open_time === '') jsonFail('Missing open_time');
 if ($close_time === '') jsonFail('Missing close_time');
 if ($objective === '') jsonFail('Missing objective');
+if ($main_concept === '') jsonFail('Missing main_concept');
 if ($instruction === '') jsonFail('Missing instruction');
 if (!is_array($questions) || count($questions) === 0) jsonFail('Missing questions');
 if (count($questions) > 10) jsonFail('Too many questions (max 10)');
+
+// Rubric is configured at workshop-level (required)
+if (!is_array($rubric) || count($rubric) === 0) jsonFail('Missing rubric');
+if (count($rubric) > 10) jsonFail('Too many rubric items (max 10)');
 
 // Validate score sum = 100 (server-side guard)
 $totalScore = 0;
@@ -88,14 +95,24 @@ foreach ($questions as $q) {
             if (trim((string)$c) === '') jsonFail('Choice text is required');
         }
         if (!is_int($answer) && !ctype_digit((string)$answer)) jsonFail('Choice answer is required');
-    } elseif ($type === 'open') {
-        $rubric_desc = $q['rubric_desc'] ?? [];
-        $rubric_score = $q['rubric_score'] ?? [];
-        if (!is_array($rubric_desc) || !is_array($rubric_score) || count($rubric_desc) !== 5 || count($rubric_score) !== 5) {
-            jsonFail('Open question must have 5-level rubric');
-        }
     } else {
-        jsonFail('Invalid question type');
+        jsonFail('Invalid question type (only choice is supported)');
+    }
+}
+
+// Validate workshop-level rubric
+foreach ($rubric as $item) {
+    if (!is_array($item)) jsonFail('Invalid rubric item');
+    $title = trim((string)($item['title'] ?? ''));
+    if ($title === '') jsonFail('Rubric title is required');
+
+    $levelCount = intval($item['level_count'] ?? 0);
+    if (!in_array($levelCount, [3, 5], true)) jsonFail('Rubric level_count must be 3 or 5');
+
+    $desc = $item['desc'] ?? [];
+    if (!is_array($desc) || count($desc) !== $levelCount) jsonFail('Rubric desc must match level_count');
+    foreach ($desc as $d) {
+        if (trim((string)$d) === '') jsonFail('Rubric description is required');
     }
 }
 
@@ -117,8 +134,10 @@ try {
         "  open_time DATETIME NOT NULL,\n" .
         "  close_time DATETIME NOT NULL,\n" .
         "  objective TEXT NOT NULL,\n" .
+        "  main_concept TEXT NULL,\n" .
         "  instruction TEXT NOT NULL,\n" .
         "  questions_json JSON NOT NULL,\n" .
+        "  rubric_json JSON NULL,\n" .
         "  created_by INT NULL,\n" .
         "  updated_by INT NULL,\n" .
         "  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n" .
@@ -127,15 +146,37 @@ try {
         ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"
     );
 
+    // Ensure column exists for older DBs
+    try {
+        $col = $db->query("SHOW COLUMNS FROM elk_workshops LIKE 'main_concept'");
+        if ($col && $col->rowCount() === 0) {
+            $db->exec("ALTER TABLE elk_workshops ADD COLUMN main_concept TEXT NULL AFTER objective");
+        }
+    } catch (Exception $e) {
+        // ignore; best-effort migration
+    }
+
+    // Ensure rubric_json exists for older DBs
+    try {
+        $col = $db->query("SHOW COLUMNS FROM elk_workshops LIKE 'rubric_json'");
+        if ($col && $col->rowCount() === 0) {
+            $db->exec("ALTER TABLE elk_workshops ADD COLUMN rubric_json JSON NULL AFTER questions_json");
+        }
+    } catch (Exception $e) {
+        // ignore; best-effort migration
+    }
+
     $stmt = $db->prepare(
-        "INSERT INTO elk_workshops (id, open_time, close_time, objective, instruction, questions_json, created_by, updated_by)\n" .
-        "VALUES (:id, :open_time, :close_time, :objective, :instruction, :questions_json, :created_by, :updated_by)\n" .
+        "INSERT INTO elk_workshops (id, open_time, close_time, objective, main_concept, instruction, questions_json, rubric_json, created_by, updated_by)\n" .
+        "VALUES (:id, :open_time, :close_time, :objective, :main_concept, :instruction, :questions_json, :rubric_json, :created_by, :updated_by)\n" .
         "ON DUPLICATE KEY UPDATE\n" .
         "  open_time = VALUES(open_time),\n" .
         "  close_time = VALUES(close_time),\n" .
         "  objective = VALUES(objective),\n" .
+        "  main_concept = VALUES(main_concept),\n" .
         "  instruction = VALUES(instruction),\n" .
         "  questions_json = VALUES(questions_json),\n" .
+        "  rubric_json = VALUES(rubric_json),\n" .
         "  updated_by = VALUES(updated_by)"
     );
 
@@ -144,13 +185,20 @@ try {
         jsonFail('Failed to encode questions', 500);
     }
 
+    $rubricJson = json_encode($rubric, JSON_UNESCAPED_UNICODE);
+    if ($rubricJson === false) {
+        jsonFail('Failed to encode rubric', 500);
+    }
+
     $stmt->execute([
         ':id' => $workshop_id,
         ':open_time' => $open_time,
         ':close_time' => $close_time,
         ':objective' => $objective,
+        ':main_concept' => $main_concept,
         ':instruction' => $instruction,
         ':questions_json' => $questionsJson,
+        ':rubric_json' => $rubricJson,
         ':created_by' => isset($credential_user_id) ? intval($credential_user_id) : null,
         ':updated_by' => isset($credential_user_id) ? intval($credential_user_id) : null,
     ]);

@@ -17,7 +17,11 @@
 				$bannerId = 'home1';
 				$bannerTitle = 'Game based learning';
 				$bannerSubtitle = 'ช่วยคุณได้มากกว่าที่คิด';
-				$bannerMediaUrl = 'https://www.youtube.com/watch?v=_f4nO8liXXI';
+				// Banner images (slideshow). Add more images to this array when needed.
+				$bannerImages = [
+					'../image/Banner-1.png',
+					'../image/Banner-2.png',
+				];
 			?>
 
 			<div class="flex w-full rounded-lg overflow-hidden shadow-lg">
@@ -25,197 +29,119 @@
 					<h2 class="text-2xl font-bold mb-2"><?php echo htmlspecialchars($bannerTitle); ?></h2>
 					<p class="text-gray-700"><?php echo htmlspecialchars($bannerSubtitle); ?></p>
 				</div> -->
-				<div class="relative w-full h-[320px] md:h-[420px] lg:h-[520px] bg-black overflow-hidden">
+				<div class="relative w-full h-[320px] md:h-[420px] lg:h-[520px] bg-white overflow-hidden">
 					<div id="banner-media-<?php echo htmlspecialchars($bannerId); ?>" class="w-full h-full"></div>
-					<div class="absolute inset-0 flex items-center justify-center">
-						<button id="play-btn-<?php echo htmlspecialchars($bannerId); ?>" class="bg-red-300 bg-opacity-60 rounded-full p-4 hover:bg-opacity-80 transition">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<polygon points="5,3 19,12 5,21" fill="white"/>
-							</svg>
-						</button>
-					</div>
 				</div>
-			</div>
-
-			<script>
-				const banner<?php echo $bannerId; ?> = document.getElementById("banner-media-<?php echo $bannerId; ?>");
-				const playBtn<?php echo $bannerId; ?> = document.getElementById("play-btn-<?php echo $bannerId; ?>");
-				const overlay<?php echo $bannerId; ?> = playBtn<?php echo $bannerId; ?> ? playBtn<?php echo $bannerId; ?>.parentElement : null;
-				const mediaUrl<?php echo $bannerId; ?> = <?php echo json_encode($bannerMediaUrl); ?>;
-
-				const getYouTubeId = (url) => {
-					try {
-						const u = new URL(url);
-						// youtu.be/<id>
-						if (u.hostname.includes('youtu.be')) {
-							const id = u.pathname.replace('/', '').trim();
-							return id || null;
-						}
-						// youtube.com/watch?v=<id>
-						if (u.searchParams.get('v')) return u.searchParams.get('v');
-						// youtube.com/embed/<id>
-						const parts = u.pathname.split('/').filter(Boolean);
-						const embedIndex = parts.indexOf('embed');
-						if (embedIndex >= 0 && parts[embedIndex + 1]) return parts[embedIndex + 1];
-						return null;
-					} catch {
-						return null;
-					}
-				};
-
-				const youTubeId = getYouTubeId(mediaUrl<?php echo $bannerId; ?>);
-				let mode<?php echo $bannerId; ?> = 'unknown';
-
-				if (youTubeId) {
-					mode<?php echo $bannerId; ?> = 'youtube';
-					banner<?php echo $bannerId; ?>.innerHTML = `
-						<div style="position:relative;width:100%;height:100%;overflow:hidden;">
-							<iframe
-								style="position:absolute;top:50%;left:50%;width:200%;height:200%;transform:translate(-50%,-50%);"
-								src="https://www.youtube.com/embed/${youTubeId}?autoplay=1&mute=1&rel=0&playsinline=1&modestbranding=1&loop=1&playlist=${youTubeId}"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-							></iframe>
-						</div>
-					`;
-					if (overlay<?php echo $bannerId; ?>) overlay<?php echo $bannerId; ?>.style.display = "none";
-				} else if (mediaUrl<?php echo $bannerId; ?>.match(/\.(mp4|webm|ogg)$/i)) {
-					mode<?php echo $bannerId; ?> = 'video';
-					banner<?php echo $bannerId; ?>.innerHTML = `
-						<video id="banner-video-<?php echo $bannerId; ?>" class="w-full h-full object-cover" autoplay muted loop playsinline>
-							<source src="${mediaUrl<?php echo $bannerId; ?>}" type="video/mp4">
-							Your browser does not support the video tag.
-						</video>
-					`;
-					if (overlay<?php echo $bannerId; ?>) overlay<?php echo $bannerId; ?>.style.display = "none";
-				} else if (mediaUrl<?php echo $bannerId; ?>.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
-					mode<?php echo $bannerId; ?> = 'image';
-					banner<?php echo $bannerId; ?>.innerHTML = `<img src="${mediaUrl<?php echo $bannerId; ?>}" alt="Banner" class="w-full h-full object-cover">`;
-					if (overlay<?php echo $bannerId; ?>) overlay<?php echo $bannerId; ?>.style.display = "none";
-				} else {
-					banner<?php echo $bannerId; ?>.innerHTML = `<div class="flex items-center justify-center text-white">Unsupported media</div>`;
-					if (overlay<?php echo $bannerId; ?>) overlay<?php echo $bannerId; ?>.style.display = "none";
-				}
-
-				playBtn<?php echo $bannerId; ?>.addEventListener("click", () => {
-					if (mode<?php echo $bannerId; ?> === 'youtube' && youTubeId) {
-						banner<?php echo $bannerId; ?>.innerHTML = `
-							<iframe
-								class="w-full h-full"
-								src="https://www.youtube.com/embed/${youTubeId}?autoplay=1&mute=1&rel=0&loop=1&playlist=${youTubeId}"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-							></iframe>
-						`;
-						playBtn<?php echo $bannerId; ?>.style.display = "none";
-						return;
-					}
-					if (mode<?php echo $bannerId; ?> === 'video') {
-						const video = document.getElementById("banner-video-<?php echo $bannerId; ?>");
-						if (video) {
-							video.play();
-							playBtn<?php echo $bannerId; ?>.style.display = "none";
-						}
-					}
-				});
-			</script>
-
-
-			<div class="w-full bg-white p-[35px] mt-6">
-				<div class="flex items-center justify-between mb-4 gap-4">
-					<h2 class="text-2xl font-bold">สื่อการสอน</h2>
-					<a href="storage" class="text-sm text-purple-700 hover:underline whitespace-nowrap">ดูทั้งหมด</a>
-				</div>
-				<div id="random-posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 			</div>
 
 			<script>
 				(() => {
-					const container = document.getElementById('random-posts');
-					if (!container) return;
+					const bannerEl = document.getElementById("banner-media-<?php echo $bannerId; ?>");
+					if (!bannerEl) return;
 
-					container.innerHTML = '<div class="flex justify-center items-center w-full col-span-full py-12"><img src="../image/loading.gif" alt="loading" class="w-16 h-16"></div>';
+					const images = <?php echo json_encode($bannerImages ?? [], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
+					const slides = Array.isArray(images) ? images.filter(Boolean) : [];
 
-					const limit = 6;
-					const storageUrl = 'post';
+					if (slides.length === 0) {
+						bannerEl.innerHTML = '<div class="flex items-center justify-center w-full h-full text-gray-400">No banner</div>';
+						return;
+					}
 
-					const shuffleInPlace = (arr) => {
-						for (let i = arr.length - 1; i > 0; i--) {
-							const j = Math.floor(Math.random() * (i + 1));
-							[arr[i], arr[j]] = [arr[j], arr[i]];
-						}
-						return arr;
-					};
+					let index = 0;
+					let timer = null;
+					const canSlide = slides.length > 1;
 
-					fetch('../backend/api/get_posts.php')
-						.then((res) => res.json())
-						.then((payload) => {
-							if (!payload?.success || !Array.isArray(payload.data)) {
-								throw new Error(payload?.message || 'Invalid response');
-							}
+					bannerEl.innerHTML = `
+						<div class="relative w-full h-full" data-carousel>
+							<div class="w-full h-full overflow-hidden">
+								<div class="flex w-full h-full transition-transform duration-500 ease-in-out" data-track></div>
+							</div>
+							<button type="button" class="hidden md:flex items-center justify-center absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 text-white hover:bg-black/60" data-prev aria-label="Previous">‹</button>
+							<button type="button" class="hidden md:flex items-center justify-center absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 text-white hover:bg-black/60" data-next aria-label="Next">›</button>
+							<div class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2" data-dots></div>
+						</div>
+					`;
 
-							const posts = shuffleInPlace(payload.data.slice());
-							const selected = posts.slice(0, Math.max(0, limit));
-							container.innerHTML = '';
+					const root = bannerEl.querySelector('[data-carousel]');
+					const track = bannerEl.querySelector('[data-track]');
+					const dots = bannerEl.querySelector('[data-dots]');
+					const btnPrev = bannerEl.querySelector('[data-prev]');
+					const btnNext = bannerEl.querySelector('[data-next]');
+					if (!track || !dots) return;
 
-							if (selected.length === 0) {
-								container.innerHTML = '<div class="p-4 text-gray-400">ไม่พบข้อมูล</div>';
-								return;
-							}
+					slides.forEach((src, i) => {
+						const slide = document.createElement('div');
+						slide.className = 'w-full h-full flex-shrink-0';
+						slide.innerHTML = `<img src="${src}" alt="Banner ${i + 1}" class="w-full object-contain bg-white" />`;
+						track.appendChild(slide);
 
-							selected.forEach((item) => {
-								const card = document.createElement('div');
-								card.className = 'bg-white rounded-lg shadow-lg flex flex-col overflow-hidden border border-gray-100 hover:shadow-xl transition';
+						const dot = document.createElement('button');
+						dot.type = 'button';
+						dot.className = 'w-2.5 h-2.5 rounded-full bg-white/60 hover:bg-white transition';
+						dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+						dot.addEventListener('click', () => setIndex(i));
+						dots.appendChild(dot);
+					});
 
-								const link = document.createElement('a');
-								link.href = `${storageUrl}?id=${encodeURIComponent(item?.id ?? '')}`;
-
-								const img = document.createElement('img');
-								img.src = item?.thumbnail || '../image/no-thumbnail.png';
-								img.alt = 'thumbnail';
-								img.className = 'w-full h-60 object-cover bg-gray-100';
-								link.appendChild(img);
-								card.appendChild(link);
-
-								const body = document.createElement('div');
-								body.className = 'p-4 flex-1 flex flex-col justify-between';
-
-								const titleWrap = document.createElement('div');
-								const title = document.createElement('h3');
-								title.className = 'font-semibold text-[#433878] text-lg mb-1';
-								const titleLink = document.createElement('a');
-								titleLink.href = `${storageUrl}?id=${encodeURIComponent(item?.id ?? '')}`;
-								titleLink.className = 'hover:underline';
-								titleLink.textContent = item?.title || '-';
-								title.appendChild(titleLink);
-								titleWrap.appendChild(title);
-
-								const category = document.createElement('p');
-								category.className = 'text-gray-500 text-sm mb-2';
-								category.textContent = item?.category || '-';
-								titleWrap.appendChild(category);
-
-								const date = document.createElement('p');
-								date.className = 'text-gray-400 text-xs';
-								date.textContent = item?.uploaded_at ? String(item.uploaded_at).substring(0, 10) : '-';
-								titleWrap.appendChild(date);
-
-								body.appendChild(titleWrap);
-								card.appendChild(body);
-
-								container.appendChild(card);
-							});
-						})
-						.catch((err) => {
-							console.error(err);
-							container.innerHTML = '<div class="p-4 text-gray-400">ไม่สามารถโหลดข้อมูลได้</div>';
+					function render() {
+						track.style.transform = `translateX(-${index * 100}%)`;
+						const dotEls = dots.querySelectorAll('button');
+						dotEls.forEach((d, i) => {
+							d.classList.toggle('bg-white', i === index);
+							d.classList.toggle('bg-white/60', i !== index);
 						});
+					}
+
+					function setIndex(next) {
+						if (!canSlide) return;
+						index = (next + slides.length) % slides.length;
+						render();
+						restart();
+					}
+
+					function next() { setIndex(index + 1); }
+					function prev() { setIndex(index - 1); }
+
+					function stop() {
+						if (timer) clearInterval(timer);
+						timer = null;
+					}
+
+					function start() {
+						if (!canSlide) return;
+						stop();
+						timer = setInterval(next, 6000);
+					}
+
+					function restart() {
+						start();
+					}
+
+					if (btnPrev && btnNext) {
+						if (canSlide) {
+							btnPrev.classList.remove('hidden');
+							btnNext.classList.remove('hidden');
+							btnPrev.addEventListener('click', prev);
+							btnNext.addEventListener('click', next);
+						} else {
+							btnPrev.classList.add('hidden');
+							btnNext.classList.add('hidden');
+						}
+					}
+
+					if (!canSlide) {
+						dots.classList.add('hidden');
+					}
+
+					root?.addEventListener('mouseenter', stop);
+					root?.addEventListener('mouseleave', start);
+					render();
+					start();
 				})();
 			</script>
+
+
+			
 
             <!-- Section Workshop -->
 
@@ -353,6 +279,98 @@
 								return;
 							}
 							container.innerHTML = items.map(renderCard).join('');
+						})
+						.catch((err) => {
+							console.error(err);
+							container.innerHTML = '<div class="p-4 text-gray-400">ไม่สามารถโหลดข้อมูลได้</div>';
+						});
+				})();
+			</script>
+
+            <div class="w-full bg-white p-[35px] mt-6">
+				<div class="flex items-center justify-between mb-4 gap-4">
+					<h2 class="text-2xl font-bold">ทรัพยากร</h2>
+					<a href="storage" class="text-sm text-purple-700 hover:underline whitespace-nowrap">ดูทั้งหมด</a>
+				</div>
+				<div id="random-posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+			</div>
+
+			<script>
+				(() => {
+					const container = document.getElementById('random-posts');
+					if (!container) return;
+
+					container.innerHTML = '<div class="flex justify-center items-center w-full col-span-full py-12"><img src="../image/loading.gif" alt="loading" class="w-16 h-16"></div>';
+
+					const limit = 6;
+					const storageUrl = 'post';
+
+					const shuffleInPlace = (arr) => {
+						for (let i = arr.length - 1; i > 0; i--) {
+							const j = Math.floor(Math.random() * (i + 1));
+							[arr[i], arr[j]] = [arr[j], arr[i]];
+						}
+						return arr;
+					};
+
+					fetch('../backend/api/get_posts.php')
+						.then((res) => res.json())
+						.then((payload) => {
+							if (!payload?.success || !Array.isArray(payload.data)) {
+								throw new Error(payload?.message || 'Invalid response');
+							}
+
+							const posts = shuffleInPlace(payload.data.slice());
+							const selected = posts.slice(0, Math.max(0, limit));
+							container.innerHTML = '';
+
+							if (selected.length === 0) {
+								container.innerHTML = '<div class="p-4 text-gray-400">ไม่พบข้อมูล</div>';
+								return;
+							}
+
+							selected.forEach((item) => {
+								const card = document.createElement('div');
+								card.className = 'bg-white rounded-lg shadow-lg flex flex-col overflow-hidden border border-gray-100 hover:shadow-xl transition';
+
+								const link = document.createElement('a');
+								link.href = `${storageUrl}?id=${encodeURIComponent(item?.id ?? '')}`;
+
+								const img = document.createElement('img');
+								img.src = item?.thumbnail || '../image/no-thumbnail.png';
+								img.alt = 'thumbnail';
+								img.className = 'w-full h-60 object-cover bg-gray-100';
+								link.appendChild(img);
+								card.appendChild(link);
+
+								const body = document.createElement('div');
+								body.className = 'p-4 flex-1 flex flex-col justify-between';
+
+								const titleWrap = document.createElement('div');
+								const title = document.createElement('h3');
+								title.className = 'font-semibold text-[#433878] text-lg mb-1';
+								const titleLink = document.createElement('a');
+								titleLink.href = `${storageUrl}?id=${encodeURIComponent(item?.id ?? '')}`;
+								titleLink.className = 'hover:underline';
+								titleLink.textContent = item?.title || '-';
+								title.appendChild(titleLink);
+								titleWrap.appendChild(title);
+
+								const category = document.createElement('p');
+								category.className = 'text-gray-500 text-sm mb-2';
+								category.textContent = item?.category || '-';
+								titleWrap.appendChild(category);
+
+								const date = document.createElement('p');
+								date.className = 'text-gray-400 text-xs';
+								date.textContent = item?.uploaded_at ? String(item.uploaded_at).substring(0, 10) : '-';
+								titleWrap.appendChild(date);
+
+								body.appendChild(titleWrap);
+								card.appendChild(body);
+
+								container.appendChild(card);
+							});
 						})
 						.catch((err) => {
 							console.error(err);

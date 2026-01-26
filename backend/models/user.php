@@ -38,6 +38,9 @@ class User{
 	public $academic_year;
 	public $academic_term;
 
+	public $last_error;
+	public $last_error_code;
+
  
     // constructor with $db as database connection
     public function __construct($db){
@@ -211,13 +214,21 @@ class User{
 	$stmt->bindParam(":academic_year", $this->academic_year);
 	$stmt->bindParam(":academic_term", $this->academic_term);
 
-    // execute query
-    if($stmt->execute()){
-        return true;
-    }else{
-        error_log("Error creating user: " . print_r($stmt->errorInfo(), true));
-        return false;
-    }
+	// execute query
+	try {
+		if($stmt->execute()){
+			return true;
+		}
+		$this->last_error = json_encode($stmt->errorInfo());
+		$this->last_error_code = null;
+		error_log("Error creating user: " . print_r($stmt->errorInfo(), true));
+		return false;
+	} catch (PDOException $e) {
+		$this->last_error = $e->getMessage();
+		$this->last_error_code = $e->getCode();
+		error_log("Error creating user (exception): " . $e->getMessage());
+		return false;
+	}
 	}
 
 
