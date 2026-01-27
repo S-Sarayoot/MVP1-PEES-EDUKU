@@ -193,9 +193,9 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 
 		const roleBadge = (userType) => {
 			const t = String(userType || '').toLowerCase();
-			if (t === 'teacher') return '<span class="text-xs px-2 py-0.5 rounded bg-green-100 text-green-700">อาจารย์</span>';
-			if (t === 'admin') return '<span class="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-700">แอดมิน</span>';
-			return '<span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-700">นักเรียน</span>';
+			if (t === 'teacher') return '<span class="text-xs px-2 py-0.5 rounded bg-green-100 text-green-700">คุณครู/ผู้ทรงคุณวุฒิ</span>';
+			if (t === 'admin') return '<span class="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-700">ผู้ดูแลระบบ</span>';
+			return '<span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-700">นิสิต</span>';
 		};
 
 		const renderNote = (note, indentLevel = 0) => {
@@ -259,7 +259,7 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 			return;
 		}
 
-		if (elActivityLink) elActivityLink.href = `../student/activity.php?workshop=${encodeURIComponent(String(workshopId))}`;
+		if (elActivityLink) elActivityLink.href = `../teacher/activity.php?workshop=${encodeURIComponent(String(workshopId))}`;
 
 		setResourcesLoading('loading');
 		fetch(`../backend/api/get_workshop_posts.php?workshop_id=${encodeURIComponent(String(workshopId))}`)

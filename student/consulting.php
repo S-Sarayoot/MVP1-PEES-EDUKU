@@ -121,27 +121,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
 
         <div class="w-full">
-          <div class="bg-white p-4 rounded-lg shadow-md h-max-auto border-2 border-purple-100">
+            <div class="bg-white p-4 rounded-lg shadow-md h-max-auto border-2 border-purple-100">
             <h2 class="text-2xl font-semibold text-[#433878]">คำถามที่พบบ่อย (FAQ)</h2>
             <div id="faq" class="border-b border-purple-100 p-4">
-              <?php
+                <?php
                 $faq = faq_chatbot_pairs();
                 $faq = array_slice($faq, 0, 10);
                 $idx = 1;
-              ?>
-              <?php foreach ($faq as $item): ?>
+                ?>
+                <?php foreach ($faq as $item): ?>
                 <button class="w-full flex justify-between items-center py-3 text-left text-gray-800 font-medium focus:outline-none cursor-pointer"
                         onclick="toggleFAQ(<?= $idx ?>)">
-                  <span>Q: <?= esc($item['q'] ?? '') ?></span>
-                  <span id="icon-<?= $idx ?>" class="text-[#433878]">+</span>
+                    <span>Q: <?= esc($item['q'] ?? '') ?></span>
+                    <span id="icon-<?= $idx ?>" class="text-[#433878]">+</span>
                 </button>
                 <div id="faq-<?= $idx ?>" class="hidden pb-3 text-gray-600 shadow-md bg-purple-50 rounded-md p-3">
-                  <?= esc($item['a'] ?? '') ?>
+                    <?= esc($item['a'] ?? '') ?>
                 </div>
                 <?php $idx++; ?>
-              <?php endforeach; ?>
-          </div>
+                <?php endforeach; ?>
+            </div>
         </div>
+        <a href="https://chatgpt.com/g/g-693a32b4d5c48191a1c5409cde1fa4b7-equity-expert" target="_blank" rel="noopener noreferrer"
+               class="block mt-5 bg-white p-4 rounded-lg shadow-md border-2 border-purple-100 hover:shadow-lg transition">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h2 class="text-2xl font-semibold text-[#433878]">Equity Expert</h2>
+                  <p class="text-gray-600 mt-1 text-sm">คลิกเพื่อเปิดผู้ช่วย Equity Expert (เปิดแท็บใหม่)</p>
+                </div>
+                <div class="shrink-0 mt-1 text-[#433878]">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="22" fill="currentColor">
+                    <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-214-56-56 370-370H520v-80h320v320h-80v-182L388-334Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="mt-3 inline-flex items-center gap-2 px-3 py-2 rounded-md bg-purple-50 border border-purple-200 text-[#433878] hover:bg-purple-100">
+                <span class="text-sm font-medium">ไปที่ Equity Expert</span>
+                <span class="text-sm">→</span>
+              </div>
+            </a>
       </div>
       </div>
     </div>

@@ -1,59 +1,62 @@
-<?php 
+<?php
     require_once 'base.php';
 ?>
-    <title>EquityLearnKU - Workshop</title>
-</head>
+	<title>EquityLearnKU - Workshop</title>
+</head> 
+
 
 <body class="bg-gray-100">
     <div class="grid grid-cols-12 grid-rows-10 md:grid-rows-12 gap-4 max-h-screen overflow-y-auto ">
-        <!-- Navigation -->
+        
         <?php include_once '../component/sidebar.php' ?>
+
 
         <!-- Main Content -->
         <div class="col-span-12 md:col-span-9 xl:col-span-10 row-span-9 md:row-span-11 w-full h-full py-2 px-4 md:ps-0 pe-4 max-md:mt-16 overflow-y-auto">
             <div class="flex justify-between">
                 <h1 class="text-xl text-[#433878] mb-4 md:mx-4">Workshop</h1>
-                <p class="text-gray-700 mb-4 mr-4"><a href="../"
+                <p class="text-gray-700 mb-4 mr-4"><a href="./"
                         class="text-gray-400  hover:font-semibold hover:text-[#433878]">Home</a>
                     > Workshop</p>
             </div>
             <div class="flex flex-col gap-4">
                 <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow transition-tranform ease-in-out duration-200">
                     <h1 class="text-center text-xl font-semibold text-[#433878] py-4 ">
-                        สำหรับผู้ดูแลระบบ
+                        สำหรับคุณครูและผู้ทรงคุณวุฒิ
                     </h1>
                     <div class="flex text-sm mb-2 p-2 bg-purple-50 rounded-lg border border-purple-200">
                         <span class="font-semibold underline mx-4">คำอธิบาย</span>
-                        <span>คลิกที่ Workshop เพื่อดูรายละเอียดและกำหนดข้อมูล</span>
+                        <span>คลิกที่ Workshop เพื่อดูรายละเอียดกิจกรรม</span>
                     </div>
                     <div id="workshopBox" class="flex flex-col lg:flex-row justify-center gap-5 mb-2 mt-4 w-full">
                         
-                        <a href="workshop_management?id=1" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
+                        <a href="activity.php?workshop=1" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
                             <p class="text-center text-lg text-violet-900 font-semibold">Workshop 1</p>
                         </a>
-                        <a href="workshop_management?id=2" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
+                        <a href="activity.php?workshop=2" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
                             <p class="text-center text-lg text-violet-900 font-semibold">Workshop 2</p>
                         </a>
-                        <a href="workshop_management?id=3" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
+                        <a href="activity.php?workshop=3" class="rounded-lg shadow-md hover:shadow-lg hover:ring hover:ring-purple-300 p-4 bg-white transition-all border border-purple-100 block w-full lg:flex-1 lg:basis-0">
                             <p class="text-center text-lg text-violet-900 font-semibold">Workshop 3</p>
                         </a>
                     </div>
                 </div>
-                <!--  -->
 
-                <!-- รายชื่อนิสิตที่ส่ง workshop (เหมือนฝั่งครู) -->
+
+                <!-- รายชื่อนิสิตที่ส่ง workshop (ตามภาพ: ปุ่มสี + tab + search) -->
                 <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shdow transition-tranform ease-in-out duration-200">
-                    <h2 class="text-xl font-semibold text-center text-[#433878] my-2">รายชื่อนิสิตที่ส่ง Workshop</h2>
+                    
 
-                    <div class="mt-3 bg-gray-100/60 rounded-lg p-4">
+                    <div class="mt-6 bg-gray-100/60 rounded-lg p-4">
                         <div class="flex items-center justify-between flex-wrap gap-3">
-                            <div>คลิกเพื่อตรวจสอบรายชื่อนิสิตที่ส่งงาน</div>
+                            <div >คลิกเพื่อตรวจสอบรายชื่อนิสิตที่ส่งงาน</div>
                             <div class="inline-flex rounded border border-purple-200 overflow-hidden bg-white">
-                                <button type="button" class="adm-ws-tab px-4 py-2 text-sm font-semibold bg-[#433878] text-white" data-cat="workshop 1">Workshop 1</button>
-                                <button type="button" class="adm-ws-tab px-4 py-2 text-sm font-semibold" data-cat="workshop 2">Workshop 2</button>
-                                <button type="button" class="adm-ws-tab px-4 py-2 text-sm font-semibold" data-cat="workshop 3">Workshop 3</button>
+                                <button type="button" class="ws-tab px-4 py-2 text-sm font-semibold bg-[#433878] text-white" data-cat="workshop 1">Workshop 1</button>
+                                <button type="button" class="ws-tab px-4 py-2 text-sm font-semibold" data-cat="workshop 2">Workshop 2</button>
+                                <button type="button" class="ws-tab px-4 py-2 text-sm font-semibold" data-cat="workshop 3">Workshop 3</button>
                             </div>
 
+                            
 
                             <div class="relative w-full sm:w-72">
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -61,13 +64,12 @@
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                 </div>
-                                <input id="admWsSearch" type="search" class="block w-full py-1.5 ps-10 text-sm text-gray-900 border border-purple-300 rounded bg-purple-50 focus:ring-purple-500 focus:border-purple-500" placeholder="search" />
+                                <input id="wsSearch" type="search" class="block w-full py-1.5 ps-10 text-sm text-gray-900 border border-purple-300 rounded bg-purple-50 focus:ring-purple-500 focus:border-purple-500" placeholder="search" />
                             </div>
                         </div>
-                    
-                        <button id="admWsExport" type="button" class="inline-flex items-center gap-2 px-3 py-2 text-sm font-semibold rounded border border-purple-200 bg-white hover:bg-purple-50 text-purple-700">
-                            <span>Export CSV</span>
-                        </button>
+                        <button id="wsExport" type="button" class="inline-flex items-center gap-2 px-3 py-2 text-sm font-semibold rounded border border-purple-200 bg-white hover:bg-purple-50 text-purple-700">
+                                <span>Export CSV</span>
+                            </button>
 
                         <div class="mt-4 w-full overflow-x-auto border border-gray-200 bg-white">
                             <table class="w-full text-sm">
@@ -82,11 +84,11 @@
                                         <th class="py-2 px-3 font-semibold border border-gray-300 text-center">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody id="admWsBody">
-                                    <tr id="admWsLoading">
+                                <tbody id="wsBody">
+                                    <tr id="wsLoading">
                                         <td colspan="7" class="py-4 px-3 text-center text-gray-500">กำลังโหลดข้อมูล...</td>
                                     </tr>
-                                    <tr id="admWsEmpty" class="hidden">
+                                    <tr id="wsEmpty" class="hidden">
                                         <td colspan="7" class="py-4 px-3 text-center text-gray-500">ไม่มีข้อมูล</td>
                                     </tr>
                                 </tbody>
@@ -94,11 +96,11 @@
                         </div>
 
                         <div class="mt-3 flex items-center justify-between flex-wrap gap-3">
-                            <div id="admWsPageInfo" class="text-sm text-gray-600"></div>
+                            <div id="wsPageInfo" class="text-sm text-gray-600"></div>
                             <div class="flex items-center gap-2">
-                                <button id="admWsPrev" type="button" class="px-3 py-1.5 text-sm rounded border border-gray-300 bg-white hover:bg-gray-50">ก่อนหน้า</button>
-                                <button id="admWsNext" type="button" class="px-3 py-1.5 text-sm rounded border border-gray-300 bg-white hover:bg-gray-50">ถัดไป</button>
-                                <select id="admWsPageSize" class="px-2 py-1.5 text-sm rounded border border-gray-300 bg-white">
+                                <button id="wsPrev" type="button" class="px-3 py-1.5 text-sm rounded border border-gray-300 bg-white hover:bg-gray-50">ก่อนหน้า</button>
+                                <button id="wsNext" type="button" class="px-3 py-1.5 text-sm rounded border border-gray-300 bg-white hover:bg-gray-50">ถัดไป</button>
+                                <select id="wsPageSize" class="px-2 py-1.5 text-sm rounded border border-gray-300 bg-white">
                                     <option value="10">10 แถว</option>
                                     <option value="20" selected>20 แถว</option>
                                     <option value="50">50 แถว</option>
@@ -110,17 +112,18 @@
 
                     <script>
                         (function () {
-                            const tabs = Array.from(document.querySelectorAll('.adm-ws-tab'));
-                            const search = document.getElementById('admWsSearch');
-                            const exportBtn = document.getElementById('admWsExport');
-                            const emptyRow = document.getElementById('admWsEmpty');
-                            const loadingRow = document.getElementById('admWsLoading');
-                            const tbody = document.getElementById('admWsBody');
+                            const tabs = Array.from(document.querySelectorAll('.ws-tab'));
+                            const summary = Array.from(document.querySelectorAll('.ws-summary'));
+                            const search = document.getElementById('wsSearch');
+                            const exportBtn = document.getElementById('wsExport');
+                            const emptyRow = document.getElementById('wsEmpty');
+                            const loadingRow = document.getElementById('wsLoading');
+                            const tbody = document.getElementById('wsBody');
 
-                            const pageInfo = document.getElementById('admWsPageInfo');
-                            const btnPrev = document.getElementById('admWsPrev');
-                            const btnNext = document.getElementById('admWsNext');
-                            const pageSizeSelect = document.getElementById('admWsPageSize');
+                            const pageInfo = document.getElementById('wsPageInfo');
+                            const btnPrev = document.getElementById('wsPrev');
+                            const btnNext = document.getElementById('wsNext');
+                            const pageSizeSelect = document.getElementById('wsPageSize');
 
                             let activeCat = 'workshop 1';
                             let allItems = [];
@@ -130,6 +133,7 @@
                             function formatDateDisplay(value) {
                                 if (!value) return '-';
                                 const s = String(value);
+                                // if looks like MySQL DATETIME, keep date part
                                 const m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
                                 if (m) return `${m[3]}/${m[2]}/${m[1]}`;
                                 return s;
@@ -207,7 +211,9 @@
 
                             function renderRows(items) {
                                 if (!tbody) return;
-                                Array.from(tbody.querySelectorAll('.adm-ws-row')).forEach(tr => tr.remove());
+
+                                // Clear all rows except placeholders (loading/empty)
+                                Array.from(tbody.querySelectorAll('.ws-row')).forEach(tr => tr.remove());
 
                                 const list = Array.isArray(items) ? items : [];
                                 const total = list.length;
@@ -235,21 +241,29 @@
 
                                     const workshopNo = toText(it.workshop_id || '').trim();
                                     const activityHref = workshopNo
-                                        ? ('../admin/workshop_management.php?id=' + encodeURIComponent(workshopNo) )
+                                        ? ('activity.php?workshop=' + encodeURIComponent(workshopNo) + '&student_id=' + encodeURIComponent(id))
                                         : '#';
                                     const reflectionHref = workshopNo
-                                        ? ('../admin/reflection.php?workshop=' + encodeURIComponent(workshopNo) )
+                                        ? ('reflection.php?workshop=' + encodeURIComponent(workshopNo) + '&student_id=' + encodeURIComponent(id))
                                         : '#';
 
                                     const tr = document.createElement('tr');
-                                    tr.className = 'adm-ws-row';
+                                    tr.className = 'ws-row';
+                                    tr.dataset.cat = toText(it.cat);
+                                    tr.dataset.name = name;
+                                    tr.dataset.id = id;
+                                    tr.dataset.major = major;
 
                                     const tdUser = document.createElement('td');
                                     tdUser.className = 'py-2 px-3 border border-gray-200';
                                     const nameDiv = document.createElement('div');
                                     nameDiv.className = 'font-semibold';
                                     nameDiv.textContent = name || '-';
+                                    // const subDiv = document.createElement('div');
+                                    // subDiv.className = 'text-xs text-gray-500';
+                                    // subDiv.textContent = id ? ('Username | ' + id.slice(-4)) : 'Username';
                                     tdUser.appendChild(nameDiv);
+                                    // tdUser.appendChild(subDiv);
 
                                     const tdId = document.createElement('td');
                                     tdId.className = 'py-2 px-3 border border-gray-200 text-blue-800';
@@ -289,15 +303,11 @@
                                         const a1 = document.createElement('a');
                                         a1.className = 'inline-flex items-center justify-center px-3 py-1 rounded border border-gray-300 hover:bg-gray-50 text-xs';
                                         a1.href = activityHref;
-                                        a1.target = '_blank';
-                                        a1.rel = 'noreferrer';
                                         a1.textContent = 'กิจกรรม';
 
                                         const a2 = document.createElement('a');
                                         a2.className = 'inline-flex items-center justify-center px-3 py-1 rounded border border-gray-300 hover:bg-gray-50 text-xs ml-2';
                                         a2.href = reflectionHref;
-                                        a2.target = '_blank';
-                                        a2.rel = 'noreferrer';
                                         a2.textContent = 'สะท้อนคิด';
 
                                         tdAction.appendChild(a1);
@@ -317,6 +327,7 @@
                                     tr.appendChild(tdRef);
                                     tr.appendChild(tdAction);
 
+                                    // Insert before empty row
                                     if (emptyRow) {
                                         tbody.insertBefore(tr, emptyRow);
                                     } else {
@@ -335,13 +346,20 @@
 
                             tabs.forEach(btn => {
                                 btn.addEventListener('click', function () {
+                                    activeCat = btn.dataset.cat || 'คลังทรัพยากร';
+                                    currentPage = 1;
+                                    setActiveUI();
+                                    applyFilter();
+                                });
+                            });
+                            summary.forEach(btn => {
+                                btn.addEventListener('click', function () {
                                     activeCat = btn.dataset.cat || 'workshop 1';
                                     currentPage = 1;
                                     setActiveUI();
                                     applyFilter();
                                 });
                             });
-
                             if (search) {
                                 search.addEventListener('input', () => {
                                     currentPage = 1;
@@ -386,6 +404,7 @@
                                         const maxScoreTotal = Number(it.max_score_total || 0) || 0;
                                         const score = (maxScoreTotal > 0) ? `${scoreTotal}/${maxScoreTotal}` : (scoreTotal > 0 ? String(scoreTotal) : '-');
                                         const ref = it.reflection ? 'ส่งแล้ว' : 'ยังไม่ส่ง';
+
                                         rows.push([w, name, sid, major, submittedAt, score, ref]);
                                     }
 
@@ -394,13 +413,14 @@
                                     const m = String(today.getMonth() + 1).padStart(2, '0');
                                     const d = String(today.getDate()).padStart(2, '0');
                                     const catSafe = String(activeCat || 'workshop').replace(/\s+/g, '-');
-                                    const filename = `admin-${catSafe}-submissions-${y}${m}${d}.csv`;
+                                    const filename = `${catSafe}-submissions-${y}${m}${d}.csv`;
                                     downloadCsv(filename, rows);
                                 });
                             }
 
                             setActiveUI();
 
+                            // Fetch real data from backend API
                             fetch('../backend/api/get_teacher_workshop_submissions.php')
                                 .then((res) => res.json().then((j) => ({ ok: res.ok, json: j })).catch(() => ({ ok: res.ok, json: null })))
                                 .then(({ ok, json }) => {
@@ -420,8 +440,7 @@
                         })();
                     </script>
                 </div>
-
-                
+                <!--  -->
                 
             </div>
         </div>

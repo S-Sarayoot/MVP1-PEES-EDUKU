@@ -36,12 +36,14 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 							<div class="mt-4">
 								<h2 class="text-xl font-bold">ลิงก์ที่เกี่ยวข้อง</h2>
 								<ul class="list-disc list-inside mt-2">
-									<li><a id="ws-activity-link" href="#" class="text-purple-600 hover:underline">ไปหน้ากิจกรรมของ Workshop นี้</a></li>
+									<li><a id="ws-activity-link" href="#" class="text-purple-600 hover:underline">ไปหน้าจัดการ Workshop นี้</a></li>
 								</ul>
+							</div>
 
-								<h2 class="text-xl font-bold mt-4">ทรัพยากรที่เกี่ยวข้อง</h2>
-								<ul id="ws-resources" class="list-disc list-inside mt-2 text-sm text-gray-600">
-									<li>กำลังโหลด...</li>
+							<div class="mt-4">
+								<h2 class="text-xl font-bold">ทรัพยากรที่เกี่ยวข้อง</h2>
+								<ul id="ws-resources" class="list-disc list-inside mt-2">
+									<li class="text-gray-500">กำลังโหลด...</li>
 								</ul>
 							</div>
 						</div>
@@ -104,38 +106,6 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 		const timeline = document.getElementById('timeline');
 		const timelineEmpty = document.getElementById('timeline-empty');
 
-		const setResourcesLoading = (mode) => {
-			if (!elResources) return;
-			if (mode === 'loading') {
-				elResources.innerHTML = '<li>กำลังโหลด...</li>';
-				return;
-			}
-			if (mode === 'empty') {
-				elResources.innerHTML = '<li class="text-gray-400">ยังไม่มีทรัพยากรที่เกี่ยวข้อง</li>';
-				return;
-			}
-			if (mode === 'error') {
-				elResources.innerHTML = '<li class="text-red-600">โหลดทรัพยากรไม่สำเร็จ</li>';
-				return;
-			}
-		};
-
-		const renderResources = (posts) => {
-			if (!elResources) return;
-			const items = Array.isArray(posts) ? posts : [];
-			if (!items.length) {
-				setResourcesLoading('empty');
-				return;
-			}
-			elResources.innerHTML = items.map((p) => {
-				const id = p?.id;
-				const title = p?.title ? escapeHtml(p.title) : `Post#${escapeHtml(id)}`;
-				const category = p?.category ? escapeHtml(p.category) : '';
-				const badge = category ? ` <span class="text-xs text-gray-500">(${category})</span>` : '';
-				return `<li><a class="text-purple-600 hover:underline" href="post?id=${encodeURIComponent(String(id))}" target="_blank" rel="noopener noreferrer">${title}</a>${badge}</li>`;
-			}).join('');
-		};
-
 		const escapeHtml = (v) => String(v ?? '')
 			.replace(/&/g, '&amp;')
 			.replace(/</g, '&lt;')
@@ -172,6 +142,29 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 			}
 		};
 
+		const setResourcesLoading = () => {
+			if (!elResources) return;
+			elResources.innerHTML = '<li class="text-gray-500">กำลังโหลด...</li>';
+		};
+
+		const renderResources = (posts) => {
+			if (!elResources) return;
+			const items = Array.isArray(posts) ? posts : [];
+			if (items.length === 0) {
+				elResources.innerHTML = '<li class="text-gray-500">ยังไม่ได้กำหนดทรัพยากร</li>';
+				return;
+			}
+
+			elResources.innerHTML = items.map((p) => {
+				const id = Number(p?.id || 0) || 0;
+				const title = escapeHtml(p?.title || (id ? `Post #${id}` : '-'));
+				const category = escapeHtml(p?.category || '');
+				const href = id ? `../admin/post?id=${encodeURIComponent(String(id))}` : '#';
+				const cat = category ? ` <span class="text-xs text-gray-500">(${category})</span>` : '';
+				return `<li><a href="${href}" class="text-purple-600 hover:underline">${title}</a>${cat}</li>`;
+			}).join('');
+		};
+
 		const buildTree = (notes) => {
 			const byId = new Map();
 			for (const n of notes) byId.set(String(n.id), { ...n, replies: [] });
@@ -193,9 +186,9 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 
 		const roleBadge = (userType) => {
 			const t = String(userType || '').toLowerCase();
-			if (t === 'teacher') return '<span class="text-xs px-2 py-0.5 rounded bg-green-100 text-green-700">อาจารย์</span>';
-			if (t === 'admin') return '<span class="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-700">แอดมิน</span>';
-			return '<span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-700">นักเรียน</span>';
+			if (t === 'teacher') return '<span class="text-xs px-2 py-0.5 rounded bg-green-100 text-green-700">คุณครู/ผู้ทรงคุณวุฒิ</span>';
+			if (t === 'admin') return '<span class="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-700">ผู้ดูแลระบบ</span>';
+			return '<span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-700">นิสิต</span>';
 		};
 
 		const renderNote = (note, indentLevel = 0) => {
@@ -259,18 +252,17 @@ $appBase = '/' . ($scriptParts[0] ?? '');
 			return;
 		}
 
-		if (elActivityLink) elActivityLink.href = `../student/activity.php?workshop=${encodeURIComponent(String(workshopId))}`;
+		if (elActivityLink) elActivityLink.href = `../admin/workshop_management.php?id=${encodeURIComponent(String(workshopId))}`;
 
-		setResourcesLoading('loading');
+		setResourcesLoading();
 		fetch(`../backend/api/get_workshop_posts.php?workshop_id=${encodeURIComponent(String(workshopId))}`)
 			.then((res) => res.json())
 			.then((payload) => {
 				if (!payload?.success) throw new Error(payload?.message || 'โหลดทรัพยากรไม่สำเร็จ');
 				renderResources(payload.posts);
 			})
-			.catch((err) => {
-				console.error(err);
-				setResourcesLoading('error');
+			.catch(() => {
+				renderResources([]);
 			});
 		
         Promise.all([

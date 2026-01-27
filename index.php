@@ -48,7 +48,7 @@
         $sideBarMenu = [
           [ "name" => "Dashboard", "path" => $base_url . "/teacher/" ],
           [ "name" => "Workshop", "path" => $base_url . "/teacher/workshop" ],
-          [ "name" => "คลังทรัพยากร", "path" => $base_url . "/teacher/media" ],
+          [ "name" => "คลังทรัพยากร", "path" => $base_url . "/teacher/storage" ],
           [ "name" => "ผู้ใช้งาน", "path" => $base_url . "/teacher/user" ]
         ];
         echo '<script>';

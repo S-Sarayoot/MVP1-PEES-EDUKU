@@ -133,8 +133,9 @@
 								</div>
 								<div class="flex flex-col mt-4 mb-2 gap-2 w-full items-center">
 									${button('กิจกรรม', links.activity(id), '📚')}
-									${button('ทรัพยากร', links.storage(id), '🗂️')}
+                                    
 									${button('สะท้อนคิด', links.reflection(id), '📝')}
+									${button('ทรัพยากร', links.storage(id), '🗂️')}
 								</div>
 							</div>
 						`;

@@ -49,7 +49,9 @@
                         <p class="text-green-600 font-semibold mx-2" id="student-count">0</p>
                         <p class="text-purple-900">คน</p>
                     </div>
-                    <?php include '../component/search.php' ?>
+                    <div id="student-search">
+                        <?php include '../component/search.php' ?>
+                    </div>
                 </div>
                 <!--  -->
                 <div class="max-h-47 md:max-h-54 overflow-auto border-2 border-purple-100 rounded-b-xl rounded-tr-xl">
@@ -71,6 +73,19 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-2 px-2">
+                    <div id="student-page-info" class="text-xs text-gray-500">หน้า 1/1 • 0 รายการ</div>
+                    <div class="flex items-center gap-2">
+                        <label class="text-xs text-gray-500">ต่อหน้า</label>
+                        <select id="student-page-size" class="border border-gray-200 rounded px-2 py-1 bg-white text-sm">
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button id="student-prev" type="button" class="px-3 py-1.5 text-sm rounded bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50" disabled>ก่อนหน้า</button>
+                        <button id="student-next" type="button" class="px-3 py-1.5 text-sm rounded bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50" disabled>ถัดไป</button>
+                    </div>
+                </div>
                 <!--  -->
                 <!-- table ผู้ทรงคุณวุฒิ -->
                 <!--  -->
@@ -80,7 +95,9 @@
                         <p class="text-green-600 font-semibold mx-2" id="teacher-count">0</p>
                         <p class="text-purple-900">คน</p>
                     </div>
-                    <?php include '../component/search.php' ?>
+                    <div id="teacher-search">
+                        <?php include '../component/search.php' ?>
+                    </div>
                 </div>
                 <!--  -->
                 <div class="max-h-47 md:max-h-54 overflow-auto border-2 border-purple-100 rounded-b-xl rounded-tr-xl">
@@ -102,6 +119,19 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-2 px-2">
+                    <div id="teacher-page-info" class="text-xs text-gray-500">หน้า 1/1 • 0 รายการ</div>
+                    <div class="flex items-center gap-2">
+                        <label class="text-xs text-gray-500">ต่อหน้า</label>
+                        <select id="teacher-page-size" class="border border-gray-200 rounded px-2 py-1 bg-white text-sm">
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button id="teacher-prev" type="button" class="px-3 py-1.5 text-sm rounded bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50" disabled>ก่อนหน้า</button>
+                        <button id="teacher-next" type="button" class="px-3 py-1.5 text-sm rounded bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50" disabled>ถัดไป</button>
+                    </div>
+                </div>
                 <!--  -->
                 <!-- table ผู้ดูแล -->
                 <!--  -->
@@ -111,7 +141,9 @@
                         <p class="text-green-600 font-semibold mx-2" id="admin-count">0</p>
                         <p class="text-purple-900">คน</p>
                     </div>
-                    <?php include '../component/search.php' ?>
+                    <div id="admin-search">
+                        <?php include '../component/search.php' ?>
+                    </div>
                 </div>
                 <!--  -->
                 <div class="max-h-47 md:max-h-54 overflow-auto border-2 border-purple-100 rounded-b-xl rounded-tr-xl">
@@ -129,6 +161,19 @@
 
                         </tbody>
                     </table>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-2 px-2">
+                    <div id="admin-page-info" class="text-xs text-gray-500">หน้า 1/1 • 0 รายการ</div>
+                    <div class="flex items-center gap-2">
+                        <label class="text-xs text-gray-500">ต่อหน้า</label>
+                        <select id="admin-page-size" class="border border-gray-200 rounded px-2 py-1 bg-white text-sm">
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button id="admin-prev" type="button" class="px-3 py-1.5 text-sm rounded bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50" disabled>ก่อนหน้า</button>
+                        <button id="admin-next" type="button" class="px-3 py-1.5 text-sm rounded bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50" disabled>ถัดไป</button>
+                    </div>
                 </div>
                 <!--  -->
             </div>
@@ -484,7 +529,7 @@
                 const errors = res.errors ?? 0;
 
                 toggleModal(false, 'importStudentsModal');
-                renderTable('student', 'student');
+                await window.reloadUsersTable?.('student');
                 fetchUserCounts();
 
                 Swal.fire({
@@ -498,76 +543,252 @@
         });
     });
 
-    function renderTable(type, tableId) {
-        fetch(`../backend/api/get_users_by_type.php?type=${type}`)
-            .then(res => res.json())
-            .then(data => {
-                const table = document.getElementById(tableId);
-                table.innerHTML = '';
-                if (data.success && Array.isArray(data.data)) {
-                    data.data.forEach((item, i) => {
-                        if(type === 'student') {
-                            const displayUsername = item.user_code || item.username || '-';
-                            table.innerHTML += `
-                            <tr class="bg-white">
-                                <td class="py-2 px-4">${i+1}</td>
-                                <td class="py-2 px-4 text-blue-500">${item.user_code || '-'}</td>
-                                <td class="py-2 px-4">${displayUsername}</td>
-                                <td class="py-2 px-4">${item.user_name || '-'}</td>
-                                <td class="py-2 px-4">${item.major_name || '-'}</td>
-                                <td class="py-2 px-4">${item.faculty_name || '-'}</td>
-                                <td class="py-2 px-4 text-blue-500">${item.created_by || '-'}</td>
-                                <td>
-                                    <div class="flex flex-col md:flex-row">
-                                        <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
-                                        <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            `;
-                        } else if(type === 'teacher') {
-                            table.innerHTML += `
-                            <tr class="bg-white">
-                                <td class="py-2 px-4">${i+1}</td>
-                                <td class="py-2 px-4 text-blue-500">${item.user_code || '-'}</td>
-                                <td class="py-2 px-4">${item.username || '-'}</td>
-                                <td class="py-2 px-4">${item.user_name || '-'}</td>
-                                <td class="py-2 px-4">${item.major_name || '-'}</td>
-                                <td class="py-2 px-4">${item.faculty_name || '-'}</td>
-                                <td class="py-2 px-4 text-blue-500">${item.created_by || '-'}</td>
-                                <td>
-                                    <div class="flex flex-col md:flex-row">
-                                        <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
-                                        <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            `;
-                        } else if(type === 'admin') {
-                            table.innerHTML += `
-                            <tr class="bg-white">
-                                <td class="py-2 px-4">${i+1}</td>
-                                <td class="py-2 px-4 text-blue-500">${item.user_code || '-'}</td>
-                                <td class="py-2 px-4">${item.username || '-'}</td>
-                                <td class="py-2 px-4">${item.user_name || '-'}</td>
-                                <td>
-                                    <div class="flex flex-col md:flex-row">
-                                        <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
-                                        <button class="text-red-500 hover:underline md:ml-2">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            `;
-                        }
-                    });
-                }
-            });
-    }
+    // --- Users tables pagination ---
+    const USER_TABLES = {
+        student: {
+            type: 'student',
+            tbodyId: 'student',
+            pageInfoId: 'student-page-info',
+            prevId: 'student-prev',
+            nextId: 'student-next',
+            pageSizeId: 'student-page-size',
+        },
+        teacher: {
+            type: 'teacher',
+            tbodyId: 'teacher',
+            pageInfoId: 'teacher-page-info',
+            prevId: 'teacher-prev',
+            nextId: 'teacher-next',
+            pageSizeId: 'teacher-page-size',
+        },
+        admin: {
+            type: 'admin',
+            tbodyId: 'admin',
+            pageInfoId: 'admin-page-info',
+            prevId: 'admin-prev',
+            nextId: 'admin-next',
+            pageSizeId: 'admin-page-size',
+        },
+    };
 
-    // เรียก renderTable สำหรับแต่ละประเภท
-    renderTable('student', 'student');
-    renderTable('teacher', 'teacher');
-    renderTable('admin', 'admin');
+    const userTableState = {
+        student: { allData: [], data: [], page: 1, pageSize: 10, query: '' },
+        teacher: { allData: [], data: [], page: 1, pageSize: 10, query: '' },
+        admin: { allData: [], data: [], page: 1, pageSize: 10, query: '' },
+    };
+
+    const escapeHtml = (v) => String(v ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+    const fetchUsersByType = async (type) => {
+        const payload = await fetch(`../backend/api/get_users_by_type.php?type=${encodeURIComponent(String(type))}`)
+            .then((res) => res.json())
+            .catch(() => ({ success: false, data: [] }));
+        return (payload?.success && Array.isArray(payload.data)) ? payload.data : [];
+    };
+
+    const renderUserRows = (kind, rows, startIndex) => {
+        const cfg = USER_TABLES[kind];
+        const tbody = document.getElementById(cfg.tbodyId);
+        if (!tbody) return;
+        tbody.innerHTML = '';
+
+        rows.forEach((item, idx) => {
+            const i = startIndex + idx;
+            if (cfg.type === 'student') {
+                const displayUsername = item.user_code || item.username || '-';
+                tbody.innerHTML += `
+                <tr class="bg-white">
+                    <td class="py-2 px-4">${i + 1}</td>
+                    <td class="py-2 px-4 text-blue-500">${escapeHtml(item.user_code || '-')}</td>
+                    <td class="py-2 px-4">${escapeHtml(displayUsername)}</td>
+                    <td class="py-2 px-4">${escapeHtml(item.user_name || '-')}</td>
+                    <td class="py-2 px-4">${escapeHtml(item.major_name || '-')}</td>
+                    <td class="py-2 px-4">${escapeHtml(item.faculty_name || '-')}</td>
+                    <td class="py-2 px-4 text-blue-500">${escapeHtml(item.created_by || '-')}</td>
+                    <td>
+                        <div class="flex flex-col md:flex-row">
+                            <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
+                            <button class="text-red-500 hover:underline md:ml-2">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                `;
+                return;
+            }
+
+            if (cfg.type === 'teacher') {
+                tbody.innerHTML += `
+                <tr class="bg-white">
+                    <td class="py-2 px-4">${i + 1}</td>
+                    <td class="py-2 px-4 text-blue-500">${escapeHtml(item.user_code || '-')}</td>
+                    <td class="py-2 px-4">${escapeHtml(item.username || '-')}</td>
+                    <td class="py-2 px-4">${escapeHtml(item.user_name || '-')}</td>
+                    <td class="py-2 px-4">${escapeHtml(item.major_name || '-')}</td>
+                    <td class="py-2 px-4">${escapeHtml(item.faculty_name || '-')}</td>
+                    <td class="py-2 px-4 text-blue-500">${escapeHtml(item.created_by || '-')}</td>
+                    <td>
+                        <div class="flex flex-col md:flex-row">
+                            <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
+                            <button class="text-red-500 hover:underline md:ml-2">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                `;
+                return;
+            }
+
+            // admin
+            tbody.innerHTML += `
+            <tr class="bg-white">
+                <td class="py-2 px-4">${i + 1}</td>
+                <td class="py-2 px-4 text-blue-500">${escapeHtml(item.user_code || '-')}</td>
+                <td class="py-2 px-4">${escapeHtml(item.username || '-')}</td>
+                <td class="py-2 px-4">${escapeHtml(item.user_name || '-')}</td>
+                <td>
+                    <div class="flex flex-col md:flex-row">
+                        <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
+                        <button class="text-red-500 hover:underline md:ml-2">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            `;
+        });
+    };
+
+    const renderUserTable = (kind) => {
+        const cfg = USER_TABLES[kind];
+        const st = userTableState[kind];
+        const info = document.getElementById(cfg.pageInfoId);
+        const btnPrev = document.getElementById(cfg.prevId);
+        const btnNext = document.getElementById(cfg.nextId);
+
+        const total = Array.isArray(st.data) ? st.data.length : 0;
+        const pageSize = Math.max(1, Number(st.pageSize) || 10);
+        const totalPages = Math.max(1, Math.ceil(total / pageSize));
+        st.page = Math.min(Math.max(1, Number(st.page) || 1), totalPages);
+
+        const start = (st.page - 1) * pageSize;
+        const end = Math.min(start + pageSize, total);
+        const rows = st.data.slice(start, end);
+
+        renderUserRows(kind, rows, start);
+
+        if (info) {
+            const allTotal = Array.isArray(st.allData) ? st.allData.length : total;
+            const q = String(st.query || '').trim();
+            info.textContent = q ? `หน้า ${st.page}/${totalPages} • ${total} รายการ (จาก ${allTotal})` : `หน้า ${st.page}/${totalPages} • ${total} รายการ`;
+        }
+        if (btnPrev) btnPrev.disabled = st.page <= 1;
+        if (btnNext) btnNext.disabled = st.page >= totalPages;
+    };
+
+    const getSearchableText = (kind, item) => {
+        const parts = [];
+        const push = (v) => {
+            const s = String(v ?? '').trim();
+            if (s) parts.push(s);
+        };
+
+        push(item.user_code);
+        push(item.username);
+        push(item.user_name);
+        push(item.major_name);
+        push(item.faculty_name);
+        push(item.created_by);
+        push(item.academic_year);
+        push(item.academic_term);
+        push(item.user_type);
+        push(item.user_id);
+        push(item.id);
+
+        return parts.join(' ').toLowerCase();
+    };
+
+    const applyUserFilter = (kind) => {
+        const st = userTableState[kind];
+        if (!st) return;
+        const q = String(st.query || '').trim().toLowerCase();
+        const src = Array.isArray(st.allData) ? st.allData : [];
+
+        if (!q) {
+            st.data = src;
+            return;
+        }
+
+        st.data = src.filter((it) => getSearchableText(kind, it).includes(q));
+    };
+
+    const bindUserPager = (kind) => {
+        const cfg = USER_TABLES[kind];
+        const st = userTableState[kind];
+        const btnPrev = document.getElementById(cfg.prevId);
+        const btnNext = document.getElementById(cfg.nextId);
+        const selSize = document.getElementById(cfg.pageSizeId);
+
+        btnPrev?.addEventListener('click', () => {
+            st.page = Math.max(1, st.page - 1);
+            renderUserTable(kind);
+        });
+
+        btnNext?.addEventListener('click', () => {
+            st.page = st.page + 1;
+            renderUserTable(kind);
+        });
+
+        selSize?.addEventListener('change', () => {
+            st.pageSize = Number(selSize.value) || 10;
+            st.page = 1;
+            renderUserTable(kind);
+        });
+    };
+
+    window.reloadUsersTable = async function reloadUsersTable(kind) {
+        if (!USER_TABLES[kind] || !userTableState[kind]) return;
+        const st = userTableState[kind];
+        st.allData = await fetchUsersByType(USER_TABLES[kind].type);
+        applyUserFilter(kind);
+        st.page = 1;
+        renderUserTable(kind);
+    };
+
+    window.reloadAllUsersTables = async function reloadAllUsersTables() {
+        await Promise.all([
+            window.reloadUsersTable('student'),
+            window.reloadUsersTable('teacher'),
+            window.reloadUsersTable('admin'),
+        ]);
+    };
+
+    const bindUserSearch = (kind) => {
+        const st = userTableState[kind];
+        const box = document.getElementById(`${kind}-search`);
+        if (!st || !box) return;
+
+        const form = box.querySelector('form');
+        const input = box.querySelector('input');
+        if (!input) return;
+
+        form?.addEventListener('submit', (e) => e.preventDefault());
+
+        const apply = () => {
+            st.query = String(input.value || '');
+            applyUserFilter(kind);
+            st.page = 1;
+            renderUserTable(kind);
+        };
+
+        input.addEventListener('input', apply);
+        input.addEventListener('change', apply);
+    };
+
+    Object.keys(USER_TABLES).forEach((k) => bindUserPager(k));
+    Object.keys(USER_TABLES).forEach((k) => bindUserSearch(k));
+    window.reloadAllUsersTables();
 
 
     function fetchUserCounts() {
