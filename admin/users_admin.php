@@ -613,7 +613,7 @@
                     <td>
                         <div class="flex flex-col md:flex-row">
                             <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
-                            <button class="text-red-500 hover:underline md:ml-2">Delete</button>
+                            <button type="button" class="text-red-500 hover:underline md:ml-2" onclick='handleDeleteUser(${JSON.stringify(kind)}, ${JSON.stringify(item)})'>Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -634,7 +634,7 @@
                     <td>
                         <div class="flex flex-col md:flex-row">
                             <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
-                            <button class="text-red-500 hover:underline md:ml-2">Delete</button>
+                            <button type="button" class="text-red-500 hover:underline md:ml-2" onclick='handleDeleteUser(${JSON.stringify(kind)}, ${JSON.stringify(item)})'>Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -652,12 +652,74 @@
                 <td>
                     <div class="flex flex-col md:flex-row">
                         <button class="text-blue-500 hover:underline" onclick='showEditUser(${JSON.stringify(item)})'>Edit</button>
-                        <button class="text-red-500 hover:underline md:ml-2">Delete</button>
+                        <button type="button" class="text-red-500 hover:underline md:ml-2" onclick='handleDeleteUser(${JSON.stringify(kind)}, ${JSON.stringify(item)})'>Delete</button>
                     </div>
                 </td>
             </tr>
             `;
         });
+    };
+
+    window.handleDeleteUser = async function handleDeleteUser(kind, user) {
+        const u = user || {};
+        const userId = Number(u.user_id || u.id || 0);
+        if (!userId) {
+            Swal.fire({ icon: 'error', title: 'ไม่พบ user_id' });
+            return;
+        }
+
+        const label = (u.user_name || u.user_code || u.username || '').toString().trim();
+        const detail = label ? `ผู้ใช้งาน: ${label}` : `user_id: ${userId}`;
+
+        const confirm = await Swal.fire({
+            title: 'ยืนยันการลบผู้ใช้งาน?',
+            html: `<div class="text-sm text-gray-600">${escapeHtml(detail)}</div><div class="text-xs text-gray-500 mt-2">พิมพ์คำว่า <b>ยืนยัน</b> เพื่อดำเนินการลบ</div>`,
+            input: 'text',
+            inputPlaceholder: 'พิมพ์ "ยืนยัน"',
+            inputAttributes: {
+                autocapitalize: 'off',
+                autocomplete: 'off',
+            },
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'ลบ',
+            cancelButtonText: 'ยกเลิก',
+            confirmButtonColor: '#EF4444',
+            preConfirm: (value) => {
+                const v = String(value || '').trim();
+                if (v !== 'ยืนยัน') {
+                    Swal.showValidationMessage('กรุณาพิมพ์คำว่า "ยืนยัน" ให้ถูกต้อง');
+                    return false;
+                }
+                return true;
+            },
+        });
+        if (!confirm.isConfirmed) return;
+
+        Swal.fire({
+            title: 'กำลังลบ... ',
+            text: 'โปรดรอสักครู่',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            showConfirmButton: false,
+            didOpen: () => Swal.showLoading(),
+        });
+
+        const res = await fetch('../backend/api/delete_user.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ user_id: userId })
+        }).then(r => r.json()).catch(() => ({ success: false, message: 'Server error' }));
+
+        Swal.close();
+
+        if (res?.success) {
+            await window.reloadUsersTable?.(kind);
+            fetchUserCounts();
+            Swal.fire({ icon: 'success', title: 'ลบแล้ว', timer: 1200, showConfirmButton: false });
+        } else {
+            Swal.fire({ icon: 'error', title: 'ลบไม่สำเร็จ', text: res?.message || 'เกิดข้อผิดพลาด' });
+        }
     };
 
     const renderUserTable = (kind) => {
