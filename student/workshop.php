@@ -80,6 +80,57 @@
 					};
 
 					const escapeHtml = (v) => String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+					const escapeHtmlNl = (v) => escapeHtml(v).replace(/\n/g, '<br>');
+
+					const truncateText = (value, maxChars = 100) => {
+						const s = String(value ?? '').trim();
+						const chars = Array.from(s);
+						if (chars.length <= maxChars) {
+							return { text: s, truncated: false };
+						}
+						return { text: chars.slice(0, maxChars).join('') + '...', truncated: true };
+					};
+
+					const workshopsById = new Map();
+					const bindMoreHandlerOnce = () => {
+						if (container.dataset.moreBound === '1') return;
+						container.dataset.moreBound = '1';
+						container.addEventListener('click', (e) => {
+							const btn = e.target.closest('[data-ws-more]');
+							if (!btn) return;
+							const wsid = btn.getAttribute('data-ws-id') || '';
+							const ws = workshopsById.get(String(wsid));
+							if (!ws) return;
+
+							const id = ws?.id ?? '';
+							const instruction = ws?.instruction || '-';
+							const objective = ws?.objective || '-';
+							const mainConcept = ws?.main_concept || '-';
+
+							Swal.fire({
+								title: `Workshop ${id}`,
+								width: 700,
+								html: `
+									<div class="text-left space-y-4">
+										<div>
+											<div class="font-semibold text-purple-800 mb-1">คำชี้แจง</div>
+											<div class="text-sm text-gray-700" style="white-space:pre-line">${escapeHtmlNl(instruction)}</div>
+										</div>
+										<div>
+											<div class="font-semibold text-purple-800 mb-1">วัตถุประสงค์</div>
+											<div class="text-sm text-gray-700" style="white-space:pre-line">${escapeHtmlNl(objective)}</div>
+										</div>
+										<div>
+											<div class="font-semibold text-purple-800 mb-1">แนวคิดหลัก</div>
+											<div class="text-sm text-gray-700" style="white-space:pre-line">${escapeHtmlNl(mainConcept)}</div>
+										</div>
+									</div>
+								`,
+								confirmButtonText: 'ปิด',
+								confirmButtonColor: '#6D28D9',
+							});
+						});
+					};
 					const formatDatetimeLocal = (value) => {
 						if (!value) return '-';
 						return String(value).replace('T', ' ');
@@ -87,12 +138,16 @@
 
 					const renderCard = (workshop, attemptsByWorkshopId) => {
 						const id = workshop?.id ?? '';
+						workshopsById.set(String(id), workshop || {});
 						const status = computeStatus(workshop);
 						const badge = badgeMeta(status);
 						const submittedAttempt = attemptsByWorkshopId ? attemptsByWorkshopId[String(id)] : null;
 						const isSubmitted = Boolean(submittedAttempt && submittedAttempt.attempt_id);
 						const name = `Workshop ${id}`;
-						const desc = workshop?.objective || workshop?.instruction || '-';
+						const instruction = workshop?.instruction || '-';
+						const mainConcept = workshop?.main_concept || '-';
+						const objective = workshop?.objective || '-';
+						const { text: instructionShort, truncated: isInstructionTruncated } = truncateText(instruction, 100);
 						const openText = formatDatetimeLocal(workshop?.open_time_local || workshop?.open_time);
 						const closeText = formatDatetimeLocal(workshop?.close_time_local || workshop?.close_time);
 						const isActive = status === 'active';
@@ -128,7 +183,10 @@
 								${isSubmitted ? `<div class="absolute top-2 right-2 text-xs px-2 py-1 rounded bg-blue-600 text-white">ส่งแล้ว</div>` : ''}
 								<div class="flex flex-col text-sm my-3 flex-wrap">
 									<p class="underline font-semibold text-purple-800">คำชี้แจง</p>
-									<p>${escapeHtml(desc)}</p>
+									<p>${escapeHtml(instructionShort || '-')}</p>
+									${isInstructionTruncated || String(mainConcept || '').trim() || String(objective || '').trim() ? `
+										<button type="button" class="text-xs text-purple-700 underline hover:text-purple-900 mt-1 w-fit" data-ws-more data-ws-id="${escapeHtml(id)}">ดูเพิ่มเติม</button>
+									` : ''}
 									<p class="text-xs text-gray-500 mt-2">เวลาเปิด: ${escapeHtml(openText)} | เวลาปิด: ${escapeHtml(closeText)}</p>
 								</div>
 								<div class="flex flex-col mt-4 mb-2 gap-2 w-full items-center">
@@ -158,6 +216,7 @@
 
 							items.sort((a, b) => (Number(a?.id || 0) - Number(b?.id || 0)));
 							container.innerHTML = items.map((w) => renderCard(w, attemptsByWorkshopId)).join('');
+							bindMoreHandlerOnce();
 						})
 						.catch((err) => {
 							console.error(err);

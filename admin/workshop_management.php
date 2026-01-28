@@ -39,16 +39,16 @@
                             </div>
 
                             <div class="mt-4">
+                                <label class="block font-semibold mb-1">คำชี้แจง</label>
+                                <textarea name="instruction" class="w-full border border-gray-200 rounded px-3 py-2" rows="6" required></textarea>
+                            </div>
+                            <div class="mt-4">
                                 <label class="block font-semibold mb-1">วัตถุประสงค์</label>
                                 <textarea name="objective" class="w-full border border-gray-200 rounded px-3 py-2" rows="6" required></textarea>
                             </div>
                             <div class="mt-4">
                                 <label class="block font-semibold mb-1">แนวคิดหลัก</label>
                                 <textarea name="main_concept" class="w-full border border-gray-200 rounded px-3 py-2" rows="6" required></textarea>
-                            </div>
-                            <div class="mt-4">
-                                <label class="block font-semibold mb-1">คำชี้แจง</label>
-                                <textarea name="instruction" class="w-full border border-gray-200 rounded px-3 py-2" rows="6" required></textarea>
                             </div>
                         </section>
 

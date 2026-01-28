@@ -50,8 +50,10 @@ try {
         "  open_time DATETIME NOT NULL,\n" .
         "  close_time DATETIME NOT NULL,\n" .
         "  objective TEXT NOT NULL,\n" .
+        "  main_concept TEXT NULL,\n" .
         "  instruction TEXT NOT NULL,\n" .
         "  questions_json JSON NOT NULL,\n" .
+        "  rubric_json JSON NULL,\n" .
         "  created_by INT NULL,\n" .
         "  updated_by INT NULL,\n" .
         "  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n" .
@@ -60,7 +62,27 @@ try {
         ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"
     );
 
-    $stmt = $db->prepare('SELECT id, open_time, close_time, objective, instruction, questions_json, created_by, updated_by, created_at, updated_at FROM elk_workshops ORDER BY id ASC');
+    // Ensure column exists for older DBs
+    try {
+        $col = $db->query("SHOW COLUMNS FROM elk_workshops LIKE 'main_concept'");
+        if ($col && $col->rowCount() === 0) {
+            $db->exec("ALTER TABLE elk_workshops ADD COLUMN main_concept TEXT NULL AFTER objective");
+        }
+    } catch (Exception $e) {
+        // ignore; best-effort migration
+    }
+
+    // Ensure rubric_json exists for older DBs
+    try {
+        $col = $db->query("SHOW COLUMNS FROM elk_workshops LIKE 'rubric_json'");
+        if ($col && $col->rowCount() === 0) {
+            $db->exec("ALTER TABLE elk_workshops ADD COLUMN rubric_json JSON NULL AFTER questions_json");
+        }
+    } catch (Exception $e) {
+        // ignore; best-effort migration
+    }
+
+    $stmt = $db->prepare('SELECT id, open_time, close_time, objective, main_concept, instruction, questions_json, rubric_json, created_by, updated_by, created_at, updated_at FROM elk_workshops ORDER BY id ASC');
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -81,6 +103,7 @@ try {
             'open_time_local' => toDatetimeLocal($row['open_time'] ?? ''),
             'close_time_local' => toDatetimeLocal($row['close_time'] ?? ''),
             'objective' => $row['objective'] ?? '',
+            'main_concept' => $row['main_concept'] ?? '',
             'instruction' => $row['instruction'] ?? '',
             'questions' => $questions,
             'created_by' => isset($row['created_by']) ? intval($row['created_by']) : null,
