@@ -110,16 +110,16 @@
                         </div>
                         <div class="text-end text-[#866BC2] grow">
                             <p class="text-sm font-semibold bg-purple-50 py-2 px-4"><span id="ws1-files">0</span>
-                                <span class="text-sm">Files</span>
+                                <span class="text-sm">Post</span>
                             </p>
                             <p class="text-sm font-semibold py-2 px-4"><span id="ws2-files">0</span>
-                                <span class="text-sm">Files</span>
+                                <span class="text-sm">Post</span>
                             </p>
                             <p class="text-sm font-semibold bg-purple-50 py-2 px-4"><span id="ws3-files">0</span>
-                                <span class="text-sm">Files</span>
+                                <span class="text-sm">Post</span>
                             </p>
                             <p class="text-lg font-semibold py-2 px-4 text-[#B1BB1E]"><span id="ws-total-files">0</span>
-                                <span class="text-sm">Files</span>
+                                <span class="text-sm">Post</span>
                             </p>
                         </div>
                     </div>

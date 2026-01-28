@@ -41,7 +41,7 @@ function checkLogin(event) {
     sideBarMenu = [
       { name: "Dashboard", path: BASE_LINK + "/admin/dashboard_admin" },
       { name: "คลังทรัพยากร", path: BASE_LINK + "/admin/storage_admin" },
-      { name: "Workshop/แผนฯ", path: BASE_LINK + "/admin/workshop_admin" },
+      { name: "Workshop", path: BASE_LINK + "/admin/workshop_admin" },
       { name: "ผู้ใช้งาน", path: BASE_LINK + "/admin/users_admin" },
       { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/admin/consulting" },
       { name: "รายงาน/log", path: BASE_LINK + "/admin/log_admin" },
@@ -64,7 +64,7 @@ function checkLogin(event) {
     sideBarMenu = [
       { name: "Dashboard", path: BASE_LINK + "/student/" },
       { name: "คลังทรัพยากร", path: BASE_LINK + "/student/storage" },
-      { name: "Workshop/แผนฯ", path: BASE_LINK + "/student/workshop" },
+      { name: "Workshop", path: BASE_LINK + "/student/workshop" },
       { name: "ระบบให้คำปรึกษา", path: BASE_LINK + "/student/consulting" },
       { name: "ระบบสะท้อนความคิด", path: BASE_LINK + "/student/reflection?workshop=1" },
       { name: "ผู้ใช้งาน", path: BASE_LINK + "/student/user" },
