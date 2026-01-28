@@ -137,7 +137,7 @@
                         <div class="flex w-full h-full items-center mb-4">
                             <div class="w-full h-full bg-purple-50 rounded-l-lg px-4 py-5 text-center">
                                 <p id="resource-media-count" class="text-2xl font-bold text-[#156E68] pb-5 pt-2">0</p>
-                                <p class="text-sm text-gray-500">สื่อการสอน</p>
+                                <p class="text-sm text-gray-500">Post</p>
                             </div>
                             <!-- <div class="w-full h-full bg-gray-50 rounded-r-lg px-4 py-5 text-center">
                                 <p id="resource-selected-plan-count" class="text-2xl font-bold text-[#156E68] pb-5 pt-2">0</p>
