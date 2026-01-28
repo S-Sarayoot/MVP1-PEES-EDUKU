@@ -585,7 +585,7 @@
         .replace(/'/g, '&#039;');
 
     const fetchUsersByType = async (type) => {
-        const payload = await fetch(`../backend/api/get_users_by_type.php?type=${encodeURIComponent(String(type))}`)
+        const payload = await fetch(`../backend/api/get_users_by_type.php?type=${encodeURIComponent(String(type))}&_ts=${Date.now()}`)
             .then((res) => res.json())
             .catch(() => ({ success: false, data: [] }));
         return (payload?.success && Array.isArray(payload.data)) ? payload.data : [];
