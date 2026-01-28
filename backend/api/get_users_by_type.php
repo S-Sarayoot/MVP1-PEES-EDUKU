@@ -9,11 +9,23 @@ require_once __DIR__ . '/../models/User.php';
 $type = $_GET['type'] ?? '';
 $response = ['success' => false, 'data' => []];
 
+// Helps confirm which code is running in production
+header('X-UsersByType-Build: 2026-01-29');
+
 if ($type) {
     $database = new Database();
     $db = $database->getConnection();
     $userModel = new User($db);
-    $response['data'] = $userModel->getByType($type);
+    $data = $userModel->getByType($type);
+    // Defensive filter: never return soft-deleted users (status=0)
+    if (is_array($data)) {
+        $data = array_values(array_filter($data, function ($r) {
+            return intval($r['status'] ?? 1) !== 0;
+        }));
+    } else {
+        $data = [];
+    }
+    $response['data'] = $data;
     $response['success'] = true;
 } else {
     $response['message'] = 'Missing user type';
