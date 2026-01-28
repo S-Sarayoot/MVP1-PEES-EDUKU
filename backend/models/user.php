@@ -54,7 +54,7 @@ class User{
 				FROM {$this->table_name} u
 				LEFT JOIN elk_major m ON u.major_id = m.id
 				LEFT JOIN elk_faculty f ON u.faculty_id = f.id
-				WHERE u.status != '0' AND u.user_type = :type A
+				WHERE u.status <> '0' AND u.user_type = :type 
 				ORDER BY u.user_id DESC";
 		$stmt = $this->conn->prepare($sql);
 		$stmt->execute([':type' => $type]);
