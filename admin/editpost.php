@@ -81,13 +81,41 @@
 <!-- Rich Text Editor (ใช้ CDN ของ TinyMCE หรือ CKEditor) -->
 <script src="https://cdn.tiny.cloud/1/dzcsf7dom8o3tpzedz2b8ja0md7st1h9iu86fkvmm1bq81f4/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 <script>
-tinymce.init({
-    selector: '#content',
-    height: 250,
-    menubar: false,
-    branding: false,
-    toolbar_mode: 'floating'
-});
+let __pendingTinyContent = null;
+
+function setPostEditorContent(html) {
+    const value = String(html ?? '');
+    const editor = window.tinymce ? tinymce.get('content') : null;
+    if (editor) {
+        editor.setContent(value);
+        return;
+    }
+    __pendingTinyContent = value;
+    const textarea = document.getElementById('content');
+    if (textarea) textarea.value = value;
+}
+
+try {
+    if (window.tinymce && typeof tinymce.init === 'function') {
+        tinymce.init({
+            selector: '#content',
+            height: 250,
+            menubar: false,
+            branding: false,
+            toolbar_mode: 'floating',
+            setup: (editor) => {
+                editor.on('init', () => {
+                    if (__pendingTinyContent !== null) {
+                        editor.setContent(__pendingTinyContent);
+                        __pendingTinyContent = null;
+                    }
+                });
+            }
+        });
+    }
+} catch (e) {
+    console.warn('TinyMCE init failed; fallback to textarea.', e);
+}
 
 // ฟังก์ชันดึง id จาก url
 function getPostIdFromUrl() {
@@ -107,11 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('input[name="title"]').value = post.title || '';
             document.querySelector('select[name="category"]').value = post.category || '';
             document.querySelector('input[name="media_link"]').value = post.media_link || '';
-            if (window.tinymce) {
-                tinymce.get('content').setContent(post.description || '');
-            } else {
-                document.getElementById('content').value = post.description || '';
-            }
+            setPostEditorContent(post.description || '');
             // แสดง preview ไฟล์/รูป/วิดีโอเดิม (ถ้ามี)
             // รูปภาพ
             const previewImages = document.getElementById('preview-images');
@@ -225,7 +249,9 @@ document.getElementById('mediaPostForm').addEventListener('submit', function(e) 
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    formData.set('description', tinymce.get('content').getContent());
+    const editor = window.tinymce ? tinymce.get('content') : null;
+    const html = editor ? editor.getContent() : (document.getElementById('content')?.value || '');
+    formData.set('description', html);
 
     // แสดง Swal.fire loading
     if (window.Swal) {
@@ -256,7 +282,8 @@ document.getElementById('mediaPostForm').addEventListener('submit', function(e) 
                 showConfirmButton: false
             });
             form.reset();
-            tinymce.get('content').setContent('');
+            const editor = window.tinymce ? tinymce.get('content') : null;
+            if (editor) editor.setContent('');
             document.getElementById('preview-images').innerHTML = '';
             document.getElementById('preview-videos').innerHTML = '';
             setTimeout(function() {

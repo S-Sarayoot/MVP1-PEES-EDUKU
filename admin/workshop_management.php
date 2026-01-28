@@ -60,11 +60,12 @@
                                         <h2 class="text-lg font-semibold text-[#433878]">ข้อคำถาม (แบบตัวเลือก)</h2>
                                         <div class="text-xs text-gray-500">ตั้งค่าข้อคำถามและเฉลย</div>
                                     </div>
-                                    <button id="add-question-btn" type="button" onclick="addQuestion()" class="px-4 py-2 bg-green-100 text-green-800 rounded hover:bg-green-200">+ เพิ่มคำถาม</button>
+                                    
                                 </div>
 
                                 <div id="questions-list" class="mt-4 flex flex-col gap-4"></div>
-                                <div id="question-limit-hint" class="text-xs text-gray-500 mt-2">เพิ่มได้ไม่เกิน 10 ข้อ</div>
+                                
+                                <div id="question-limit-hint" class="text-xs text-gray-500 mt-2"><button id="add-question-btn" type="button" onclick="addQuestion()" class="px-4 py-2 bg-green-100 text-green-800 rounded hover:bg-green-200">+ เพิ่มคำถาม</button> เพิ่มได้ไม่เกิน 10 ข้อ</div>
                             </section>
 
                             <section class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow transition-tranform ease-in-out duration-200 p-5">
@@ -73,11 +74,12 @@
                                         <h2 class="text-lg font-semibold text-[#433878]">Rubric score (กำหนดต่อ 1 Workshop)</h2>
                                         <div class="text-xs text-gray-500">เพิ่มหัวข้อเกณฑ์และคำอธิบายระดับ 3 หรือ 5 ระดับ</div>
                                     </div>
-                                    <button id="add-rubric-btn" type="button" onclick="addRubricItem()" class="px-4 py-2 bg-green-100 text-green-800 rounded hover:bg-green-200">+ เพิ่มเกณฑ์</button>
+                                    
                                 </div>
 
                                 <div id="rubric-list" class="mt-4 flex flex-col gap-4"></div>
-                                <div id="rubric-limit-hint" class="text-xs text-gray-500 mt-2">เพิ่มได้ไม่เกิน 10 ข้อ</div>
+                                
+                                <div id="rubric-limit-hint" class="text-xs text-gray-500 mt-2"><button id="add-rubric-btn" type="button" onclick="addRubricItem()" class="px-4 py-2 bg-green-100 text-green-800 rounded hover:bg-green-200">+ เพิ่มเกณฑ์</button> เพิ่มได้ไม่เกิน 10 ข้อ</div>
                             </section>
                         </div>
                     </div>
